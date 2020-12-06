@@ -28,7 +28,7 @@ try {
 }
 
 // Currently, assumes that this will be in the project home directory
-const json_string = await Fs.readFile("./sample.json", "UTF8");
+const json_string = await Fs.readFile(config.json_path, "UTF8");
 const video_list = JSON.parse(json_string);
 Utils.validate_json_or_fail(video_list);
 
