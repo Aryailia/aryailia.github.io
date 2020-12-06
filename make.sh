@@ -64,19 +64,19 @@ m_make() {
       ;; all-local)  "${MAKE_DIR}/${NAME}" all "${force}" -l
 
       ;; eisel)
-        write_path="${MAKE_DIR}/public/eisel"
+        write_path="${MAKE_DIR}/public/̀a-bas-le-ciel"
         errln "Buildling 'a-bas-le-ciel' -> '${write_path}' ..."
 
         mkdir -p "${write_path}"
         if "${LOCAL}"
-          then input="final.json";  domain="${write_path}"
-          else input="sample.json"; domain='/eisel'
+          then input="sample.json"; domain="${write_path}"
+          else input="final.json";  domain='/̀a-bas-le-ciel'
         fi
 
         cd "${MAKE_DIR}/a-bas-le-ciel" || "$?"
 
         node build.mjs \
-          "${MAKE_DIR}/eisel/${input}" \
+          "${MAKE_DIR}/a-bas-le-ciel/${input}" \
           "${write_path}" \
           "${domain}" \
           ${force} || exit "$?"
