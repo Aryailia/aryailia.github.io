@@ -65,13 +65,13 @@ m_make() {
 
       ;; eisel)
         # ̀a is too annoying to 'cd' into so source is named eisel
-        write_path="${MAKE_DIR}/public/̀a-bas-le-ciel"
+        write_path="${MAKE_DIR}/public/̀à-bas-le-ciel"
         errln "Buildling 'eisel' -> '${write_path}' ..."
 
         mkdir -p "${write_path}"
         if "${LOCAL}"
           then input="sample.json"; domain="${write_path}"
-          else input="final.json";  domain='/̀a-bas-le-ciel'
+          else input="final.json";  domain='/̀à-bas-le-ciel'
         fi
 
         cd "${MAKE_DIR}/eisel" || "$?"
