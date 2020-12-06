@@ -1,0 +1,47 @@
+name: Eisel-Archive
+on: [push]
+jobs:
+  make_site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning master -> vm ./
+        uses: actions/checkout@v2  # From the marketplace
+
+      - name: Remove .gitignore    # To commit public later on
+        run: rm .gitignore
+
+      - name: Build the Site
+        run: /bin/sh make.sh all
+
+      # In repository settings, place public key in "Deploy Keys", place private key in "Secrets"
+      # $ ssh-keygen -t ed25519 -C "your_email@example.com"
+      #
+      # https://serverfault.com/questions/856194/
+      # https://www.webfactory.de/blog/use-ssh-key-for-private-repositories-in-github-actions
+      # https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/githubs-ssh-key-fingerprints
+      - name: Verify then add GitHub SSH key
+        run: |
+          [ "$( ssh-keyscan -t rsa github.com | tee github-key-temp | ssh-keygen -lf - 2>/dev/null )" \
+          = "2048 SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8 github.com (RSA)" ] \
+          || { printf "Invalid GitHub SSH key" >&2; exit 1; }
+          mkdir ~/.ssh
+          cat github-key-temp >>~/.ssh/known_hosts
+          eval "$( ssh-agent -a "$SSH_AUTH_SOCKET" )"
+          <<EOF ssh-add -
+          ${{ secrets.GH_PAGES_DEPLOY_SECRET }}
+          EOF
+
+      - name: Push to gh_pages branch
+        env:
+          SSH_AUTH_SOCKET: /tmp/ssh_agent.sock
+        run: |
+          git add public
+          git config user.email "bot@users.noreply.github.com"
+          git config user.name "Continuous Integration Bot"
+          git commit -m 'publishing public'
+          git subtree split --prefix public --branch gh-pages
+          git checkout gh-pages
+          git status
+          git remote -v
+          git push --force origin gh-pages
+
