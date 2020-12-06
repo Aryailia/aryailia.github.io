@@ -50,7 +50,7 @@ main() {
   m_make "$@"
 }
 
-#run: sh % all-local
+#run: sh % clean all
 m_make() {
   if "${FORCE}"
     then force='--force'
@@ -64,8 +64,9 @@ m_make() {
       ;; all-local)  "${MAKE_DIR}/${NAME}" all "${force}" -l
 
       ;; eisel)
+        # ̀a is too annoying to 'cd' into so source is named eisel
         write_path="${MAKE_DIR}/public/̀a-bas-le-ciel"
-        errln "Buildling 'a-bas-le-ciel' -> '${write_path}' ..."
+        errln "Buildling 'eisel' -> '${write_path}' ..."
 
         mkdir -p "${write_path}"
         if "${LOCAL}"
@@ -73,10 +74,10 @@ m_make() {
           else input="final.json";  domain='/̀a-bas-le-ciel'
         fi
 
-        cd "${MAKE_DIR}/a-bas-le-ciel" || "$?"
+        cd "${MAKE_DIR}/eisel" || "$?"
 
         node build.mjs \
-          "${MAKE_DIR}/a-bas-le-ciel/${input}" \
+          "${MAKE_DIR}/eisel/${input}" \
           "${write_path}" \
           "${domain}" \
           ${force} || exit "$?"
