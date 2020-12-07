@@ -7,18 +7,10 @@ export default function home_page(config, rel_path) {
 <html>
 <head>${
   Headers.head("Archive of Eisel Mazard's videos")}
-  <style>
-main {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 600px 1fr;
-}
-  </style>
-</head>
 </head>
 <body>${
   Headers.navbar(config, rel_path)}
-  <main>
+  <main class="thin-column">
     <aside></aside>
     <section>
       <p>This is an archive of archive the videos the Eisel Mazard's youtube channels.</p>

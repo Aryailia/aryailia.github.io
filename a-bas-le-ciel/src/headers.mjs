@@ -1,4 +1,4 @@
-//run: ../../make.sh eisel -l
+//run: ../../make.sh eisel -l -f
 
 export function head(title) {
   return `
@@ -7,9 +7,26 @@ export function head(title) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>${title}</title>
   <style>
+    /* Overall structure */
     body { margin: 0px; padding: 0px; border: 0px; }
     span, div, p, h1, h2, h3, h4, h5, h6 { line-height: 1.3em; }
-    main {  padding-top: 40px; }
+    @media screen and (min-width: 1200px) {
+      .medium-column {
+        display: grid;
+        /* 768 (thin) + 336px (thumnail) */
+        grid-template-columns: minmax(0, 1fr) 1104px minmax(0, 1fr);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .thin-column {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 768px minmax(0, 1fr);
+      }
+    }
+
+    /* Overall structure */
+    /* top right bottom left */
+    main {  padding: 40px 20px 20px 20px; }
     nav {
       position: fixed;
       top: 0px;
@@ -19,23 +36,32 @@ export function head(title) {
     }
     nav span {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 15px;
       text-align: center;
       vertical-align: center;
     }
     nav .search {
       float: right;
     }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Calibri, Helvetica, "Noto Sans", sans-serif;
+    }
+    p {
+      font-faily: "Times New Roman", "Open Sans", serif;
+    }
   </style>`
 };
 
 
 export function navbar(config, rel_path) {
+  // Spans might not be good for ARIA
   return `
   <nav><!--
-    --><span>${format_nav_link("Home",      rel_path, `${config.domain}/`)}</a></span><!--
-    --><span>${format_nav_link("Paginated", rel_path, `${config.domain}/1.html`)}</a></span><!--
-    --><span>${format_nav_link("Full List", rel_path, `${config.domain}/list.html`)}</a></span><!--
+    --><span>${format_nav_link("Home",      rel_path, `${config.domain}/`)}</span><!--
+    --><span>${format_nav_link("Paginated", rel_path, `${config.domain}/1.html`)}</span><!--
+    --><span>${format_nav_link("All", rel_path, `${config.domain}/list.html`)}</span><!--
+    --><span>Playlists</span><!--
     --><span class="search">
       <form  action="https://google.com/" method="get">
         <input type="text" name="q" autocomplete="off">
@@ -85,6 +111,6 @@ export function format_date(date) {
     "December",
   ];
 
-  return `${to_month_name[month]} ${day}, ${year}`;
+  return `${day} ${to_month_name[month]} ${year}`;
 };
 

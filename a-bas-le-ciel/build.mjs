@@ -52,7 +52,7 @@ await async function () {
 
     results[i] = Utils.write(
       `${config.write_path}/${i + 1}.html`,
-      paginated_index(config, url, i, video_list, start, close),
+      paginated_index(config, url, i, page_count, video_list, start, close),
       config.is_force,
     );
     sitemap[++sitemap_index] = {
