@@ -129,10 +129,12 @@ await async function() {
     const x = sitemap[i];
     rendered_sitemap[i] = `
 <url>
-  <loc>${x.loc}</loc>
+  <loc>${x.loc.replace(/^https:/, "http:")}</loc>
   <changefreq>${x.changefreq}</changefreq>
 </url>`;
   }
+
+
   const sitemap_string =
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
