@@ -1,4 +1,4 @@
-name: Eisel-Archive
+name: Publish to gh-pages branch (root for hosted site)
 on: [push]
 jobs:
   make_site:
