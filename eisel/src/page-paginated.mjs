@@ -1,5 +1,7 @@
 import  *  as Headers from './headers.mjs';
 
+//run: ../../make.sh eisel -l -f
+
 export default function paginated_index(config, rel_path, index, video_list, start, close) {
   const length = video_list.length;
   const previous = (start <= 0)
@@ -41,7 +43,7 @@ function paginated_index_main(config, video_list, start, close) {
       <li><div class="paginated-item">
         <img class="thumbnail" src="${thumbnail.url}" width="100%">
         <h1 class="title"><a href="${config.domain}/video/${id}.html">${title}</a></h1>
-        <p class="date">${Headers.format_date(upload_date)}</p>
+        <p class="date">${Headers.format_date(upload_date)} <a href="${url}">[YT link]</a></p>
         <p class="description">${Headers.format_desc(description)}</p>
       </div></li>`;
   }
