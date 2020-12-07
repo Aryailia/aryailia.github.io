@@ -102,11 +102,19 @@ await async function() {
   const rendered_sitemap = new Array(sitemap_index + 1);
   for (let i = 0; i <= sitemap_index; ++i) {
     const x = sitemap[i];
-    rendered_sitemap[i] = `<url><loc>${x.loc}</loc><changefreq>${x.changefreq}</changefreq></url>`;
+    rendered_sitemap[i] = `
+<url>
+  <loc>${x.loc}</loc>
+  <changefreq>${x.changefreq}</changefreq>
+</url>`;
   }
   const sitemap_string =
-`<?xml version="1.0" encoding="UTF-8" ?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+`<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${rendered_sitemap.join("\n")}
 </urlset>
 `;
