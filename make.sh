@@ -50,7 +50,7 @@ main() {
   m_make "$@"
 }
 
-#run: sh % clean all
+#run: sh % root
 m_make() {
   if "${FORCE}"
     then force='--force'
@@ -65,12 +65,12 @@ m_make() {
 
       ;; eisel)
         # ̀a is too annoying to 'cd' into so source is named eisel
-        write_path="${MAKE_DIR}/public/̀à-bas-le-ciel"
-        errln "Buildling 'eisel' -> '${write_path}' ..."
+        write_dir="${MAKE_DIR}/public/̀à-bas-le-ciel"
+        errln "Buildling 'eisel' -> '${write_dir}' ..."
 
-        mkdir -p "${write_path}"
+        mkdir -p "${write_dir}"
         if "${LOCAL}"
-          then input="sample.json"; domain="${write_path}"
+          then input="sample.json"; domain="${write_dir}"
           else input="final.json";  domain='/̀à-bas-le-ciel'
         fi
 
@@ -78,19 +78,46 @@ m_make() {
 
         node build.mjs \
           "${MAKE_DIR}/eisel/${input}" \
-          "${write_path}" \
+          "${write_dir}" \
           "${domain}" \
           ${force} || exit "$?"
 
-      ;; base)
-        write_path="${MAKE_DIR}/public/"
-        errln "Buildling 'base' -> '${write_path}' ..."
-        mkdir -p "${write_path}"
-        cp "${MAKE_DIR}/base/index.html" "${write_path}"
+      ;; root)
+        write_dir="${MAKE_DIR}/public/"
+        errln "Buildling 'root' -> '${write_dir}' ..."
+        compile_base "${MAKE_DIR}/root" "${write_dir}" "/"
 
-      ;; *) die FATAL 1 "\`${NAME} '${1}'\` is an invalid subcommand."
+      ;; *)
+        die FATAL 1 "\`${NAME} '${1}'\` is an invalid subcommand."
+
     esac
     shift 1
+  done
+}
+
+compile_base() {
+  # $1: read path
+  # $2: write directory
+  # $3: domain
+
+  mkdir -p "${2}" || exit "$?"
+  [ -d "${1}" ] && [ -d "${2}" ] \
+    || die DEV 1 "\`compile_base\` only accepts directories" \
+      "\$ compile_base '${1}' '${2}' '${3}'"
+
+  #for child in "${1}"/*; do
+  for child in "${1}"/* "${1}"/.[!.]* "${1}"/..?*; do
+    [ -e "${child}" ] || continue
+    filename="${child##*/}"
+    extension="${filename##*.}"
+    filestem="${filename%".${extension}"}"
+
+    case "${extension}"
+      in sh)    "${child}" "${3}" >"${2}/${filestem}.html"
+      ;; html)  cp "${child}" "${2}/${filename}"
+      ;; *)     die FATAL 1 \
+        "The extension '${extension}' in '${child}' is not supported"
+    esac || die FATAL 1 "Error processing the file '${child}'"
   done
 }
 
