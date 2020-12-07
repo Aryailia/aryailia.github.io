@@ -11,6 +11,8 @@ jobs:
         run: rm .gitignore
 
       - name: Build the Site
+        env:
+          DOMAIN: https://aryailia.github.io
         run: /bin/sh make.sh all
 
       # In repository settings, place public key in "Deploy Keys", place private key in "Secrets"

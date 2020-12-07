@@ -44,6 +44,9 @@ main() {
     "${literal}" && args="${args} $( outln "${a}" | eval_escape )"
   done
 
+  ! "${LOCAL}" && errln "Environment \${DOMAIN} is set to '${DOMAIN}'"
+
+
   [ -z "${args}" ] && { show_help; exit 1; }
   eval "set -- ${args}"
 
@@ -71,7 +74,7 @@ m_make() {
         mkdir -p "${write_dir}"
         if "${LOCAL}"
           then input="sample.json"; domain="${write_dir}"
-          else input="final.json";  domain='/a-bas-le-ciel'
+          else input="final.json";  domain="${DOMAIN}/a-bas-le-ciel"
         fi
 
         cd "${MAKE_DIR}/eisel" || "$?"
