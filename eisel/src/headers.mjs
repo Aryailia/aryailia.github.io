@@ -1,4 +1,4 @@
-//run: node index.mjs
+//run: ../../make.sh clean eisel -l
 
 export function head(title) {
   return `
@@ -28,9 +28,9 @@ export function head(title) {
 export function navbar(config, rel_path) {
   return `
   <nav><!--
-    --><span>${format_nav_link(config, "Home", rel_path, "")}</a></span><!--
-    --><span>${format_nav_link(config, "Paginated", rel_path, "1.html")}</a></span><!--
-    --><span>${format_nav_link(config, "Full List", rel_path, "list.html")}</a></span><!--
+    --><span>${format_nav_link(config, "Home",      rel_path, `${config.domain}/`)}</a></span><!--
+    --><span>${format_nav_link(config, "Paginated", rel_path, `${config.domain}/1.html`)}</a></span><!--
+    --><span>${format_nav_link(config, "Full List", rel_path, `${config.domain}/list.html`)}</a></span><!--
     --><span class="search">
       <form  action="https://google.com/" method="get">
         <input type="text" name="q" autocomplete="off">
@@ -43,7 +43,7 @@ function format_nav_link(config, title, rel_path, target) {
   //console.log(`${config.domain}, ${title}, ${rel_path}, ${target}`);
   return rel_path == target
     ? `${title}`
-    : `<a href="${config.domain}/${target}">${title}</a>`
+    : `<a href="${target}">${title}</a>`
   ;
 }
 

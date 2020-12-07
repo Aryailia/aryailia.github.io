@@ -36,28 +36,33 @@ Utils.validate_json_or_fail(video_list);
 
 const video_count = video_list.length;
 const page_count = Math.max(video_count / ITEMS_PER_PAGE);
-const results = new Array(page_count);
-for (let i = 0; i < page_count; ++i) {
-  const start = i * ITEMS_PER_PAGE;
-  const close = Math.min(start + ITEMS_PER_PAGE, video_count);
+const sitemap_count = video_list.length + page_count + 4;
+const sitemap = new Array(sitemap_count);
+let sitemap_index = -1;
 
-  results[i] = Utils.write(
-    `${config.write_path}/${i + 1}.html`,
-    paginated_index(config, `${i + 1}.html`, i, video_list, start, close),
-    config.is_force,
-  );
-}
-// Allow Node to handle error (just exit)
-await Promise.all(results);
+// The paginated list
+await async function () {
+  const results = new Array(page_count);
+  for (let i = 0; i < page_count; ++i) {
+    const start = i * ITEMS_PER_PAGE;
+    const close = Math.min(start + ITEMS_PER_PAGE, video_count);
+    const url = `${config.domain}/${i + 1}.html`
 
-// Allow Node to handle error (just exit)
-await Utils.write(
-  `${config.write_path}/index.html`,
-  home_page(config, "index.html"),
-  config.is_force,
-);
+    results[i] = Utils.write(
+      `${config.write_path}/${i + 1}.html`,
+      paginated_index(config, url, i, video_list, start, close),
+      config.is_force,
+    );
+    sitemap[++sitemap_index] = {
+      loc: url,
+      changefreq: 'daily',
+    };
+  }
+  // Allow Node to handle error (just exit)
+  await Promise.all(results);
+}();
 
-
+// The individual video pages
 //const chunk_size = 100;
 //const chunk_count = Math.max(video_count / chunk_size);
 //let index = 0;
@@ -73,3 +78,42 @@ await Utils.write(
 //  }
 //  await Promise.all(results);
 //}
+
+// All the single pages
+await async function () {
+  const url = `${config.domain}/`
+  // Allow Node to handle error (just exit)
+  await Utils.write(
+    `${config.write_path}/index.html`,
+    home_page(config, url),
+    config.is_force,
+  );
+  sitemap[++sitemap_index] = {
+    loc: url,
+    changefreq: 'monthly',
+  };
+
+  // ...
+  // JK there's only one
+}();
+
+// The sitemap
+await async function() {
+  const rendered_sitemap = new Array(sitemap_index + 1);
+  for (let i = 0; i <= sitemap_index; ++i) {
+    const x = sitemap[i];
+    rendered_sitemap[i] = `<url><loc>${x.loc}</loc><changefreq>${x.changefreq}</changefreq></url>`;
+  }
+  const sitemap_string =
+`<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+${rendered_sitemap.join("\n")}
+</urlset>
+`;
+  await Utils.write(`${config.write_path}/sitemap.xml`, sitemap_string, true);
+}();
+
+console.log(`
+Sitemap precalculated count: ${sitemap_count}
+Sitemap Index:               ${sitemap_index}`
+);

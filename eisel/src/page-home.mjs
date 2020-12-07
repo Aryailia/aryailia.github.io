@@ -1,5 +1,7 @@
 import  *  as Headers from './headers.mjs';
 
+//../../make.sh eisel -l
+
 export default function home_page(config, rel_path) {
   return `<!DOCTYPE html>
 <html>
