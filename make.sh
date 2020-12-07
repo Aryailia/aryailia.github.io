@@ -63,13 +63,12 @@ m_make() {
   while [ "$#" -gt 0 ]; do
     case "${1}"
       in clean)      rm -r "${MAKE_DIR}/public"
-      ;; all)        m_make root eisel
+      ;; all)        m_make root a-bas-le-ciel
       ;; all-local)  "${MAKE_DIR}/${NAME}" all "${force}" -l
 
-      ;; eisel)
-        # ̀a is too annoying to 'cd' into so source is named eisel
+      ;; eisel|a-bas-le-ciel)
         write_dir="${MAKE_DIR}/public/a-bas-le-ciel"
-        errln "Buildling 'eisel' -> '${write_dir}' ..."
+        errln "Buildling 'a-bas-le-ciel' -> '${write_dir}' ..."
 
         mkdir -p "${write_dir}"
         if "${LOCAL}"
@@ -77,10 +76,10 @@ m_make() {
           else input="final.json";  domain="${DOMAIN}/a-bas-le-ciel"
         fi
 
-        cd "${MAKE_DIR}/eisel" || "$?"
+        cd "${MAKE_DIR}/a-bas-le-ciel" || "$?"
 
         node build.mjs \
-          "${MAKE_DIR}/eisel/${input}" \
+          "${MAKE_DIR}/a-bas-le-ciel/${input}" \
           "${write_dir}" \
           "${domain}" \
           ${force} || exit "$?"
