@@ -1,18 +1,20 @@
 import { promises as Fs } from 'fs';
 
 import home_page from './src/page-home.mjs';
+import full_index from './src/page-full-index.mjs';
 import paginated_index from './src/page-paginated.mjs';
+import video_page from './src/page-video-page.mjs';
 import * as Utils from './src/utils.mjs';
 
 export const BASE = "/home/rai/interim/eisel/public/";
 export const MAX_LEN = 300; // For description
 
 
-//run: ../make.sh eisel -l -f
+//run: ../make.sh eisel -l
 // run:setsid falkon test.html
 
 const config = Utils.process_args();
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 50;
 
 // Allow Node to handle error (just exit)
 
@@ -35,7 +37,7 @@ Utils.validate_json_or_fail(video_list);
 
 
 const video_count = video_list.length;
-const page_count = Math.max(video_count / ITEMS_PER_PAGE);
+const page_count = Math.ceil(video_count / ITEMS_PER_PAGE);
 const sitemap_count = video_list.length + page_count + 4;
 const sitemap = new Array(sitemap_count);
 let sitemap_index = -1;
@@ -62,22 +64,47 @@ await async function () {
   await Promise.all(results);
 }();
 
+
+await async function () {
+  // The list dump
+  const url = `${config.domain}/list.html`;
+  await Utils.write(
+    `${config.write_path}/list.html`,
+    full_index(config, url, "One-Page Video List", video_list),
+    true,
+  );
+  sitemap[++sitemap_index] = {
+    loc: url,
+    changefreq: 'monthly',
+  };
+}();
+
 // The individual video pages
-//const chunk_size = 100;
-//const chunk_count = Math.max(video_count / chunk_size);
-//let index = 0;
-//for (let i = 0; i < chunk_count; ++i) {
-//  const results = new Array(chunk_size);
-//  for (let j = 0; j < chunk_size && index < video_count; ++j) {
-//    const video_data = db[index];
-//    results[j] = write(`../public/video/${video_data.id}.html`,
-//      Pages.individual_video_page(`video/${video_data.id}.html`, video_data),
-//      FORCE,
-//    );
-//    index += 1;
-//  }
-//  await Promise.all(results);
-//}
+await async function () {
+  const chunk_size = 100;
+  const chunk_count = Math.max(video_count / chunk_size);
+  let index = 0;
+  for (let i = 0; i < chunk_count; ++i) {
+    const results = new Array(chunk_size);
+    for (let j = 0; j < chunk_size && index < video_count; ++j) {
+      const video_data = video_list[index];
+      const url = `${config.domain}/video/${video_data.id}.html`;
+
+      results[j] = Utils.write(
+        `${config.write_path}/video/${video_data.id}.html`,
+        video_page(config, url, video_data),
+        config.is_force,
+      );
+      index += 1;
+
+      sitemap[++sitemap_index] = {
+        loc: url,
+        changefreq: 'monthly',
+      };
+    }
+    await Promise.all(results);
+  }
+}();
 
 // All the single pages
 await async function () {
@@ -93,8 +120,6 @@ await async function () {
     changefreq: 'monthly',
   };
 
-  // ...
-  // JK there's only one
 }();
 
 // The sitemap

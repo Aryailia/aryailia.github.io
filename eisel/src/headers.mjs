@@ -1,4 +1,4 @@
-//run: ../../make.sh clean eisel -l
+//run: ../../make.sh eisel -l
 
 export function head(title) {
   return `
@@ -9,14 +9,19 @@ export function head(title) {
   <style>
     body { margin: 0px; padding: 0px; border: 0px; }
     span, div, p, h1, h2, h3, h4, h5, h6 { line-height: 1.3em; }
+    main {  padding-top: 40px; }
     nav {
-      /* display: fixed; */
+      position: fixed;
+      top: 0px;
+      background-color: white;
+      height: 40px;
+      width: 100%;
     }
     nav span {
-       display: inline-block;
-       padding: 10px 20px;
-       text-align: center;
-       vertical-align: center;
+      display: inline-block;
+      padding: 10px 20px;
+      text-align: center;
+      vertical-align: center;
     }
     nav .search {
       float: right;
@@ -28,9 +33,9 @@ export function head(title) {
 export function navbar(config, rel_path) {
   return `
   <nav><!--
-    --><span>${format_nav_link(config, "Home",      rel_path, `${config.domain}/`)}</a></span><!--
-    --><span>${format_nav_link(config, "Paginated", rel_path, `${config.domain}/1.html`)}</a></span><!--
-    --><span>${format_nav_link(config, "Full List", rel_path, `${config.domain}/list.html`)}</a></span><!--
+    --><span>${format_nav_link("Home",      rel_path, `${config.domain}/`)}</a></span><!--
+    --><span>${format_nav_link("Paginated", rel_path, `${config.domain}/1.html`)}</a></span><!--
+    --><span>${format_nav_link("Full List", rel_path, `${config.domain}/list.html`)}</a></span><!--
     --><span class="search">
       <form  action="https://google.com/" method="get">
         <input type="text" name="q" autocomplete="off">
@@ -39,8 +44,7 @@ export function navbar(config, rel_path) {
     </span>
   </nav>`
 };
-function format_nav_link(config, title, rel_path, target) {
-  //console.log(`${config.domain}, ${title}, ${rel_path}, ${target}`);
+function format_nav_link(title, rel_path, target) {
   return rel_path == target
     ? `${title}`
     : `<a href="${target}">${title}</a>`

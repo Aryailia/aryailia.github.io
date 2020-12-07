@@ -24,7 +24,7 @@ main {
       <p>This is an archive of archive the videos the Eisel Mazard's youtube channels.</p>
       <p>Currently, this site archives:</p>
       <ul>
-        <li><a href="https://www.youtube.com/user/HeiJinZhengZhi">à-bas-le-ciel</a></li>
+        <li><a href="https://www.youtube.com/user/HeiJinZhengZhi">à-bas-le-ciel</a>  <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCWPKJM4CT6ES2BrUz9wbELw">[RSS feed link]</a></li>
         <li>Maybe more will come</li>
       </ul>
 
