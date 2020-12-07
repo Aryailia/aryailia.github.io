@@ -60,7 +60,7 @@ m_make() {
   while [ "$#" -gt 0 ]; do
     case "${1}"
       in clean)      rm -r "${MAKE_DIR}/public"
-      ;; all)        m_make base eisel
+      ;; all)        m_make root eisel
       ;; all-local)  "${MAKE_DIR}/${NAME}" all "${force}" -l
 
       ;; eisel)
