@@ -60,7 +60,7 @@ export function navbar(config, rel_path) {
   <nav><!--
     --><span>${format_nav_link("Home",      rel_path, `${config.domain}/`)}</span><!--
     --><span>${format_nav_link("Paginated", rel_path, `${config.domain}/1.html`)}</span><!--
-    --><span>${format_nav_link("All", rel_path, `${config.domain}/list.html`)}</span><!--
+    --><span>${format_nav_link("All", rel_path, `${config.domain}/all.html`)}</span><!--
     --><span>Playlists</span><!--
     --><span class="search">
       <form  action="https://google.com/" method="get">

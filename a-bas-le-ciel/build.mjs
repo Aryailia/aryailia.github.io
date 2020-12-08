@@ -67,9 +67,9 @@ await async function () {
 
 await async function () {
   // The list dump
-  const url = `${config.domain}/list.html`;
+  const url = `${config.domain}/all.html`;
   await Utils.write(
-    `${config.write_path}/list.html`,
+    `${config.write_path}/all.html`,
     full_index(config, url, "One-Page Video List", video_list),
     true,
   );
