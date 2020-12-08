@@ -115,8 +115,8 @@ compile_base() {
     filestem="${filename%".${extension}"}"
 
     case "${extension}"
-      in sh)    "${child}" "${3}" >"${2}/${filestem}.html"
-      ;; html)  cp "${child}" "${2}/${filename}"
+      in sh)        "${child}" "${3}" >"${2}/${filestem}.html"
+      ;; txt|html)  cp "${child}" "${2}/${filename}"
       ;; *)     die FATAL 1 \
         "The extension '${extension}' in '${child}' is not supported"
     esac || die FATAL 1 "Error processing the file '${child}'"
