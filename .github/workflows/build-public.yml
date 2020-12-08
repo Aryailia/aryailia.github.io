@@ -5,15 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning master -> vm ./
-        uses: actions/checkout@v2  # From the marketplace
+        uses: actions/checkout@v2  # From the marketplace, by GitHub
 
       - name: Remove .gitignore    # To commit public later on
         run: rm .gitignore
+
+      - name: Download the data
+        run: |
+          git clone https://github.com/Aryailia/a-bas-le-ciel-data
+          cp ./a-bas-le-ciel-data/final.json ./a-bas-le-ciel/final.json
 
       - name: Build the Site
         env:
           DOMAIN: https://aryailia.github.io
         run: /bin/sh make.sh all
+
 
       # In repository settings, place public key in "Deploy Keys", place private key in "Secrets"
       # $ ssh-keygen -t ed25519 -C "your_email@example.com"
