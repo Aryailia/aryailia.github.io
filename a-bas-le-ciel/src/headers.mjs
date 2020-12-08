@@ -45,10 +45,10 @@ export function head(title) {
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: Calibri, Helvetica, "Noto Sans", sans-serif;
+      font-family: Helvetica, "Noto Sans", sans-serif;
     }
     p {
-      font-faily: "Times New Roman", "Open Sans", serif;
+      font-faily: Calibri, "Times New Roman", "Open Sans", serif;
     }
   </style>`
 };
