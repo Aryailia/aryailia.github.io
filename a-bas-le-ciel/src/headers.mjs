@@ -45,7 +45,7 @@ export function head(title) {
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: Helvetica, "Noto Sans", sans-serif;
+      font-family: Verdana, Helvetica, "Dejavu Sans", "Noto Sans", sans-serif;
     }
     p {
       font-faily: Calibri, "Times New Roman", "Open Sans", serif;
@@ -64,6 +64,7 @@ export function navbar(config, rel_path) {
     --><span>Playlists</span><!--
     --><span class="search">
       <form  action="https://google.com/" method="get">
+        <input type="hidden" name="q" autocomplete="off" value="site:${config.domain}">
         <input type="text" name="q" autocomplete="off">
         <input type="submit" value="WIP Search">
       </form>
