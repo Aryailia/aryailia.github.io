@@ -43,6 +43,7 @@ function () {
     </section>
     <aside></aside>
   </main>
+  ${Headers.footer()}
 </body>
 </html>`;
 }

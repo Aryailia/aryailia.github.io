@@ -20,6 +20,7 @@ ${Headers.navbar(config, rel_path)}
     <h2>Youtube Automatic Transcription</h2>
     <p>WIP</p>
   </main>
+  ${Headers.footer()}
 </body>
 </html>`;
 }

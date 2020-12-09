@@ -41,6 +41,7 @@ export default function paginated_index(
     </section>
     <aside></aside>
   </main>
+  ${Headers.footer()}
 </body>
 </html>`;
 }

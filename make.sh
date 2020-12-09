@@ -72,14 +72,15 @@ m_make() {
 
         mkdir -p "${write_dir}"
         if "${LOCAL}"
-          then input="sample.json"; domain="${write_dir}"
-          else input="final.json";  domain="${DOMAIN}/a-bas-le-ciel"
+          then domain="${write_dir}"
+          else domain="${DOMAIN}/a-bas-le-ciel"
         fi
 
         cd "${MAKE_DIR}/a-bas-le-ciel" || "$?"
 
         node build.mjs \
-          "${MAKE_DIR}/a-bas-le-ciel/${input}" \
+          "${MAKE_DIR}/a-bas-le-ciel/video.json" \
+          "${MAKE_DIR}/a-bas-le-ciel/playlist.json" \
           "${write_dir}" \
           "${domain}" \
           ${force} || exit "$?"

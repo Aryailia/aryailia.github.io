@@ -28,10 +28,10 @@ export function process_args() {
         break;
     }
   }
-  if (push_index != 3) {
+  if (push_index != 4) {
     console.log(
 `Expected three arguments:
-  node '${process.argv[1]}' <json-input> <path-to-write-folder> <public-path-for-links>
+  node '${process.argv[1]}' <video-json-path> <playlist-json-path> <path-to-write-folder> <public-path-for-links>
 
 Received:`,
       process.argv
@@ -40,9 +40,10 @@ Received:`,
   }
   return {
     is_force,
-    json_path: args[0],
-    write_path: args[1],
-    domain: args[2],
+    videolist_path: args[0],
+    playlist_path: args[1],
+    write_path: args[2],
+    domain: args[3],
   };
 
 }

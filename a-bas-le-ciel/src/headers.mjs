@@ -30,6 +30,7 @@ export function head(title) {
     nav {
       position: fixed;
       top: 0px;
+      border-bottom: solid 1px black;
       background-color: white;
       height: 40px;
       width: 100%;
@@ -42,6 +43,11 @@ export function head(title) {
     }
     nav .search {
       float: right;
+    }
+    footer {
+      border-top: solid 1px black;
+      padding-top: 8px;
+      text-align: center;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -59,16 +65,16 @@ export function navbar(config, rel_path) {
   return `
   <nav><!--
     --><span>${format_nav_link("Home",      rel_path, `${config.domain}/`)}</span><!--
+    --><span>${format_nav_link("All (Search this)", rel_path, `${config.domain}/all.html`)}</span><!--
     --><span>${format_nav_link("Paginated", rel_path, `${config.domain}/1.html`)}</span><!--
-    --><span>${format_nav_link("All", rel_path, `${config.domain}/all.html`)}</span><!--
-    --><span>Playlists</span><!--
-    --><span class="search">
-      <form  action="https://google.com/" method="get">
+    --><span>${format_nav_link("Playlists", rel_path, `${config.domain}/playlists.html`)}</span><!--
+    --><!--<span class="search">
+      <form  action="https://www.bing.com/" method="get">
         <input type="hidden" name="q" autocomplete="off" value="site:${config.domain}">
         <input type="text" name="q" autocomplete="off">
         <input type="submit" value="WIP Search">
       </form>
-    </span>
+    </span>-->
   </nav>`
 };
 function format_nav_link(title, rel_path, target) {
@@ -76,6 +82,16 @@ function format_nav_link(title, rel_path, target) {
     ? `${title}`
     : `<a href="${target}">${title}</a>`
   ;
+}
+
+export function footer(config) {
+  return `
+  <footer>
+    <div>
+      Site designed <a href="https://aryailia.site/">Aryailia</a>.
+      Content hosted with permission from <a href="http://a-bas-le-ciel.blogspot.com/">Eisel Mazard</a>.
+    </div>
+  </footer>`;
 }
 
 

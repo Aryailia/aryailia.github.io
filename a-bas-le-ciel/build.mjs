@@ -3,6 +3,7 @@ import { promises as Fs } from 'fs';
 import home_page from './src/page-home.mjs';
 import full_index from './src/page-full-index.mjs';
 import paginated_index from './src/page-paginated.mjs';
+import playlist_page from './src/page-playlist.mjs';
 import video_page from './src/page-video-page.mjs';
 import * as Utils from './src/utils.mjs';
 
@@ -29,12 +30,15 @@ try {
   }
 }
 
-// Currently, assumes that this will be in the project home directory
-const json_string = await Fs.readFile(config.json_path, "UTF8");
-const video_list = JSON.parse(json_string);
+const video_list = await async function () {
+  const string = await Fs.readFile(config.videolist_path, "UTF8");
+  return JSON.parse(string);
+}();
+const playlist_list = await async function () {
+  const string = await Fs.readFile(config.playlist_path, "UTF8");
+  return JSON.parse(string);
+}();
 Utils.validate_json_or_fail(video_list);
-
-
 
 const video_count = video_list.length;
 const page_count = Math.ceil(video_count / ITEMS_PER_PAGE);
@@ -65,6 +69,7 @@ await async function () {
 }();
 
 
+// All-in-one page
 await async function () {
   // The list dump
   const url = `${config.domain}/all.html`;
@@ -106,13 +111,29 @@ await async function () {
   }
 }();
 
-// All the single pages
+// Playlist Page
+await async function () {
+  const url = `${config.domain}/playlists.html`
+  // Allow Node to handle error (just exit)
+  await Utils.write(
+    `${config.write_path}/playlists.html`,
+    playlist_page(config, url, playlist_list),
+    config.is_force,
+  );
+  sitemap[++sitemap_index] = {
+    loc: url,
+    changefreq: 'monthly',
+  };
+
+}();
+
+// Home Page
 await async function () {
   const url = `${config.domain}/`
   // Allow Node to handle error (just exit)
   await Utils.write(
     `${config.write_path}/index.html`,
-    home_page(config, url),
+    home_page(config, url, playlist_list),
     config.is_force,
   );
   sitemap[++sitemap_index] = {
