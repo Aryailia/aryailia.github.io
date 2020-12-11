@@ -3,6 +3,8 @@ import {promises as Fs} from 'fs';
 const VALID_KEYS = ["id", "url", "upload_date", "title", "description", "thumbnail"];
 const VALID_LENGTH = VALID_KEYS.length;
 
+//run: ../../make.sh eisel -l -f
+
 // Last I did javascript, according to John-David Dalton (lodash),
 // vanilla '.map()' is slower than a for loop ('.map()' has to deal with
 // sparse arrays) and generally the fastest way to push elements onto an
@@ -57,7 +59,7 @@ export function validate_json_or_fail(json_array) {
       && check_is_valid_outside_tags(entry.upload_date)
       && check_is_valid_outside_tags(entry.title)
       && check_is_valid_outside_tags(entry.description)
-      && check_is_valid_outside_tags(entry.thumbnail.url)
+      && check_is_valid_outside_tags(entry.thumbnail)
     )) {
       console.log("Entry contains invalid characters \" & ' < >", entry);
       process.exit(1)

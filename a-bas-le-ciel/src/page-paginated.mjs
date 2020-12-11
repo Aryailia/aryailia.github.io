@@ -53,7 +53,7 @@ function paginated_index_main(config, video_list, start, close) {
     const { id, url, title, upload_date, description, thumbnail } = video_list[start + i];
     subarray[i] = `
       <li><div class="paginated-item">
-        <img class="thumbnail" src="${thumbnail.url}" width="100%">
+        <img class="thumbnail" src="${thumbnail}" width="100%">
         <h2 class="title"><a href="${config.domain}/video/${id}.html">${title}</a></h2>
         <p class="date">${Headers.format_date(upload_date)} <a href="${url}">[YT link]</a></p>
         <p class="description">${Headers.format_desc(description)}</p>
