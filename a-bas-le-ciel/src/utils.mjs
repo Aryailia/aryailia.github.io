@@ -30,7 +30,7 @@ export function process_args() {
         break;
     }
   }
-  if (push_index != 4) {
+  if (push_index != 5) {
     console.log(
 `Expected three arguments:
   node '${process.argv[1]}' <video-json-path> <playlist-json-path> <path-to-write-folder> <public-path-for-links>
@@ -46,6 +46,7 @@ Received:`,
     playlist_path: args[1],
     write_path: args[2],
     domain: args[3],
+    transcript_dir: args[4],
   };
 
 }
@@ -109,13 +110,14 @@ function check_is_valid_outside_tags(val) {
   return true;
 }
 
-export function write(path, content, force) {
+export function write(path, promise, force) {
   return force
-    ? Fs.writeFile(path, content, "UTF8")
+    ? promise.then(content => Fs.writeFile(path, content, "UTF8"))
     : Fs.access(path)
-        .catch(_ => Fs.writeFile(path, content, "UTF8")
-            // Only log this write if NOT --force and 'path' was missing
-            .then(_ => console.log(`Wrote to ${path}`)))
+      .catch(_ => promise
+        .then(content => Fs.writeFile(path, content, "UTF8"))
+        // Only log this write if NOT --force and 'path' was missing
+        .then(_ => console.log(`Wrote to ${path}`)))
   // Allow you the node to handle the error for use
 }
 

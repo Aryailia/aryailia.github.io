@@ -12,9 +12,9 @@ jobs:
 
       - name: Download the data
         run: |
-          git clone https://github.com/Aryailia/a-bas-le-ciel-data
-          cp ./a-bas-le-ciel-data/compiled/video.json ./a-bas-le-ciel/video.json
-          cp ./a-bas-le-ciel-data/compiled/playlist.json ./a-bas-le-ciel/playlist.json
+          git clone https://github.com/Aryailia/a-bas-le-ciel-data data
+          cp ./data/compiled/video.json ./a-bas-le-ciel/video.json
+          cp ./data/compiled/playlist.json ./a-bas-le-ciel/playlist.json
 
       - name: Build the Site
         env:

@@ -4,14 +4,14 @@ import home_page from './src/page-home.mjs';
 import full_index from './src/page-full-index.mjs';
 import paginated_index from './src/page-paginated.mjs';
 import playlist_page from './src/page-playlist.mjs';
-import video_page from './src/page-video-page.mjs';
+import video_page_promise from './src/page-video-page.mjs';
 import * as Utils from './src/utils.mjs';
 
 export const BASE = "/home/rai/interim/eisel/public/";
 export const MAX_LEN = 300; // For description
 
 
-//run: ../make.sh eisel -l
+//run: ../make.sh eisel -l -f
 // run:setsid falkon test.html
 
 const config = Utils.process_args();
@@ -56,7 +56,9 @@ await async function () {
 
     results[i] = Utils.write(
       `${config.write_path}/${i + 1}.html`,
-      paginated_index(config, url, i, page_count, video_list, start, close),
+      new Promise(res => res(paginated_index(
+        config, url, i, page_count, video_list, start, close)
+      )),
       config.is_force,
     );
     sitemap[++sitemap_index] = {
@@ -75,7 +77,9 @@ await async function () {
   const url = `${config.domain}/all.html`;
   await Utils.write(
     `${config.write_path}/all.html`,
-    full_index(config, url, "One-Page Video List", video_list),
+    new Promise(res => res(full_index(
+      config, url, "One-Page Video List", video_list
+    ))),
     true,
   );
   sitemap[++sitemap_index] = {
@@ -97,7 +101,7 @@ await async function () {
 
       results[j] = Utils.write(
         `${config.write_path}/video/${video_data.id}.html`,
-        video_page(config, url, video_data),
+        video_page_promise(config, url, video_data),
         config.is_force,
       );
       index += 1;
@@ -117,7 +121,7 @@ await async function () {
   // Allow Node to handle error (just exit)
   await Utils.write(
     `${config.write_path}/playlists.html`,
-    playlist_page(config, url, playlist_list),
+    new Promise(res => res(playlist_page(config, url, playlist_list))),
     config.is_force,
   );
   sitemap[++sitemap_index] = {
@@ -133,7 +137,7 @@ await async function () {
   // Allow Node to handle error (just exit)
   await Utils.write(
     `${config.write_path}/index.html`,
-    home_page(config, url, playlist_list),
+    new Promise(res => res(home_page(config, url, playlist_list))),
     config.is_force,
   );
   sitemap[++sitemap_index] = {
@@ -169,7 +173,11 @@ await async function() {
 ${rendered_sitemap.join("\n")}
 </urlset>
 `;
-  await Utils.write(`${config.write_path}/sitemap.xml`, sitemap_string, true);
+  await Utils.write(
+    `${config.write_path}/sitemap.xml`,
+    new Promise(res => res(sitemap_string)),
+    true,
+  );
 }();
 
 console.log(`
