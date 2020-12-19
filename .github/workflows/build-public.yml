@@ -1,5 +1,9 @@
 name: Publish to gh-pages branch (root for hosted site)
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - update
 jobs:
   make_site:
     runs-on: ubuntu-latest
