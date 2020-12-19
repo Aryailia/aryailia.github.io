@@ -97,10 +97,11 @@ await async function () {
     const results = new Array(chunk_size);
     for (let j = 0; j < chunk_size && index < video_count; ++j) {
       const video_data = video_list[index];
-      const url = `${config.domain}/video/${video_data.id}.html`;
+      // Need 'v-' because github-pages privates files prefixed by underscore
+      const url = `${config.domain}/video/v-${video_data.id}.html`;
 
       results[j] = Utils.write(
-        `${config.write_path}/video/${video_data.id}.html`,
+        `${config.write_path}/video/v-${video_data.id}.html`,
         video_page_promise(config, url, video_data),
         config.is_force,
       );

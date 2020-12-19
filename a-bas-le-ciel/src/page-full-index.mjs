@@ -28,9 +28,10 @@ export default function full_index(config, rel_path, title, video_list) {
       <ol>${
 function () {
   return video_list.map(({ id, url, title, upload_date, description}) => {
+    // Need 'v-' because github-pages privates files prefixed by underscore
     return `
 <li>
-  <h2><a href="${config.domain}/video/${id}.html">${title}</a></h2>
+  <h2><a href="${config.domain}/video/v-${id}.html">${title}</a></h2>
   <p>${Headers.format_date(upload_date)} <a href="${url}">[YT link]</a></p>
   <p class="description">${
     Headers.format_desc(description)
