@@ -1,9 +1,9 @@
 name: Publish to gh-pages branch (root for hosted site)
 on:
+  repository_dispatch:
+    types: ["Update from a-bas-le-ciel-data"]
   push:
-    branches:
-      - master
-      - update
+    branches: [master]
 jobs:
   make_site:
     runs-on: ubuntu-latest
