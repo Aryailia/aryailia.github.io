@@ -83,7 +83,7 @@ m_make() {
           "${MAKE_DIR}/a-bas-le-ciel/playlist.json" \
           "${write_dir}" \
           "${domain}" \
-          "${MAKE_DIR}/data/transcripts" \
+          "${MAKE_DIR}/a-bas-le-ciel/transcripts.json" \
           ${force} || exit "$?"
 
       ;; root)

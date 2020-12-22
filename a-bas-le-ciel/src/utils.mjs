@@ -46,7 +46,7 @@ Received:`,
     playlist_path: args[1],
     write_path: args[2],
     domain: args[3],
-    transcript_dir: args[4],
+    transcript_path: args[4],
   };
 
 }
@@ -110,6 +110,9 @@ function check_is_valid_outside_tags(val) {
   return true;
 }
 
+// This syntax is so `Utils.write` can accept promises
+// mainly want to delay processing of a page until `Util.write` allows write to execute
+// TODO: I could change this to not be wrapped inside a promise (to just a function)
 export function write(path, promise, force) {
   return force
     ? promise.then(content => Fs.writeFile(path, content, "UTF8"))

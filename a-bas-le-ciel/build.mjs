@@ -14,11 +14,11 @@ export const MAX_LEN = 300; // For description
 //run: ../make.sh eisel -l -f
 // run:setsid falkon test.html
 
+// Read the command line arguments (`process.argv`)
 const config = Utils.process_args();
 const ITEMS_PER_PAGE = 50;
 
 // Allow Node to handle error (just exit)
-
 try {
   await Fs.mkdir([config.write_path, "/", "video"].join(""))
 } catch (err) {
@@ -30,6 +30,7 @@ try {
   }
 }
 
+// Read the JSON files
 const video_list = await async function () {
   const string = await Fs.readFile(config.videolist_path, "UTF8");
   return JSON.parse(string);
@@ -38,8 +39,19 @@ const playlist_list = await async function () {
   const string = await Fs.readFile(config.playlist_path, "UTF8");
   return JSON.parse(string);
 }();
+const sub_hashmap = await async function () {
+  const string = await Fs.readFile(config.transcript_path, "UTF8");
+  const json = JSON.parse(string);
+  const length = json.length;
+  const hashmap = {};
+  for (let i = 0; i < length; ++i) {
+    hashmap[json[i].id] = json[i].text;
+  }
+  return hashmap;
+}();
 Utils.validate_json_or_fail(video_list);
 
+// Start building the website
 const video_count = video_list.length;
 const page_count = Math.ceil(video_count / ITEMS_PER_PAGE);
 const sitemap_count = video_list.length + page_count + 4;
@@ -102,7 +114,7 @@ await async function () {
 
       results[j] = Utils.write(
         `${config.write_path}/video/v-${video_data.id}.html`,
-        video_page_promise(config, url, video_data),
+        new Promise(res => res(video_page_promise(config, url, video_data, sub_hashmap))),
         config.is_force,
       );
       index += 1;

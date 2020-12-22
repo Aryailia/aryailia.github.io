@@ -17,8 +17,9 @@ jobs:
       - name: Download the data
         run: |
           git clone --branch compiled --single-branch https://github.com/Aryailia/a-bas-le-ciel-data data
-          cp ./data/video.json ./a-bas-le-ciel/video.json
-          cp ./data/playlist.json ./a-bas-le-ciel/playlist.json
+          cp ./data/video.json ./a-bas-le-ciel/
+          cp ./data/playlist.json ./a-bas-le-ciel/
+          cp ./data/transcripts.json ./a-bas-le-ciel/
 
       - name: Build the Site
         env:
