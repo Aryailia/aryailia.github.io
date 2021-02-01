@@ -1,5 +1,6 @@
 name: Publish to gh-pages branch (root for hosted site)
 on:
+  workflow_dispatch: # So I can manually run it
   repository_dispatch:
     types: ["Update from a-bas-le-ciel-data"]
   push:
