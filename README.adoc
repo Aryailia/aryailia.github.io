@@ -1,0 +1,33 @@
+Currently, this is just a host of random projects.
+
+== à-bas-le-ciel
+
+This is really the combination of two repositories working together, this one and https://github.com/Aryailia/a-bas-le-ciel-data[a data repo].
+The overall workflow is as follows:
+
+. The data repo's GitHub Action has a cron script that polls YouTube's RSS feed for channel updates.
+Originally, I did this with https://github.com/ytdl-org/youtube-dl[youtube-dl], but it iterates over all playlists and videos. (`./make.sh eisel --force` will do exactly this)
+
+. Download updates with youtube-dl (video JSON and YouTube automatic subtitles)
+
+. Wrangle these into info the desire (extract title, strip timestamps from autosubs, etc.).
+Originally done with _jq_, but I swapped to Node.
+
+. Signal this repo via data repo's GitHub Action that an update was found
+
+. Rebuild this the GitHub Pages site via this repo's GitHub Action.
+The static-site generator is hand-written and can be found at link:./a-bas-le-ciel/[]
+
+
+== Research goals
+
+I wanted to learn GitHub's Actions architecture.
+The motivating project was to create an archive of a YouTube channel, and I thought GitHub Actions would be the perfect tool for periodically updating.
+I wrote https://aryailia.site/blog/en/github-actions-hosting.html[an article] about what I learned titled "Dynamic Static Sites with GitHub Actions": it involved a lot of hacking at the SSH API.
+
+I also learned how registration for indexing on web searches works.
+Ideally, one has to create a _sitemap_, and registration can take quite a while, especially if one were to make mistakes.
+
+== TODO
+
+* Force push to a updater branch to trigger updates from the https://github.com/Aryailia/a-bas-le-ciel-data[data repo].
