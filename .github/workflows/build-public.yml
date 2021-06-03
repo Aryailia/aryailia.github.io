@@ -5,6 +5,9 @@ on:
     types: ["Update from a-bas-le-ciel-data"]
   push:
     branches: [master]
+  schedule:
+    - cron: "0 14 * * 2"  # Once a week on Tuesday at 14:00 UTC
+
 jobs:
   make_site:
     runs-on: ubuntu-latest
@@ -17,7 +20,8 @@ jobs:
 
       - name: Download the data
         run: |
-          git clone --branch compiled --single-branch https://github.com/Aryailia/a-bas-le-ciel-data data
+          # "compiled" branch into "data" folder
+          git clone --depth 1 --branch compiled --single-branch https://github.com/Aryailia/a-bas-le-ciel-data data
           cp ./data/video.json ./a-bas-le-ciel/
           cp ./data/playlist.json ./a-bas-le-ciel/
           cp ./data/transcripts.json ./a-bas-le-ciel/
