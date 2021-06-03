@@ -45,7 +45,7 @@ jobs:
           || { printf "Invalid GitHub SSH key" >&2; exit 1; }
           mkdir ~/.ssh
           cat github-key-temp >>~/.ssh/known_hosts
-          eval "$( ssh-agent -a "$SSH_AUTH_SOCKET" )"
+          eval "$( ssh-agent -s )"
           <<EOF ssh-add -
           ${{ secrets.GH_PAGES_DEPLOY_SECRET }}
           EOF
