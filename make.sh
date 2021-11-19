@@ -1,104 +1,89 @@
 #!/bin/sh
 
-NAME="$( basename "${0}"; printf a )"; NAME="${NAME%?a}"
-
 show_help() {
-  <<EOF cat - >&2
-SYNOPSIS
-  ${NAME}
+  printf %s\\n "SYNOPSIS" >&2
+  printf %s\\n "  ${NAME} <JOB> [<arg> ...]" >&2
 
-DESCRIPTION
-  
 
-OPTIONS
-  -
-    Special argument that says read from STDIN
+  printf %s\\n "" "JOBS" >&2
+  <"${0}" awk '
+    /^my_make/ { run = 1; }
+    /^\}/ { run = 0; }
+    run && /^    in|^    ;;/ {
+      sub(/^ *in /, "  ", $0);
+      sub(/^ *;; /, "  ", $0);
+      sub(/\) *#/, "\t", $0);
+      sub(/\).*/, "", $0);
+      print $0;
+    }
+  ' >&2
 
-  --
-    Special argument that prevents all following arguments from being
-    intepreted as options.
-EOF
+  exit 1
 }
 
-main() {
-  MAKE_DIR="$( dirname "${0}"; printf a )"; MAKE_DIR="${MAKE_DIR%?a}"
-  cd "${MAKE_DIR}" || exit "$?"
-  MAKE_DIR="$( pwd -P; printf a )"; MAKE_DIR="${MAKE_DIR%?a}"
-
-  # Flags
-  LOCAL='false'
-  FORCE='false'
-
-  # Options processing
-  args=''; literal='false'
-  for a in "$@"; do
-    "${literal}" || case "${a}"
-      in --)          literal='true'; continue
-      ;; -h|--help)   show_help; exit 0
-      ;; -f|--force)  FORCE='true'
-      ;; -l|--local)  LOCAL='true'
-
-      ;; -*) die FATAL 1 "Invalid option '${a}'. See \`${NAME} -h\` for help"
-      ;; *)  args="${args} $( outln "${a}" | eval_escape )"
-    esac
-    "${literal}" && args="${args} $( outln "${a}" | eval_escape )"
-  done
-
-  ! "${LOCAL}" && errln "Environment \${DOMAIN} is set to '${DOMAIN}'"
+# Change to the directory holding this script file
+my_dir="$( dirname "${0}"; printf a )"; my_dir="${my_dir%?a}"
+cd "${my_dir}" || { printf %s\\n "Could not cd into project dir" >&2; exit 1; }
+my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 
 
-  [ -z "${args}" ] && { show_help; exit 1; }
-  eval "set -- ${args}"
+PROJECTS="\
+both,ablc-main,git clone -b main git@github.com:Aryailia/a-bas-le-ciel ablc-main
+host,ablc-data,git clone -b data git@github.com:Aryailia/a-bas-le-ciel ablc-data
+"
 
-  m_make "$@"
-}
+PROJECTS_HOST="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^host,' )"
+PROJECTS_LOCAL="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^mypc,' )"
 
-#run: sh % root
-m_make() {
-  if "${FORCE}"
-    then force='--force'
-    else force=''
-  fi
+#run: sh % init-local
 
-  while [ "$#" -gt 0 ]; do
-    case "${1}"
-      in clean)      rm -r "${MAKE_DIR}/public"
-      ;; all)        m_make root a-bas-le-ciel
-      ;; all-local)  "${MAKE_DIR}/${NAME}" all "${force}" -l
 
-      ;; eisel|a-bas-le-ciel)
-        write_dir="${MAKE_DIR}/public/a-bas-le-ciel"
-        errln "Buildling 'a-bas-le-ciel' -> '${write_dir}' ..."
 
-        mkdir -p "${write_dir}"
-        if "${LOCAL}"
-          then domain="${write_dir}"
-          else domain="${DOMAIN}/a-bas-le-ciel"
-        fi
+my_make() {
+  case "${1}"
+    in clean)  rm -r "./docs"
+    ;; all)        my_make "init"; my_make "root"; my_make "eisel"
+    ;; all-local)  my_make "init-local"; my_make "root"; my_make "eisel"
+    ;; eisel)      "./ablc-main/make.sh" "${my_dir}/public/a-bas-le-ciel"
 
-        cd "${MAKE_DIR}/a-bas-le-ciel" || "$?"
-
-        node build.mjs \
-          "${MAKE_DIR}/a-bas-le-ciel/video.json" \
-          "${MAKE_DIR}/a-bas-le-ciel/playlist.json" \
-          "${write_dir}" \
-          "${domain}" \
-          "${MAKE_DIR}/a-bas-le-ciel/transcripts.json" \
-          ${force} || exit "$?"
-
-      ;; root)
-        write_dir="${MAKE_DIR}/public/"
+    ;; root)
+        write_dir="${my_dir}/public/"
         errln "Buildling 'root' -> '${write_dir}' ..."
-        compile_base "${MAKE_DIR}/root" "${write_dir}" "/"
+        compile_base "${my_dir}/root" "${write_dir}" "/"
 
-      ;; *)
-        die FATAL 1 "\`${NAME} '${1}'\` is an invalid subcommand."
+    ;; init)
+      printf %s\\n "${PROJECTS_HOST}" \
+        | awk -v FS=',' '
+          length($0) == 0 { next; }
+          { printf "[ -d \"%s\" ] || %s",  $2, $3; }' \
+        | sh -s
 
-    esac
-    shift 1
-  done
+    ;; init-local)
+      printf %s\\n "${PROJECTS_LOCAL}" \
+        | awk -v FS=',' '
+          length($0) == 0 { next; }
+          { printf "[ -d \"%s\" ] || %s",  $2, $3; }' \
+        | sh -s
+
+    ;; write-gitignore)
+      {
+        printf %s\\n "${PROJECTS}" | cut -d ',' -f 2
+        printf %s\\n "public"
+      } >./.gitignore
+    ;; update)
+      #for dir in $( printf %s\\n "${PROJECTS_LOCAL}" | cut -d ',' -f 2 ); do
+      #  "${dir}/make.sh" "update"
+      #done
+
+    ;; build)
+     
+
+
+    ;; help|*) show_help
+  esac
 }
 
+# TODO: make this do recursive
 compile_base() {
   # $1: read path
   # $2: write directory
@@ -106,7 +91,7 @@ compile_base() {
 
   mkdir -p "${2}" || exit "$?"
   [ -d "${1}" ] && [ -d "${2}" ] \
-    || die DEV 1 "\`compile_base\` only accepts directories" \
+    || die DEV 1 "'compile_base' only accepts directories" \
       "\$ compile_base '${1}' '${2}' '${3}'"
 
   #for child in "${1}"/*; do
@@ -126,10 +111,4 @@ compile_base() {
   done
 }
 
-# Helpers
-errln() { printf %s\\n "$@" >&2; }
-outln() { printf %s\\n "$@"; }
-die() { printf %s "${1}: " >&2; shift 1; printf %s\\n "$@" >&2; exit "${1}"; }
-eval_escape() { <&0 sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/'/"; }
-
-<&1 main "$@"
+my_make "$@"
