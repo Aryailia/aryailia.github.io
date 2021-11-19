@@ -28,41 +28,55 @@ my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 
 
 PROJECTS="\
-both,ablc-main,git clone -b main git@github.com:Aryailia/a-bas-le-ciel ablc-main
-host,ablc-data,git clone -b data git@github.com:Aryailia/a-bas-le-ciel ablc-data
+both,ablc-main,git clone -b main https://github.com/Aryailia/a-bas-le-ciel ablc-main
+host,ablc-data,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel-data ablc-data
+mypc,ablc-data,git clone -b data https://github.com/Aryailia/a-bas-le-ciel ablc-data
 "
 
 PROJECTS_HOST="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^host,' )"
 PROJECTS_LOCAL="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^mypc,' )"
 
-#run: sh % init-local
 
-
+#run: sh % init
 
 my_make() {
   case "${1}"
-    in clean)  rm -r "./docs"
-    ;; all)        my_make "init"; my_make "root"; my_make "eisel"
-    ;; all-local)  my_make "init-local"; my_make "root"; my_make "eisel"
-    ;; eisel)      "./ablc-main/make.sh" "${my_dir}/public/a-bas-le-ciel"
+    in clean)  rm -r "./public"; rm -r "./ablc-main/static"
+    ;; all)
+      my_make "init"
+      my_make "root"
+      #"./ablc-data/make.sh" copy-to-frontend "${my_dir}/public/a-bas-le-ciel"
+      errln "Copying files"
+      mkdir -p ./ablc-main/static
+      for f in "./ablc-data"/*; do cp "${f}" ./ablc-main/static; done
+      mkdir -p "${my_dir}/public/a-bas-le-ciel"
+      "./ablc-main/make.sh" build-frontend "${my_dir}/public/a-bas-le-ciel"
+
+    ;; all-local)
+      my_make "init-local"
+      my_make "root"
+      # We do not 'copy-to-frontend' or 'sample-to-frontend' because
+      # we assume that you, the developer, will do that manually
+      mkdir -p "${my_dir}/public/a-bas-le-ciel"
+      "./ablc-main/make.sh" build-frontend-local "${my_dir}/public/a-bas-le-ciel"
 
     ;; root)
-        write_dir="${my_dir}/public/"
-        errln "Buildling 'root' -> '${write_dir}' ..."
-        compile_base "${my_dir}/root" "${write_dir}" "/"
+      write_dir="${my_dir}/public/"
+      errln "Buildling 'root' -> '${write_dir}' ..."
+      compile_base "${my_dir}/root" "${write_dir}" "/"
 
     ;; init)
       printf %s\\n "${PROJECTS_HOST}" \
         | awk -v FS=',' '
           length($0) == 0 { next; }
-          { printf "[ -d \"%s\" ] || %s",  $2, $3; }' \
+          { printf "[ -d \"%s\" ] || %s\n",  $2, $3; }' \
         | sh -s
 
     ;; init-local)
       printf %s\\n "${PROJECTS_LOCAL}" \
         | awk -v FS=',' '
           length($0) == 0 { next; }
-          { printf "[ -d \"%s\" ] || %s",  $2, $3; }' \
+          { printf "[ -d \"%s\" ] || %s\n",  $2, $3; }' \
         | sh -s
 
     ;; write-gitignore)
@@ -75,11 +89,7 @@ my_make() {
       #  "${dir}/make.sh" "update"
       #done
 
-    ;; build)
-     
-
-
-    ;; help|*) show_help
+    ;; help|*) errln "Invalid command '${1}'"; show_help
   esac
 }
 
@@ -110,5 +120,7 @@ compile_base() {
     esac || die FATAL 1 "Error processing the file '${child}'"
   done
 }
+
+errln() { printf %s\\n "$@" >&2; }
 
 my_make "$@"

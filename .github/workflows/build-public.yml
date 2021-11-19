@@ -18,19 +18,8 @@ jobs:
       - name: Remove .gitignore    # To commit public later on
         run: rm .gitignore
 
-      - name: Download the data
-        run: |
-          # "compiled" branch into "data" folder
-          git clone --depth 1 --branch compiled --single-branch https://github.com/Aryailia/a-bas-le-ciel-data data
-          cp ./data/video.json ./a-bas-le-ciel/
-          cp ./data/playlist.json ./a-bas-le-ciel/
-          cp ./data/transcripts.json ./a-bas-le-ciel/
-
-      - name: Build the Site
-        env:
-          DOMAIN: https://aryailia.github.io
-        run: /bin/sh make.sh all
-
+      - name: Download and build
+        run: /bin/sh ./make.sh all
 
       # In repository settings, place public key in "Deploy Keys", place private key in "Secrets"
       # $ ssh-keygen -t ed25519 -C "your_email@example.com"
