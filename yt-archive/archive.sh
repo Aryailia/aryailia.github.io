@@ -121,7 +121,7 @@ my_make() {
       #errln "" "There are $( wc -l "${4}" ) files in the archive"
 
 
-    ;; add-missing-subs) # <interim-directory> <metadata-directory> <subtitle-directory>
+    ;; add-missing-subs) # <interim-directory> <metadata-directory> <subtitle-directory> <skip>
       errln '' 'Step 3: Adding any missing subtitles'
       [ -d "${2}" ] || die FATAL 1 "Arg two '${2}' must be a directory"
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
@@ -129,6 +129,7 @@ my_make() {
       interim="${2}"
       metadata="${3}"
       subtitle="${4}"
+      skipfile="${5}"
 
       #check_is_empty() {
       #  printf %s\\n "${1}"
@@ -146,7 +147,9 @@ my_make() {
           "Cannot handle file extension for '${1}'" \
           "Expected a '<id>.info.json' file from youtube-dl"
 
-        if [ ! -f "${subtitle}/${id}.en.vtt" ]; then
+        if   [ ! -f "${subtitle}/${id}.en.vtt" ] \
+          && ! grep -qF -- "${id}" "${skipfile}"
+        then
           errln "===== Subtitling ${id} ====="
           [ ! -f "${interim}/${id}.audio" ] && \
             youtube-dl --format bestaudio \
