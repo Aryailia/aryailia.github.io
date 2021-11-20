@@ -151,13 +151,18 @@ my_make() {
           && ! grep -qF -- "${id}" "${skipfile}"
         then
           errln "===== Subtitling ${id} ====="
-          [ ! -f "${interim}/${id}.audio" ] && \
-            youtube-dl --format bestaudio \
+          [ ! -f "${interim}/${id}.audio" ] \
+            && youtube-dl --format bestaudio \
               --output "${interim}/%(id)s.audio" \
               "https://youtube.com/watch?v=${id}"
 
-          [ ! -f "${interim}/${id}.en.vtt" ] && \
+          # Return so that we do not run `my_make autosub` which will
+          # exit if the file does not exist
+          if   [ -f "${interim}/${id}.audio" ] \
+            && [ ! -f "${interim}/${id}.en.vtt" ]
+          then
             my_make autosub "${interim}/${id}.audio" "${interim}"
+          fi
 
           # Add to ${interim} so that we can Ctrl-C halfway
         fi
