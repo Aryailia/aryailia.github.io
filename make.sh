@@ -29,7 +29,7 @@ my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 
 PROJECTS="\
 both,ablc-main,git clone -b main https://github.com/Aryailia/a-bas-le-ciel ablc-main
-host,autosub/make,git clone https://github.com/Aryailia/AutoSub autosub/make
+host,autosub/project,git clone https://github.com/Aryailia/AutoSub autosub/project; autosub/make.sh all
 host,ablc-data,git clone -b data https://github.com/Aryailia/a-bas-le-ciel-data ablc-data
 mypc,ablc-data,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-data
 "
