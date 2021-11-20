@@ -19,7 +19,7 @@ jobs:
         run: rm .gitignore
 
       - name: Download and build
-        run: /bin/sh ./make.sh all
+        run: /bin/sh ./make.sh all-cicd
 
       # In repository settings, place public key in "Deploy Keys", place private key in "Secrets"
       # $ ssh-keygen -t ed25519 -C "your_email@example.com"

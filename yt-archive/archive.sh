@@ -130,14 +130,14 @@ my_make() {
       metadata="${3}"
       subtitle="${4}"
 
-      check_is_empty() {
-        printf %s\\n "${1}"
-        errln "Because there are files in the interim directory,"
-        errln "we are assuming '${NAME} add-missing-subs' ended prematurely."
-        errln "Please empty the interim directory '${interim}'"
-        exit 1
-      }
-      for_each_file_in_dir "${interim}" check_is_empty
+      #check_is_empty() {
+      #  printf %s\\n "${1}"
+      #  errln "Because there are files in the interim directory,"
+      #  errln "we are assuming '${NAME} add-missing-subs' ended prematurely."
+      #  errln "Please empty the interim directory '${interim}'"
+      #  exit 1
+      #}
+      #for_each_file_in_dir "${interim}" check_is_empty
 
       transcribe_missing_subs() {
         filepath="${1##*/}"
@@ -148,12 +148,17 @@ my_make() {
 
         if [ ! -f "${subtitle}/${id}.en.vtt" ]; then
           errln "===== Subtitling ${id} ====="
-          youtube-dl --format bestaudio \
-            --output "${interim}/%(id)s.audio" \
-            "https://youtube.com/watch?v=${id}"
-          my_make autosub "${interim}/${id}.audio" "${interim}"
+          [ ! -f "${interim}/${id}.audio" ] && \
+            youtube-dl --format bestaudio \
+              --output "${interim}/%(id)s.audio" \
+              "https://youtube.com/watch?v=${id}"
+
+          [ ! -f "${interim}/${id}.en.vtt" ] && \
+            my_make autosub "${interim}/${id}.audio" "${interim}"
+
           # Add to ${interim} so that we can Ctrl-C halfway
         fi
+        return 0
       }
       for_each_file_in_dir "${metadata}" transcribe_missing_subs
 
@@ -174,10 +179,17 @@ my_make() {
       ext="${filename##*.}"
       stem="${filename%".${ext}"}"
 
+      printf '' >"${out_dir}/${stem}.en.vtt"
       docker run --rm \
         -v "${inp_path}:/app/${stem}.en.${ext}:ro" \
         -v "${out_dir}:/output" \
-        autosub --format vtt --file "/app/${stem}.en.${ext}"
+        autosub:0.9.3 --format vtt --file "/app/${stem}.en.${ext}"
+
+    ;; download-playlist-list) # <channel-url>
+        dump="$( ytdl -4 --ignore-errors --dump-json --flat-playlist \
+          "${2}/playlists"
+        )" || exit "$?"
+        printf %s\\n "${dump}" | jq --slurp 'sort_by(.title)'
 
     ;; list-stems) # <directory>
       [ -d "${2}" ] || die FATAL 1 "Arg two '${2}' must be a directory"

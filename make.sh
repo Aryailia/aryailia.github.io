@@ -28,14 +28,20 @@ my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 
 
 PROJECTS="\
-both,ablc-main,git clone -b main https://github.com/Aryailia/a-bas-le-ciel ablc-main
+alll,ablc-main,git clone -b main https://github.com/Aryailia/a-bas-le-ciel ablc-main
+
+cicd,ablc-compiled,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+host,ablc-data,    git clone -b data     https://github.com/Aryailia/a-bas-le-ciel ablc-data
+mypc,ablc-compiled,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+
 host,autosub/project,git clone https://github.com/Aryailia/AutoSub autosub/project; autosub/make.sh all
-host,ablc-data,git clone -b data https://github.com/Aryailia/a-bas-le-ciel-data ablc-data
-mypc,ablc-data,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-data
+mypc,autosub/project,git clone https://github.com/Aryailia/AutoSub autosub/project
+
 "
 
-PROJECTS_HOST="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^host,' )"
-PROJECTS_LOCAL="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^mypc,' )"
+PROJECTS_CICD="$( printf %s\\n "${PROJECTS}" | grep '^alll,\|^cicd,' )"
+PROJECTS_HOST="$( printf %s\\n "${PROJECTS}" | grep '^alll,\|^host,' )"
+PROJECTS_MYPC="$( printf %s\\n "${PROJECTS}" | grep '^alll,\|^mypc,' )"
 
 
 #run: sh % init
@@ -43,42 +49,34 @@ PROJECTS_LOCAL="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^mypc,' )"
 my_make() {
   case "${1}"
     in clean)  rm -r "./public"; rm -r "./ablc-main/static"
-    ;; all)
-      my_make "init"
-      my_make "root"
-      #"./ablc-data/make.sh" copy-to-frontend "${my_dir}/public/a-bas-le-ciel"
-      errln "Copying files"
-      mkdir -p ./ablc-main/static
-      for f in "./ablc-data"/*; do cp "${f}" ./ablc-main/static; done
-      mkdir -p "${my_dir}/public/a-bas-le-ciel"
-      "./ablc-main/make.sh" build-frontend "${my_dir}/public/a-bas-le-ciel"
+    ;; all-cicd)  # For GitHub Actions
+      my_make "init-cicd" || exit "$?"
+      my_make "root" || exit "$?"
+      ./ablc-main/make.sh copy-to-frontend || exit "$?"
+      ./ablc-main/make.sh build-frontend "${my_dir}/public/a-bas-le-ciel" || exit "$?"
 
-    ;; all-local)
-      my_make "init-local"
-      my_make "root"
-      # We do not 'copy-to-frontend' or 'sample-to-frontend' because
-      # we assume that you, the developer, will do that manually
-      mkdir -p "${my_dir}/public/a-bas-le-ciel"
-      "./ablc-main/make.sh" build-frontend-local "${my_dir}/public/a-bas-le-ciel"
+    ;; all-host)  # For the downloader
+      my_make "init-host" || exit "$?"
+      my_make "root" || exit "$?"
+      ./autosub/make.sh "all" || exit "$?"
+      # Do not copy to frontend on host
+      # Do not build frontend on host
+
+    ;; all-local)  # For local development
+      my_make "init-local" || exit "$?"
+      my_make "root" || exit "$?"
+      ./autosub/make.sh "all" || exit "$?"
+      ./ablc-data/make.sh sample-to-frontend || exit "$?"
+      ./ablc-data/make.sh build-frontend-local "${my_dir}/public/a-bas-le-ciel" || exit "$?"
 
     ;; root)
       write_dir="${my_dir}/public/"
       errln "Buildling 'root' -> '${write_dir}' ..."
       compile_base "${my_dir}/root" "${write_dir}" "/"
 
-    ;; init)
-      printf %s\\n "${PROJECTS_HOST}" \
-        | awk -v FS=',' '
-          length($0) == 0 { next; }
-          { printf "[ -d \"%s\" ] || %s\n",  $2, $3; }' \
-        | sh -s
-
-    ;; init-local)
-      printf %s\\n "${PROJECTS_LOCAL}" \
-        | awk -v FS=',' '
-          length($0) == 0 { next; }
-          { printf "[ -d \"%s\" ] || %s\n",  $2, $3; }' \
-        | sh -s
+    ;; init-cicd)   printf %s\\n "${PROJECTS_CICD}" | execute_third_col
+    ;; init-host)   printf %s\\n "${PROJECTS_HOST}" | execute_third_col
+    ;; init-local)  printf %s\\n "${PROJECTS_MYPC}" | execute_third_col
 
     ;; write-gitignore)
       {
@@ -86,12 +84,20 @@ my_make() {
         printf %s\\n "public"
       } | sed '/^$/d' | sort | uniq >./.gitignore
     ;; update)
-      #for dir in $( printf %s\\n "${PROJECTS_LOCAL}" | cut -d ',' -f 2 ); do
+      #for dir in $( printf %s\\n "${PROJECTS_MYPC}" | cut -d ',' -f 2 ); do
       #  "${dir}/make.sh" "update"
       #done
 
     ;; help|*) errln "Invalid command '${1}'"; show_help
   esac
+}
+
+execute_third_col() {
+  errln "Setting up git sub projects"
+  <&0 awk -v FS=',' '
+    length($0) == 0 { next; }
+    { printf "[ -d \"%s\" ] || %s\n",  $2, $3; }
+  ' | sh -s
 }
 
 # TODO: make this do recursive
