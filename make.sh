@@ -29,8 +29,9 @@ my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 
 PROJECTS="\
 both,ablc-main,git clone -b main https://github.com/Aryailia/a-bas-le-ciel ablc-main
-host,ablc-data,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel-data ablc-data
-mypc,ablc-data,git clone -b data https://github.com/Aryailia/a-bas-le-ciel ablc-data
+host,autosub/make,git clone https://github.com/Aryailia/AutoSub autosub/make
+host,ablc-data,git clone -b data https://github.com/Aryailia/a-bas-le-ciel-data ablc-data
+mypc,ablc-data,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-data
 "
 
 PROJECTS_HOST="$( printf %s\\n "${PROJECTS}" | grep '^both,\|^host,' )"
@@ -83,7 +84,7 @@ my_make() {
       {
         printf %s\\n "${PROJECTS}" | cut -d ',' -f 2
         printf %s\\n "public"
-      } >./.gitignore
+      } | sed '/^$/d' | sort | uniq >./.gitignore
     ;; update)
       #for dir in $( printf %s\\n "${PROJECTS_LOCAL}" | cut -d ',' -f 2 ); do
       #  "${dir}/make.sh" "update"

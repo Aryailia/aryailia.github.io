@@ -55,11 +55,11 @@ my_make() {
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       [ -d "${4}" ] || die FATAL 1 "Arg four '${4}' must be a directory"
 
-      rss='https://www.youtube.com/feeds/videos.xml?channel_id='
-      errln "Curling channel RSS feed '${rss}${2}'..."
+      rss="https://www.youtube.com/feeds/videos.xml?channel_id=${2}"
+      errln "Curling channel RSS feed '${rss}'..."
 
       for id in $(
-        curl -L "${rss}UCWPKJM4CT6ES2BrUz9wbELw" \
+        curl -L "${rss}" \
           | awk '$0 ~ "<link.*href=\"https://www.youtube.com/watch" {
             gsub(".*href=\"https://www\\.youtube\\.com/watch\\?v=", "");
             gsub("\"/>$", "");
@@ -68,7 +68,8 @@ my_make() {
       ); do
         [ "${#id}" != '11' ] && die FATAL 1 "Parse error of RSS feed: '${id}'"
         if [ ! -e "${4}/${id}.info.json" ]; then
-          ytdl --write-info-json --skip-download --ignore-errors \
+          ytdl --write-info-json --skip-download --continue --ignore-errors \
+            --no-overwites --no-post-overwrites \
             --sub-lang en --write-auto-sub \
             --output "${3}/%(id)s" \
             "https://www.youtube.com/watch?v=${id}"
@@ -79,7 +80,8 @@ my_make() {
       errln '' 'Step 1: Download metadata and subtitles (by youtube-dl channel)'
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       [ -w "${4}" ] || die FATAL 1 "Arg four '${4}' must be a writable file"
-      ytdl --write-info-json --skip-download --ignore-errors \
+      ytdl --write-info-json --skip-download --continue --ignore-errors \
+        --no-overwites --no-post-overwrites \
         --write-auto-sub --sub-lang en \
         --download-archive "${4}" \
         --output "${3}/%(id)s" \
@@ -177,8 +179,6 @@ my_make() {
         -v "${out_dir}:/output" \
         autosub --format vtt --file "/app/${stem}.en.${ext}"
 
-
-
     ;; list-stems) # <directory>
       [ -d "${2}" ] || die FATAL 1 "Arg two '${2}' must be a directory"
 
@@ -188,11 +188,6 @@ my_make() {
       }
       for_each_file_in_dir "${2}" print_stem
 
-    ;; download-playlist-list) # <channel-url>
-      errln '' "Downloading playlists for '${2}'"
-      dump="$( ytdl -4 --ignore-errors --dump-json --flat-playlist \
-        "${2}/playlists" )" || exit "$?"
-      printf %s\\n "${dump}" | jq --slurp 'sort_by(.title)'
     ;; help|*) show_help
   esac
 }
