@@ -27,16 +27,24 @@ cd "${my_dir}" || { printf %s\\n "Could not cd into project dir" >&2; exit 1; }
 my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 
 
+# init
 PROJECTS="\
-alll,ablc-main,git clone -b main https://github.com/Aryailia/a-bas-le-ciel ablc-main
+# Main
+alll,[ -d ./ablc-main ] ||     git clone -b main     https://github.com/Aryailia/a-bas-le-ciel ablc-main
 
-cicd,ablc-compiled,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
-host,ablc-data,    git clone -b data     https://github.com/Aryailia/a-bas-le-ciel ablc-data
-mypc,ablc-compiled,git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+# Data/Compiled
+cicd,[ -d ./ablc-compiled ] || git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+mypc,[ -d ./ablc-compiled ] || git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+host,[ -d ./ablc-data ] ||     git clone -b data     https://github.com/Aryailia/a-bas-le-ciel ablc-data
 
-host,autosub/project,git clone https://github.com/Aryailia/AutoSub autosub/project; autosub/make.sh all
-mypc,autosub/project,git clone https://github.com/Aryailia/AutoSub autosub/project
+host,git -C ./ablc-data remote set-url origin 'git@github.com:Aryailia/a-bas-le-ciel.git'
+host,git -C ./ablc-data remote add local '../ablc-main'
 
+
+# Autosub
+mypc,[ -d ./autosub/project ] || git clone https://github.com/Aryailia/AutoSub autosub/project
+host,[ -d ./autosub/project ] || git clone https://github.com/Aryailia/AutoSub autosub/project
+host,autosub/make.sh all
 "
 
 PROJECTS_CICD="$( printf %s\\n "${PROJECTS}" | grep '^alll,\|^cicd,' )"
@@ -48,7 +56,7 @@ PROJECTS_MYPC="$( printf %s\\n "${PROJECTS}" | grep '^alll,\|^mypc,' )"
 
 my_make() {
   case "${1}"
-    in clean)  rm -r "./public"; rm -r "./ablc-main/static"
+    in clean)  rm -r "./public" #; rm -r "./ablc-main/static"
     ;; all-cicd)  # For GitHub Actions
       my_make "init-cicd" || exit "$?"
       my_make "root" || exit "$?"
@@ -66,17 +74,17 @@ my_make() {
       my_make "init-local" || exit "$?"
       my_make "root" || exit "$?"
       ./autosub/make.sh "all" || exit "$?"
-      ./ablc-data/make.sh sample-to-frontend || exit "$?"
-      ./ablc-data/make.sh build-frontend-local "${my_dir}/public/a-bas-le-ciel" || exit "$?"
+      ./ablc-main/make.sh sample-to-frontend || exit "$?"
+      ./ablc-main/make.sh build-frontend-local "${my_dir}/public/a-bas-le-ciel" || exit "$?"
 
     ;; root)
       write_dir="${my_dir}/public/"
       errln "Buildling 'root' -> '${write_dir}' ..."
       compile_base "${my_dir}/root" "${write_dir}" "/"
 
-    ;; init-cicd)   printf %s\\n "${PROJECTS_CICD}" | execute_third_col
-    ;; init-host)   printf %s\\n "${PROJECTS_HOST}" | execute_third_col
-    ;; init-local)  printf %s\\n "${PROJECTS_MYPC}" | execute_third_col
+    ;; init-cicd)   printf %s\\n "${PROJECTS_CICD}" | execute_second_col
+    ;; init-host)   printf %s\\n "${PROJECTS_HOST}" | execute_second_col
+    ;; init-local)  printf %s\\n "${PROJECTS_MYPC}" | execute_second_col
 
     ;; write-gitignore)
       {
@@ -92,12 +100,9 @@ my_make() {
   esac
 }
 
-execute_third_col() {
+execute_second_col() {
   errln "Setting up git sub projects"
-  <&0 awk -v FS=',' '
-    length($0) == 0 { next; }
-    { printf "[ -d \"%s\" ] || %s\n",  $2, $3; }
-  ' | sh -s
+  <&0 cut -d ',' -f 2 | sh -s
 }
 
 # TODO: make this do recursive
