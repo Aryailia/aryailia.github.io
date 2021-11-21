@@ -34,7 +34,11 @@ alll,[ -d ./ablc-main ] ||     git clone -b main     https://github.com/Aryailia
 
 # Data/Compiled
 cicd,[ -d ./ablc-compiled ] || git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
-mypc,[ -d ./ablc-compiled ] || git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+mypc,[ -d ./ablc-compiled ] || {
+mypc,  git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
+mypc,  git -C ./ablc-compiled fetch origin compiled
+mypc,  git -C ./ablc-compiled checkout origin/compiled
+mypc,}
 host,[ -d ./ablc-data ] ||     git clone -b data     https://github.com/Aryailia/a-bas-le-ciel ablc-data
 
 host,git -C ./ablc-data remote set-url origin 'git@github.com:Aryailia/a-bas-le-ciel.git'
@@ -58,20 +62,17 @@ my_make() {
   case "${1}"
     in clean)  rm -r "./public" #; rm -r "./ablc-main/static"
     ;; all-cicd)  # For GitHub Actions
-      my_make "init-cicd" || exit "$?"
       my_make "root" || exit "$?"
       ./ablc-main/make.sh copy-to-frontend || exit "$?"
       ./ablc-main/make.sh build-frontend "${my_dir}/public/a-bas-le-ciel" || exit "$?"
 
     ;; all-host)  # For the downloader
-      my_make "init-host" || exit "$?"
       my_make "root" || exit "$?"
       ./autosub/make.sh "all" || exit "$?"
       # Do not copy to frontend on host
       # Do not build frontend on host
 
     ;; all-local)  # For local development
-      my_make "init-local" || exit "$?"
       my_make "root" || exit "$?"
       ./autosub/make.sh "all" || exit "$?"
       ./ablc-main/make.sh sample-to-frontend || exit "$?"
@@ -91,7 +92,11 @@ my_make() {
         printf %s\\n "${PROJECTS}" | cut -d ',' -f 2
         printf %s\\n "public"
       } | sed '/^$/d' | sort | uniq >./.gitignore
-    ;; update)
+
+    ;; update-local)
+      git -C ./ablc-compiled fetch origin compiled
+      git -C ./ablc-compiled checkout origin/compiled
+
       #for dir in $( printf %s\\n "${PROJECTS_MYPC}" | cut -d ',' -f 2 ); do
       #  "${dir}/make.sh" "update"
       #done
