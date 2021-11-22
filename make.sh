@@ -43,10 +43,11 @@ host,[ -d ./ablc-data ] ||     git clone -b data     https://github.com/Aryailia
 
 host,git -C ./ablc-data remote set-url origin 'git@github.com:Aryailia/a-bas-le-ciel.git'
 host,git -C ./ablc-data remote add local '../ablc-main'
+host,git -C ./ablc-data config --add core.sshCommand '/usr/bin/ssh -i ~/.ssh/ablc'
 
 
 # Autosub
-mypc,[ -d ./autosub/project ] || git clone https://github.com/Aryailia/AutoSub autosub/project
+mypc,[ -d ./autosub/project ] || git clone ssh://git@github.com:Aryailia/AutoSub autosub/project
 host,[ -d ./autosub/project ] || git clone https://github.com/Aryailia/AutoSub autosub/project
 host,autosub/make.sh all
 "
