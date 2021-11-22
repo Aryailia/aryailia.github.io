@@ -105,13 +105,23 @@ my_make() {
       move_files_and_count_moves() {
         count="$(( count + 1 ))"
         name="${1##*/}"
-
+        stem="${name%%.*}"
+ 
         case "${1}"
           in *.json)   printf %s\\n "${name%.info.json}"
                        mv "${interim}/${name}" "${metadata}/${name}" || exit "$?"
-          ;; *.vtt)    mv "${interim}/${name}" "${subtitle}/${name}" || exit "$?"
-          #  This is from 'add-missing-subtitle' job
-          ;; *.audio)  rm "${interim}/${name}"
+
+          ;; *.en.vtt)
+            #  This is from 'add-missing-subtitle' job
+            if [ -f "${interim}/${stem}.en.vtt" ]; then
+              if my_make verify-subbed-fully "${interim}/${stem}.audio" "${1}"; then
+                mv "${interim}/${name}" "${subtitle}/${name}" || exit "$?"
+                rm "${interim}/${stem}.audio" || exit "$?"
+              fi
+            else
+              mv "${interim}/${name}" "${subtitle}/${name}" || exit "$?"
+            fi
+          ;; *.audio)  :
           ;; *)  die DEV 1 "File '${1}' had an unexpected file extension"
         esac
       }
@@ -198,6 +208,29 @@ my_make() {
         -v "${inp_path}:/app/${stem}.en.${ext}:ro" \
         -v "${out_dir}:/output" \
         autosub:0.9.3 --format vtt --file "/app/${stem}.en.${ext}"
+
+    ;; verify-subbed-fully)
+      [ -r "${2}" ] || die FATAL 1 "Arg two '${2}' must be a readable file"
+      [ -r "${3}" ] || die FATAL 1 "Arg three '${3}' must be a readable file"
+      duration="$( ffprobe -v error -show_entries format=duration \
+        -of default=noprint_wrappers=1:nokey=1 "${2}" )"
+      sub_len="$( awk '/^[0-9]*:/ { last = $1; } END { print last; }' "${3}" )"
+
+      # Remove the leading 0, because shell cannot handle `$(( 11 - 09 ))`
+      hrs_="${sub_len%%:*}"; hrs_="${hrs_#0}"; sub_len="${sub_len#??:}"
+      mins="${sub_len%%:*}"; mins="${mins#0}"; sub_len="${sub_len#??:}"
+      secs="${sub_len%%.*}"; secs="${secs#0}"
+
+      duration="${duration%.*}"
+      sub_len="$(( hrs_ * 3600 + mins * 60 + secs ))"
+      if   [ "$(( duration - sub_len ))" -gt 30 ] \
+        || [ "$(( sub_len - duration ))" -gt 30 ] \
+      ; then
+        errln "Subtitle '${3}' does not cover enough of '${2}'"
+        return 1
+      else
+        return 0
+      fi
 
     ;; download-playlist-list) # <channel-url>
         dump="$( ytdl -4 --ignore-errors --dump-json --flat-playlist \
