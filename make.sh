@@ -31,6 +31,8 @@ my_dir="$( pwd -P; printf a )"; my_dir="${my_dir%?a}"
 PROJECTS="\
 # Main
 alll,[ -d ./ablc-main ] ||     git clone -b main     https://github.com/Aryailia/a-bas-le-ciel ablc-main
+host,git remote set-url origin 'git@github.com:Aryailia/aryailia.github.io.git'
+host,git config core.sshCommand '/usr/bin/ssh -i ~/.ssh/gh-pages'
 
 # Data/Compiled
 cicd,[ -d ./ablc-compiled ] || git clone -b compiled https://github.com/Aryailia/a-bas-le-ciel ablc-compiled
@@ -43,7 +45,7 @@ host,[ -d ./ablc-data ] ||     git clone -b data     https://github.com/Aryailia
 
 host,git -C ./ablc-data remote set-url origin 'git@github.com:Aryailia/a-bas-le-ciel.git'
 host,git -C ./ablc-data remote add local '../ablc-main'
-host,git -C ./ablc-data config --add core.sshCommand '/usr/bin/ssh -i ~/.ssh/ablc'
+host,git -C ./ablc-data config core.sshCommand '/usr/bin/ssh -i ~/.ssh/ablc'
 
 
 # Autosub
