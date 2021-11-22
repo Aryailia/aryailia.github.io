@@ -50,7 +50,16 @@ my_make() {
   case "${1}"
     ############################################################################
     # Main maintenance actions
-    in archive-by-rss) # <channel-id> <interim-directory> <metadata-directory>
+    in download-metadata)
+      [ -n "${3}" ] || die FATAL 1 "Arg three '${3}' must be non-empty"
+      ytdl --write-info-json --skip-download --continue --ignore-errors \
+        --no-post-overwrites \
+        --sub-lang en --write-auto-sub \
+        --output "${3}" \
+        "${2}"
+
+
+    ;; archive-by-rss) # <channel-id> <interim-directory> <metadata-directory>
       errln '' 'Step 1: Downloading metadata and subtitles (by RSS)'
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       [ -d "${4}" ] || die FATAL 1 "Arg four '${4}' must be a directory"
@@ -68,11 +77,7 @@ my_make() {
       ); do
         [ "${#id}" != '11' ] && die FATAL 1 "Parse error of RSS feed: '${id}'"
         if [ ! -e "${4}/${id}.info.json" ]; then
-          ytdl --write-info-json --skip-download --continue --ignore-errors \
-            --no-overwites --no-post-overwrites \
-            --sub-lang en --write-auto-sub \
-            --output "${3}/%(id)s" \
-            "https://www.youtube.com/watch?v=${id}"
+          my_make download-sub "https://www.youtube.com/watch?v=${id}" "${3}/%(id)s"
         fi
       done
 
@@ -80,12 +85,7 @@ my_make() {
       errln '' 'Step 1: Download metadata and subtitles (by youtube-dl channel)'
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       [ -w "${4}" ] || die FATAL 1 "Arg four '${4}' must be a writable file"
-      ytdl --write-info-json --skip-download --continue --ignore-errors \
-        --no-overwites --no-post-overwrites \
-        --write-auto-sub --sub-lang en \
-        --download-archive "${4}" \
-        --output "${3}/%(id)s" \
-        "${2}"
+      my_make download-sub "https://www.youtube.com/watch?v=${2}" "${3}/%(id)s"
 
 
 
@@ -106,14 +106,16 @@ my_make() {
         count="$(( count + 1 ))"
         name="${1##*/}"
         stem="${name%%.*}"
- 
+
         case "${1}"
           in *.json)   printf %s\\n "${name%.info.json}"
                        mv "${interim}/${name}" "${metadata}/${name}" || exit "$?"
 
           ;; *.en.vtt)
-            #  This is from 'add-missing-subtitle' job
-            if [ -f "${interim}/${stem}.en.vtt" ]; then
+            #  This is from 'add-missing-subs' job
+            if   [ -f "${interim}/${stem}.en.vtt" ] \
+              && [ -f "${interim}/${stem}.audio" ]
+            then
               if my_make verify-subbed-fully "${interim}/${stem}.audio" "${1}"; then
                 mv "${interim}/${name}" "${subtitle}/${name}" || exit "$?"
                 rm "${interim}/${stem}.audio" || exit "$?"
@@ -149,6 +151,18 @@ my_make() {
       #  exit 1
       #}
       #for_each_file_in_dir "${interim}" check_is_empty
+
+      redownload_subs() {
+        filepath="${1##*/}"
+        id="${filepath%.info.json}"
+        if   [ ! -f "${interim}/${id}.info.json" ] \
+          && [ ! -f "${subtitle}/${id}.en.vtt" ] \
+          && ! grep -qF -- "${id}" "${skipfile}"
+        then
+          my_make download-metadata "https://www.youtube.com/watch?v=${id}" "${interim}/%(id)s"
+        fi
+      }
+      for_each_file_in_dir "${metadata}" redownload_subs
 
       transcribe_missing_subs() {
         filepath="${1##*/}"
