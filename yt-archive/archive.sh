@@ -156,6 +156,12 @@ my_make() {
               --output "${interim}/%(id)s.audio" \
               "https://youtube.com/watch?v=${id}"
 
+          # If it failed, then try downloading format 251 (opus 122k)
+          [ ! -f "${interim}/${id}.audio" ] \
+            && youtube-dl --format 251 \
+              --output "${interim}/%(id)s.audio" \
+              "https://youtube.com/watch?v=${id}"
+
           # Return so that we do not run `my_make autosub` which will
           # exit if the file does not exist
           if   [ -f "${interim}/${id}.audio" ] \
