@@ -162,13 +162,13 @@ my_make() {
         then
           errln "===== Subtitling ${id} ====="
           [ ! -f "${interim}/${id}.audio" ] \
-            && youtube-dl --format bestaudio \
+            && ytdl --format bestaudio \
               --output "${interim}/%(id)s.audio" \
               "https://youtube.com/watch?v=${id}"
 
           # If it failed, then try downloading format 251 (opus 122k)
           [ ! -f "${interim}/${id}.audio" ] \
-            && youtube-dl --format 251 \
+            && ytdl --format 251 \
               --output "${interim}/%(id)s.audio" \
               "https://youtube.com/watch?v=${id}"
 
