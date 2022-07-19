@@ -57,6 +57,7 @@ my_make() {
       ytdl --write-info-json --skip-download --continue --ignore-errors \
         --no-post-overwrites \
         --sub-lang en --write-auto-sub \
+        --download-archive "${4}" \
         --output "${3}" \
         "${2}"
 
@@ -64,7 +65,7 @@ my_make() {
     ;; archive-by-rss) # <channel-id> <interim-directory> <metadata-directory>
       errln '' 'Step 1: Downloading metadata and subtitles (by RSS)'
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
-      [ -d "${4}" ] || die FATAL 1 "Arg four '${4}' must be a directory"
+      [ -w "${4}" ] || die FATAL 1 "Arg four '${4}' must be a writable file"
 
       rss="https://www.youtube.com/feeds/videos.xml?channel_id=${2}"
       errln "Curling channel RSS feed '${rss}'..."
@@ -78,8 +79,8 @@ my_make() {
           }'
       ); do
         [ "${#id}" != '11' ] && die FATAL 1 "Parse error of RSS feed: '${id}'"
-        if [ ! -e "${4}/${id}.info.json" ]; then
-          my_make download-metadata "https://www.youtube.com/watch?v=${id}" "${3}/%(id)s"
+        if [ ! -e "${3}/${id}.info.json" ]; then
+          my_make download-metadata "https://www.youtube.com/watch?v=${id}" "${3}/%(id)s" "${4}"
         fi
       done
 
@@ -87,7 +88,7 @@ my_make() {
       errln '' 'Step 1: Download metadata and subtitles (by youtube-dl channel)'
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       [ -w "${4}" ] || die FATAL 1 "Arg four '${4}' must be a writable file"
-      my_make download-metadata "${2}" "${3}/%(id)s"
+      my_make download-metadata "${2}" "${3}/%(id)s" "${4}"
 
 
 
