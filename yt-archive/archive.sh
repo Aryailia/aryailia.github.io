@@ -25,6 +25,7 @@ show_help() {
     "  ${NAME} add-to-archive ./downloaded ./metadata ./subtitles >/dev/null" \
     "  ${NAME} add-missing-subs ./downloaded ./metadata ./subtitles" \
     "  ${NAME} add-to-archive ./downloaded ./metadata ./subtitles >./archive.csv" \
+    "  ${NAME} archive-by-channel https://www.youtube.com/channel/UCWPKJM4CT6ES2BrUz9wbELw ./new ./archive.csv" \
     "  ${NAME} download-playlist-list https://www.youtube.com/user/HeiJinZhengZhi >./playlist.json" \
   >&2
   exit 1
@@ -39,11 +40,12 @@ ytdl() {
   yt-dlp "$@"
 }
 
-#run: sh % help
+# run: sh % help
 # run: sh % download-playlist-list https://www.youtube.com/user/HeiJinZhengZhi
 # run: sh % archive-by-rss UCWPKJM4CT6ES2BrUz9wbELw ./new ./archive.csv
 # run: sh % add-to-archive ./downloaded ./metadata ./subtitles
 # run: sh % add-missing-subs ./downloaded ./metadata ./subtitles
+#run: sh % archive-by-channel https://www.youtube.com/channel/UCWPKJM4CT6ES2BrUz9wbELw ./new ./archive.csv
 # run: sh % autosub SocMustDie.webm ./test
 
 my_make() {
@@ -77,7 +79,7 @@ my_make() {
       ); do
         [ "${#id}" != '11' ] && die FATAL 1 "Parse error of RSS feed: '${id}'"
         if [ ! -e "${4}/${id}.info.json" ]; then
-          my_make download-sub "https://www.youtube.com/watch?v=${id}" "${3}/%(id)s"
+          my_make download-metadata "https://www.youtube.com/watch?v=${id}" "${3}/%(id)s"
         fi
       done
 
@@ -85,7 +87,7 @@ my_make() {
       errln '' 'Step 1: Download metadata and subtitles (by youtube-dl channel)'
       [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       [ -w "${4}" ] || die FATAL 1 "Arg four '${4}' must be a writable file"
-      my_make download-sub "https://www.youtube.com/watch?v=${2}" "${3}/%(id)s"
+      my_make download-metadata "${2}" "${3}/%(id)s"
 
 
 
