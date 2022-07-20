@@ -4,7 +4,7 @@ on:
   #repository_dispatch:
   #  types: ["Update from a-bas-le-ciel-data"]
   push:
-    branches: [main, updates]
+    branches: [main, update]
 
   #Dont run this on cron because, github puts this to sleep
   #schedule:
