@@ -21,11 +21,11 @@ show_help() {
   ' >&2
 
   printf %s\\n '' "EXAMPLE" \
-    "  ${NAME} archive-by-rss UCWPKJM4CT6ES2BrUz9wbELw ./downloaded ./metadata" \
-    "  ${NAME} add-to-archive ./downloaded ./metadata ./subtitles >/dev/null" \
-    "  ${NAME} add-missing-subs ./downloaded ./metadata ./subtitles" \
-    "  ${NAME} add-to-archive ./downloaded ./metadata ./subtitles >./archive.csv" \
-    "  ${NAME} archive-by-channel https://www.youtube.com/channel/UCWPKJM4CT6ES2BrUz9wbELw ./new ./archive.csv" \
+    "  ${NAME} archive-by-rss UCWPKJM4CT6ES2BrUz9wbELw ./download ./metadata" \
+    "  ${NAME} add-to-archive ./download ./metadata ./subtitle >/dev/null" \
+    "  ${NAME} add-missing-subs ./download ./metadata ./subtitle" \
+    "  ${NAME} add-to-archive ./download ./metadata ./subtitle >./archive.csv" \
+    "  ${NAME} archive-by-channel https://www.youtube.com/channel/UCWPKJM4CT6ES2BrUz9wbELw ./download ./archive.csv" \
     "  ${NAME} download-playlist-list https://www.youtube.com/user/HeiJinZhengZhi >./playlist.json" \
   >&2
   exit 1
@@ -40,12 +40,12 @@ ytdl() {
   yt-dlp "$@"
 }
 
-# run: sh % help
+#run: sh % help
 # run: sh % download-playlist-list https://www.youtube.com/user/HeiJinZhengZhi
-# run: sh % archive-by-rss UCWPKJM4CT6ES2BrUz9wbELw ./new ./archive.csv
-# run: sh % add-to-archive ./downloaded ./metadata ./subtitles
-# run: sh % add-missing-subs ./downloaded ./metadata ./subtitles
-#run: sh % archive-by-channel https://www.youtube.com/channel/UCWPKJM4CT6ES2BrUz9wbELw ./new ./archive.csv
+# run: sh % archive-by-rss UCWPKJM4CT6ES2BrUz9wbELw ./download ./archive.csv
+# run: sh % add-to-archive ./download ./metadata ./subtitle
+# run: sh % add-missing-subs ./download ./metadata ./subtitle
+# run: sh % archive-by-channel https://www.youtube.com/channel/UCWPKJM4CT6ES2BrUz9wbELw ./download ./archive.csv
 # run: sh % autosub SocMustDie.webm ./test
 
 my_make() {
