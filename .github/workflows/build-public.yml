@@ -14,8 +14,10 @@ jobs:
   make_site:
     runs-on: ubuntu-latest
     steps:
-      - name: Cloning master -> vm ./
+      - name: Cloning main -> vm ./
         uses: actions/checkout@v2  # From the marketplace, by GitHub
+        with:
+          ref: main
 
       - name: Remove .gitignore    # To commit public later on
         run: rm .gitignore
