@@ -4,9 +4,11 @@ on:
   #repository_dispatch:
   #  types: ["Update from a-bas-le-ciel-data"]
   push:
-    branches: [main, update]
-  schedule:
-    - cron: "0 14 * * 2"  # Once a week on Tuesday at 14:00 UTC
+    branches: [main, updates]
+
+  #Dont run this on cron because, github puts this to sleep
+  #schedule:
+  #  - cron: "0 14 * * 2"  # Once a week on Tuesday at 14:00 UTC
 
 jobs:
   make_site:
