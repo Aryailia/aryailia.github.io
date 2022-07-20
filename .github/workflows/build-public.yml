@@ -1,10 +1,10 @@
 name: Publish to gh-pages branch (root for hosted site)
 on:
   workflow_dispatch: # So I can manually run it
-  repository_dispatch:
-    types: ["Update from a-bas-le-ciel-data"]
+  #repository_dispatch:
+  #  types: ["Update from a-bas-le-ciel-data"]
   push:
-    branches: [main]
+    branches: [main, update]
   schedule:
     - cron: "0 14 * * 2"  # Once a week on Tuesday at 14:00 UTC
 
