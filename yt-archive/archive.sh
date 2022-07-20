@@ -255,6 +255,9 @@ my_make() {
         )" || exit "$?"
         printf %s\\n "${dump}" | jq --slurp 'sort_by(.title)'
 
+    ;; list-as-archive)
+      my_make list_stems "${2}" | sed "s/^/youtube /"
+
     ;; list-stems) # <directory>
       [ -d "${2}" ] || die FATAL 1 "Arg two '${2}' must be a directory"
 
