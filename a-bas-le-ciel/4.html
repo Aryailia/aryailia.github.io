@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video Index - Page 4</title>
+  <style>
+    /* Overall structure */
+    body { margin: 0px; padding: 0px; border: 0px; }
+    span, div, p, h1, h2, h3, h4, h5, h6 { line-height: 1.3em; }
+    @media screen and (min-width: 1200px) {
+      .medium-column {
+        display: grid;
+        /* 768 (thin) + 336px (thumnail) */
+        grid-template-columns: minmax(0, 1fr) 1104px minmax(0, 1fr);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .thin-column {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 768px minmax(0, 1fr);
+      }
+    }
+
+
+    /* Palette
+      #FAF9FA
+      #8695A8
+      #E39940
+      #A05148
+      #2B2F3A
+    */
+    /* Colour */
+    body           { background: #DAD9DA; }
+    .coloured-item { background: #FDFDFA; }
+    nav, footer    { background: #C5F6DF; }
+    /* nav            { color: #FAF9FA; } */
+
+    /* Overall structure */
+    /* top right bottom left */
+    main {  padding: 40px 20px 20px 20px; }
+    nav {
+      position: fixed;
+      top: 0px;
+      /* border-bottom: solid 1px black; */
+      height: 40px;
+      width: 100%;
+    }
+    nav span {
+      display: inline-block;
+      padding: 10px 15px;
+      text-align: center;
+      vertical-align: center;
+    }
+    nav .search {
+      float: right;
+    }
+    footer {
+      /* border-top: solid 1px black; */
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Verdana, Helvetica, "Dejavu Sans", "Noto Sans", sans-serif;
+    }
+    p {
+      font-faily: Calibri, "Times New Roman", "Open Sans", serif;
+    }
+  </style>
+  <style>
+.paginated-list li {
+  margin-top:    40px;
+  /* list-style-position: outside; */
+}
+.paginated-list .topright, .botright {
+  text-align: right;
+}
+.paginated-list > div {
+  margin-top: 40px;
+}
+
+.paginated-list {
+  display: grid;
+  grid-template-areas:
+    "topleft   topright"
+    "list      list"
+    "botleft   botright";
+}
+.paginated-list .topleft  { grid-area: topleft; }
+.paginated-list .topright { grid-area: topright; }
+.paginated-list .list     { grid-area: list; }
+.paginated-list .botleft  { grid-area: botleft; }
+.paginated-list .botright { grid-area: botright; }
+
+.paginated-item {
+  padding: 30px 20px;
+}
+.paginated-item .number   {
+  padding: 0px 10px 0px 0px; /* TRBL */
+}
+.paginated-item .thumbnail   {
+  width: 336px;
+  margin-right: 10px;
+}
+.paginated-item * {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+.paginated-item .title       {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.paginated-item .description {
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+.paginated-item {
+  display: grid;
+  grid-template-areas:
+    "number thumbnail title"
+    "number thumbnail date"
+    "number thumbnail description";
+  grid-template-rows: auto 2em 1fr;
+  height: 188px;
+}
+.paginated-item .number      { grid-area: number; }
+.paginated-item .thumbnail   { grid-area: thumbnail; }
+.paginated-item .title       { grid-area: title; }
+.paginated-item .date        { grid-area: date; }
+.paginated-item .description { grid-area: description; }
+
+  </style>
+</head>
+<body>
+  <nav><!--
+    --><span><a href="/a-bas-le-ciel/">Home</a></span><!--
+    --><span><a href="/a-bas-le-ciel/all.html">All (Search this)</a></span><!--
+    --><span><a href="/a-bas-le-ciel/1.html">Paginated</a></span><!--
+    --><span><a href="/a-bas-le-ciel/playlists.html">Playlists</a></span><!--
+    --><!--<span class="search">
+      <form  action="https://www.bing.com/" method="get">
+        <input type="hidden" name="q" autocomplete="off" value="site:/a-bas-le-ciel">
+        <input type="text" name="q" autocomplete="off">
+        <input type="submit" value="WIP Search">
+      </form>
+    </span>-->
+  </nav>
+  <main class="medium-column">
+    <aside></aside>
+    <section class="paginated-list">
+      <div class="topleft"><a href="/a-bas-le-ciel/1.html">&lt;&lt;</a>&nbsp;&nbsp;<a href="/a-bas-le-ciel/3.html">&lt; Previous Page</a></div>
+      <div class="topright"><a href="/a-bas-le-ciel/5.html">Next Page &gt;</a>&nbsp;&nbsp;<a href="/a-bas-le-ciel/47.html">&gt;&gt;</a></div>
+      <ol class="list">
+      <li class="paginated-item coloured-item">
+        <div class="number">151</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/9I34VK6g3Dw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmujPISVcqtRdmS1iQKTiSHkcunQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-9I34VK6g3Dw.html">I don't believe in Ketamine therapy: there is no cure for depression.</a></h2>
+        <p class="date">16 October 2021 <a href="https://www.youtube.com/watch?v=9I34VK6g3Dw">[YT link]</a></p>
+        <p class="description">@Sam Harris @Cg Kid @Cg Kid Vlogs Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#sobriety #quitdrugs #quiteverything</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">152</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Jy7yohk7UAQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDYQYnwcdVTmUypbTnbItoBupeDkQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Jy7yohk7UAQ.html">Ketamine should be illegal: this is controversial.</a></h2>
+        <p class="date">15 October 2021 <a href="https://www.youtube.com/watch?v=Jy7yohk7UAQ">[YT link]</a></p>
+        <p class="description">You ever heard of this youtube channel, "Hei Mudan"? <a href="https://www.youtube.com/c/HeiMudan/videos">https://www.youtube.com/c/HeiMudan/videos</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#sobriety #quitdrugs #quiteverything @Vegan Gains @Jasmin Gains</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">153</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/R5pLS9MHh9I/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCp0sp9YUmZJFkW-Fb1IB0ZIwCGKg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-R5pLS9MHh9I.html">Sv3rige: Carnivore Caveman Heartbroken Supervictim.</a></h2>
+        <p class="date">15 October 2021 <a href="https://www.youtube.com/watch?v=R5pLS9MHh9I">[YT link]</a></p>
+        <p class="description">I am not a tough guy, but I am tougher than these guys. #vegan #vegans #veganism @sv3rige @Goatis</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">154</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/oH6K1QV8w34/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBVZHITv1Ic3QOsr88wuEPACqRUpw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-oH6K1QV8w34.html">Believing in Your Dreams: Worse than Islam.</a></h2>
+        <p class="date">14 October 2021 <a href="https://www.youtube.com/watch?v=oH6K1QV8w34">[YT link]</a></p>
+        <p class="description">Can anyone else remember when "atheism" and "activism" were found in the same sentence? ​@VitalyzdTv @More Plates More Dates @hiding in my room @Vegan Gains @Kalel @Cg Kid Vlogs @Those Annoying Vegans @Henya Mania <br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a>   <br><br>Here's the link to the video quoted from "Vitaly" in the first few minutes: <a href="https://www.youtube.com/watch?v=qDs3dTR-GbE">https://www.youtube.com/watch?v=qDs3dTR-GbE</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">155</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/DbFEBIc7cJs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtUfFYNLSmDXaTxix09tplr3z-QQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-DbFEBIc7cJs.html">Stop blaming the C.I.A. — the bleeding heart of progressive politics.</a></h2>
+        <p class="date">10 October 2021 <a href="https://www.youtube.com/watch?v=DbFEBIc7cJs">[YT link]</a></p>
+        <p class="description">[L047] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">156</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/DeXvSVoUXbo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpZKq--M2HAI4bSpdrxj7TRPmF2w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-DeXvSVoUXbo.html">NO TALENT: be a creative artist anyway.</a></h2>
+        <p class="date">10 October 2021 <a href="https://www.youtube.com/watch?v=DeXvSVoUXbo">[YT link]</a></p>
+        <p class="description">@Austin Wallace @Logan Paul @IMPAULSIVE Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#NoTalent #AustinWallace #LoganPaul</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">157</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/c3DyZAPkEF4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCzHvy7tbrkrKyWMcmELk7mbOLdg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-c3DyZAPkEF4.html">Daniel Quits Video Games. @hiding in my room</a></h2>
+        <p class="date">07 October 2021 <a href="https://www.youtube.com/watch?v=c3DyZAPkEF4">[YT link]</a></p>
+        <p class="description">The artist formerly known as "Hiding in My Room" (Daniel Lord, a.k.a. @Professional Gaming Reviews) has come to a life-altering realization… #quitvideogames #satire #notsatire  And, yes, I would just like to point out that (in the year 2021) a-bas-le-ciel is now the #1 Hiding-in-My-Room commentary channel. 😂 <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7rQ4hg5fjqvUNHRXHH2bRHC">https://www.youtube.com/playlist?list=PLZEkgohG7k7rQ4hg5fjqvUNHRXHH2bRHC</a> (Yeah, that's a playlist of videos devoted to the subject.)</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">158</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/9kZFvyU8MEI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLABmn_og85-TZCCS4Fs0pHYAksGuA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-9kZFvyU8MEI.html">Sigma Female: Claire Michelle's Gazillionaire Grindset</a></h2>
+        <p class="date">06 October 2021 <a href="https://www.youtube.com/watch?v=9kZFvyU8MEI">[YT link]</a></p>
+        <p class="description">@Claire Michelle is also known as "PlantifulSoul" on Instagram.  We take an in-depth look at her #vegan #sigma grind. Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#sigmamale</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">159</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/jdOY0UnMeCw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAR3psNuqRsGQC3bxpPsrvbpxHIdw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-jdOY0UnMeCw.html">Being Honest on Youtube, or: Why I Hate My Audience.</a></h2>
+        <p class="date">06 October 2021 <a href="https://www.youtube.com/watch?v=jdOY0UnMeCw">[YT link]</a></p>
+        <p class="description">My tongue is oddly purple at the start of the video because I drank raspberry juice immediately before hitting the record button.  Shout out to @CandidMommy for that one video she made about her divorce, found here: <a href="https://www.youtube.com/watch?v=tGe4uWEvwe8">https://www.youtube.com/watch?v=tGe4uWEvwe8</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#storytime #commentary #advicenobodywantstohear</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">160</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Vgk4Wf1_l5U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5hfiSlURmjBuMzTMKTJYKQyaQtw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Vgk4Wf1_l5U.html">Vegan Gains Challenges Me to a Debate.</a></h2>
+        <p class="date">05 October 2021 <a href="https://www.youtube.com/watch?v=Vgk4Wf1_l5U">[YT link]</a></p>
+        <p class="description">Shout out to Kool Graffiti, who had exactly ONE subscriber at the time of my uploading this video: <a href="https://www.youtube.com/channel/UCkreN8B80TgR0aXi3yilDXA/videos">https://www.youtube.com/channel/UCkreN8B80TgR0aXi3yilDXA/videos</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">161</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/bWIJC7zfgpc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA602gR5-7jZZ7DcJMofgMTcnOuaA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-bWIJC7zfgpc.html">Are there Video Games in Heaven? Boogie2988 at 400 Pounds.</a></h2>
+        <p class="date">04 October 2021 <a href="https://www.youtube.com/watch?v=bWIJC7zfgpc">[YT link]</a></p>
+        <p class="description">@boogie2988 Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">162</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/D2cJEwVDuUQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA59wn4iZZr9MqO-2Ifh-3FZDf8dg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-D2cJEwVDuUQ.html">The Decline and Fall of Buddhist Scholarship (& "The Q Hypothesis")</a></h2>
+        <p class="date">03 October 2021 <a href="https://www.youtube.com/watch?v=D2cJEwVDuUQ">[YT link]</a></p>
+        <p class="description">[L046] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">163</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/VVcyRAcfV6s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOvxbtvOQUz79Y5SJVnBGMB4MkgA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-VVcyRAcfV6s.html">Christmas in Kabul, 2021. #NotSatire</a></h2>
+        <p class="date">29 September 2021 <a href="https://www.youtube.com/watch?v=VVcyRAcfV6s">[YT link]</a></p>
+        <p class="description">The future of democracy is you. The future of atheism is you. The future of democracy and atheism IN AFGHANISTAN… is who, exactly? #Afghanistan #Atheism You are listening to the dulcet tones of Vortis: <a href="https://en.wikipedia.org/wiki/Vortis_(band)">https://en.wikipedia.org/wiki/Vortis_(band)</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">164</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Lf7rB4QegKk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANXBXHHreaobxUTmr3cWvW-JLpiQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Lf7rB4QegKk.html">This is the End of the World: the Failure of the Vegan Movement.</a></h2>
+        <p class="date">28 September 2021 <a href="https://www.youtube.com/watch?v=Lf7rB4QegKk">[YT link]</a></p>
+        <p class="description">[L045] Global Warming: Optics, Tactics, Ineluctable Realities. (Formerly known as, "Is this the end of the world?") #vegan #vegans #veganism<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">165</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/sz_FNNtS-PY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUh8p38Qx52JL3KolrkUbBQq6G5g" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-sz_FNNtS-PY.html">Depression: There is No Cure. @Vegan Gains</a></h2>
+        <p class="date">27 September 2021 <a href="https://www.youtube.com/watch?v=sz_FNNtS-PY">[YT link]</a></p>
+        <p class="description">[L044] #Sobriety #QuitVideoGames #QuitEverything<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> @Jon Venus</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">166</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/qWUA6tOC1u8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDggK_dfsQ1vli4bTtEWByHp_8b3w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-qWUA6tOC1u8.html">Sex with Strangers: Durte Dom & David Dobrik in Los Angeles.</a></h2>
+        <p class="date">26 September 2021 <a href="https://www.youtube.com/watch?v=qWUA6tOC1u8">[YT link]</a></p>
+        <p class="description">I notice that people refer to "being in Los Angeles" as if it were some tremendous catalyst in their lives, in much the same way that tourists speak of Thailand —and, in either case, the transformation they undergo has nothing to do with their new surroundings, but, instead, is explained as some kind of latent tendency they felt they had within themselves.  Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#Commentary #DurteDom #DavidDobrik @DURTE DOM @Ally Hardesty @David Dobrik</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">167</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/7jcsqse1ApY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWLlNAe0xbo3onDvbtFZ3MT7X4tA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-7jcsqse1ApY.html">The War on Boobs: Hard On Politics.</a></h2>
+        <p class="date">25 September 2021 <a href="https://www.youtube.com/watch?v=7jcsqse1ApY">[YT link]</a></p>
+        <p class="description">Yes, we've got Billie Eilish AND Kat Dennings in the video. @Billie Eilish  @katdennings Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> #BillieEilish #KatDennings #FirstWaveFeminism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">168</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/BRn7S8__nuE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6CWDpN7qUEPBLolBP9IuEVogQ_Q" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-BRn7S8__nuE.html">Anti-Communism, Atheism and Charity: My Origins as a Vegan Activist.</a></h2>
+        <p class="date">25 September 2021 <a href="https://www.youtube.com/watch?v=BRn7S8__nuE">[YT link]</a></p>
+        <p class="description">HMU on instagram already: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>#vegans #veganism #anticommunism #atheism<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">169</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/kV_1q5Sio6Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-ODKIOP56gSapm1CBFkjN2MukuA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-kV_1q5Sio6Y.html">Against the "Tax the Rich" & "Blame the Rich" Discourse.</a></h2>
+        <p class="date">25 September 2021 <a href="https://www.youtube.com/watch?v=kV_1q5Sio6Y">[YT link]</a></p>
+        <p class="description">[L041] @Bernie Sanders @Alexandria Ocasio-Cortez Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">170</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/jglVoiyMbII/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9N0BXyph-F4sTVflBRkOefc_4uA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-jglVoiyMbII.html">Vegans who want to kill every lion & shark… for not being vegan… ARE INSANE.</a></h2>
+        <p class="date">24 September 2021 <a href="https://www.youtube.com/watch?v=jglVoiyMbII">[YT link]</a></p>
+        <p class="description">[L043] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#vegan #vegans #veganism @Vegan Gains @That Vegan Teacher @Gary Yourofsky</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">171</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/3Ar6-7WF6kA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDn7kNjKrZzPP75hK9Fa0SF6U6U9g" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-3Ar6-7WF6kA.html">Vegan Gains: "First, we kill the lions, then all the predators…"</a></h2>
+        <p class="date">23 September 2021 <a href="https://www.youtube.com/watch?v=3Ar6-7WF6kA">[YT link]</a></p>
+        <p class="description">Falsus in Uno, Falsus in Omnibus = #fiufio (Yes, believe it or not, Vegan Gains justifies killing all meat-eating species (wild animals such as lions, wolves, etc.) because he's morally opposed to "Wild Animal Suffering".  This is a man who thinks of himself as one of the major moral philosophers of our time…) #pettydeep #veganism @Vegan Gains @Jasmin Gains @That Vegan Teacher Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">172</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/pGiRpm5Ft8E/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKPBxXHjzB3TWNmppV-Hl8KKsVTA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-pGiRpm5Ft8E.html">Vegan Gains: Antidepressants are his New Religion.</a></h2>
+        <p class="date">21 September 2021 <a href="https://www.youtube.com/watch?v=pGiRpm5Ft8E">[YT link]</a></p>
+        <p class="description">He's openly admitted that he's taking antidepressants… and I suppose he'd prefer if the title of this video were, "Vegan Gains is Cured! 💊  It's a Miracle!"<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#VeganGains #Sobriety #QuitDrugs @Vegan Gains  @Jasmin Gains @That'll Learn Ya</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">173</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/JAHZhHarw0o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLX7osRiQfAni1aYsZ3NC_hHgTew" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-JAHZhHarw0o.html">Daoism & Daniel: "Hiding in My Room" v. "Being Yourself".</a></h2>
+        <p class="date">20 September 2021 <a href="https://www.youtube.com/watch?v=JAHZhHarw0o">[YT link]</a></p>
+        <p class="description">[L042] Not drama.  Not gossip.  Not a shallow video. @hiding in my room @Chef Daniel #hidinginmyroom #HIMR Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">174</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/g-dsMOJWVbQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkZP-ABaJy6Ab-pBj3Tg5kAkb5zA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-g-dsMOJWVbQ.html">Going to Jail, Quitting Video Games.</a></h2>
+        <p class="date">19 September 2021 <a href="https://www.youtube.com/watch?v=g-dsMOJWVbQ">[YT link]</a></p>
+        <p class="description">Link to "Atom Izec" = <a href="https://www.youtube.com/channel/UC3aqUplvGgZsizrzFvEOWYQ/videos">https://www.youtube.com/channel/UC3aqUplvGgZsizrzFvEOWYQ/videos</a><br><br>Link to "Conscious and Aware" = <a href="https://www.youtube.com/channel/UCQsR56DBa6ZIaffv02le6PQ/videos">https://www.youtube.com/channel/UCQsR56DBa6ZIaffv02le6PQ/videos</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#QuitVideoGames #QuitEverything</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">175</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/IynTql6E3ME/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwfsFFsYWhxg6tTB7BzM77AKeBDA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-IynTql6E3ME.html">How can you quit video games AFTER TEN YEARS?</a></h2>
+        <p class="date">17 September 2021 <a href="https://www.youtube.com/watch?v=IynTql6E3ME">[YT link]</a></p>
+        <p class="description">[L040] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#quitvideogames #quiteverything #advicenobodywantstohear</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">176</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/OuklmpQ9LpM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwUYnEgIDMvqN31D_csMmgJh5-8w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-OuklmpQ9LpM.html">Domestic Violence: Gabbie Petito and the Law.</a></h2>
+        <p class="date">17 September 2021 <a href="https://www.youtube.com/watch?v=OuklmpQ9LpM">[YT link]</a></p>
+        <p class="description">Gabbie Petitio and Brian Laundrie.  If you don't like the law, write a new law.  If you don't like the constitution, change it.  If you don't like the quality of policing, reform the whole system, root and branch.  #GabbiePetitio #NomadicStatic #VanLife  Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">177</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/w8TmL1OLKUo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBN-XeaUpIxs8oDB7b7n4Kki4zjpQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-w8TmL1OLKUo.html">Introversion is just an excuse for being an idiot.</a></h2>
+        <p class="date">17 September 2021 <a href="https://www.youtube.com/watch?v=w8TmL1OLKUo">[YT link]</a></p>
+        <p class="description">[L040] A critique of "introversion" —expanding on the channel's critique of the culture of shyness.  Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">178</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/59COcIwmFrk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDiYuqOc1D1_8hzmRzvY9ljoPKuMA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-59COcIwmFrk.html">Why You're Effeminate & Have No Friends: Video Games.</a></h2>
+        <p class="date">15 September 2021 <a href="https://www.youtube.com/watch?v=59COcIwmFrk">[YT link]</a></p>
+        <p class="description">Yes, I'm also the #1 "Hiding in My Room" commentary channel… because I have absolutely zero competition in that category (in 2021).  You tell me where I am in the top ten for "quit video games" youtubers.  Are there even ten of us?  @hiding in my room @Chef Daniel  #HIMR #HidingInMyRoom #QuitVideoGames Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">179</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/IZGEQr_h4vc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNKOiEy-FWVK88qA0VL6YY3UbnhQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-IZGEQr_h4vc.html">Economic Fiction: the Post-Bernie-Sanders Consensus.</a></h2>
+        <p class="date">15 September 2021 <a href="https://www.youtube.com/watch?v=IZGEQr_h4vc">[YT link]</a></p>
+        <p class="description">Misconceptions about (1) wage growth (or lack thereof), and (2) wealth redistribution (i.e., the extent to which taxes on the rich are ALREADY alleviating the poverty of the poor) have become unchallenged "long established facts" on the American left… as part and parcel of the post-Bernie-Sanders consensus about blaming the rich. without really thinking through what exactly it is that they're supposed to be blamed for.<br><br>@The Jimmy Dore Show @Alexandria Ocasio-Cortez @The Young Turks #NihilistEconomics Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">180</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/ObRgCWXGnc8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAo6RsAmYzD1GXeV8vCS2GcKvfd2Q" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-ObRgCWXGnc8.html">AOC is Wrong: "Tax the Rich" at the Met Gala.</a></h2>
+        <p class="date">15 September 2021 <a href="https://www.youtube.com/watch?v=ObRgCWXGnc8">[YT link]</a></p>
+        <p class="description">The poor are not getting poorer, and the "tax the rich" paradigm from #AOC is built on a series of false assumptions that have become bedrock to the post-Bernie-Sanders left. @Alexandria Ocasio-Cortez @Bernie Sanders Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">181</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/FtZIFqbcsCQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBK0pJ7MBfTBfihF18Nw1e6AjLdrg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-FtZIFqbcsCQ.html">September 11th, 2001 (in retrospect, in 2021)</a></h2>
+        <p class="date">14 September 2021 <a href="https://www.youtube.com/watch?v=FtZIFqbcsCQ">[YT link]</a></p>
+        <p class="description">[L039] Share the link with a frenemy or friend, because this one is censored and shadowbanned TO THE LIMIT. #storytime #autobiographical #whitesuit Shout out to @J.J. McCullough Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">182</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/F1jtJ73cO_E/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAczpDxLL1VXSL0VwFu9G_ogryONw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-F1jtJ73cO_E.html">Love Without Sex; Sex Without Love.</a></h2>
+        <p class="date">12 September 2021 <a href="https://www.youtube.com/watch?v=F1jtJ73cO_E">[YT link]</a></p>
+        <p class="description">[L038] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#AdviceNobodyWantsToHear #StoryTime #Advice</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">183</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/CkHhYxxxNNM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAjXTLitIOxkzDt5aY6wDmALaHzcw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-CkHhYxxxNNM.html">My sex life: the secret to my success.</a></h2>
+        <p class="date">11 September 2021 <a href="https://www.youtube.com/watch?v=CkHhYxxxNNM">[YT link]</a></p>
+        <p class="description">The secret to having long-term relationships is NOT BEHAVING AS IF they're short-term relationships, basically. #advicenobodywantstohear<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">184</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/a1Y2mLWHT9U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAXDpEZXWxldMdHEo5TJKGsYnu2-g" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-a1Y2mLWHT9U.html">Bodybuilders: Chronic Pain, Walk With a Cane.</a></h2>
+        <p class="date">11 September 2021 <a href="https://www.youtube.com/watch?v=a1Y2mLWHT9U">[YT link]</a></p>
+        <p class="description">Talking about #exvegan Jon Venus, and the ways in which the pursuit of personal beauty can lead to chronic pain --and worse. @Jon Venus @Jon Venus Podcast #vegan #jonvenus Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">185</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Uli-ecX5CU0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBax15yzb1b65Au5iz_f8eqEjUERQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Uli-ecX5CU0.html">Hatred: Neither Moderation nor Minimalism, BUT HATRED.</a></h2>
+        <p class="date">10 September 2021 <a href="https://www.youtube.com/watch?v=Uli-ecX5CU0">[YT link]</a></p>
+        <p class="description">[L037] A question from a supporter on Patreon leads to advice NOBODY wants to hear. #advicenobodywantstohear Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">186</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/h9vU_4poKn4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-TwIBG325TkbvBTuSJkL7llz_ew" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-h9vU_4poKn4.html">Who Killed Martin Luther King Jr.? (Book Review)</a></h2>
+        <p class="date">10 September 2021 <a href="https://www.youtube.com/watch?v=h9vU_4poKn4">[YT link]</a></p>
+        <p class="description">[L036] A review of William Pepper's book, _The Plot to Kill King: The Truth Behind the Assassination of Martin Luther King Jr._ #Booktube #MLK #MartinLutherKing<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">187</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/iZgtFVEk3n8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLUUtpAPmRj8WbOxrNKjv5fu8Rkg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-iZgtFVEk3n8.html">China Quits Video Games: the Three Hour Limit.</a></h2>
+        <p class="date">09 September 2021 <a href="https://www.youtube.com/watch?v=iZgtFVEk3n8">[YT link]</a></p>
+        <p class="description">[L035] @Scarce @DramaAlert @China Uncensored  #QuitVideoGames #QuitEverything #China<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">188</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/FYvjEdJELwU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsRIYi51W00cXXZm8RIEQNTYcG3A" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-FYvjEdJELwU.html">How Much Chinese Can I Still Speak?</a></h2>
+        <p class="date">07 September 2021 <a href="https://www.youtube.com/watch?v=FYvjEdJELwU">[YT link]</a></p>
+        <p class="description">September of 2021… after studying absolutely zero Chinese for a full year, I had to take a language-ability test at the university, via Zoom conference call.  I'm staring at the screen because that's the portal to the professor who is administering the test (in case you can't tell, I'm not reading anything, these answers are very much "off the dome").</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">189</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/UM7wrS8n5ms/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAV9aUPfn7rt0HfWm2SV3WktHmDjQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-UM7wrS8n5ms.html">The Realest Thing Ever Said on the Internet. @Logan Paul</a></h2>
+        <p class="date">07 September 2021 <a href="https://www.youtube.com/watch?v=UM7wrS8n5ms">[YT link]</a></p>
+        <p class="description">"I can't be a mentor… I need a mentor." #LoganPaul #KeepingItReal #AdviceNobodyWantsToHear</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">190</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/WMvwwd0shMg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA5rGA2OiGthLmJOG1lmPSpJkcgtg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-WMvwwd0shMg.html">90% of People Are Stupid and Malign.</a></h2>
+        <p class="date">07 September 2021 <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">[YT link]</a></p>
+        <p class="description">[L034] You know it's true. #stupidityisreal Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">191</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/NatByuOI7Wo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5j_r4Uvlm4K_VpiZfherZ0ertgQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-NatByuOI7Wo.html">Vegan Gains: Depression, Hallucination, Deletion.</a></h2>
+        <p class="date">06 September 2021 <a href="https://www.youtube.com/watch?v=NatByuOI7Wo">[YT link]</a></p>
+        <p class="description">@Greg Doucette @Vegan Gains @Jasmin Gains @That'll Learn Ya Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#VeganGains #Cancelled #Commentary</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">192</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/TLvAdVq7m8c/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwApNp157Gr6KqB_NXs3Fv5jdySA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-TLvAdVq7m8c.html">Seven Years of Sexual Harassment on Youtube.</a></h2>
+        <p class="date">05 September 2021 <a href="https://www.youtube.com/watch?v=TLvAdVq7m8c">[YT link]</a></p>
+        <p class="description">[L034] Yep, we're talking about sexual harassment directed toward myself (and, to a lesser extent, my girlfriend) basically because I've dared to have a public profile on youtube and social media, generally.  Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#YoutubeIsBroken #StupidityIsReal #QuitVideoGames</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">193</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/UmCSY6kSCz0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDf0jQ0IfEv8g3hB_4Xo5QVqKuQhw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-UmCSY6kSCz0.html">Our Abusive Relationship (With the Audience)</a></h2>
+        <p class="date">05 September 2021 <a href="https://www.youtube.com/watch?v=UmCSY6kSCz0">[YT link]</a></p>
+        <p class="description">[L034] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">194</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/hXZk6MAGy9A/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCvtbc_ZdgSBzrTqnZoqrvqhvXj8w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-hXZk6MAGy9A.html">My Girlfriend Dumped Me BECAUSE OF YOU!</a></h2>
+        <p class="date">03 September 2021 <a href="https://www.youtube.com/watch?v=hXZk6MAGy9A">[YT link]</a></p>
+        <p class="description">No, I did not get caught cheating.  And no, she didn't get caught cheating, either… the problem was you people!  You!  It was all of you!  Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a> <br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">195</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/NANdKxvqxwA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBNlkj7Nkh-J5q-boBGQZqGr5qsPA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-NANdKxvqxwA.html">Q&A: Sex & Socialism (Pro-Sex, Anti-Socialism)</a></h2>
+        <p class="date">02 September 2021 <a href="https://www.youtube.com/watch?v=NANdKxvqxwA">[YT link]</a></p>
+        <p class="description">[L033] You know how people say, "You deserve to be loved"?  THEY'RE WRONG.  Nobody deserves love, nobody is entitled to be loved, and nobody can ever earn it.  Love is precisely what you can never deserve or be entitled to —and this entails a number of quandaries for a culture preoccupied with notions of justice, duty and obligation. #SexPositive #NotShallow #AdviceNobodyWantsToHear<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">196</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/ziailRGhmxA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBO0-sfsPCMSUAScUM56ERRKib5Og" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-ziailRGhmxA.html">The Psychology of Vegan Gains: His Deleted Videos.</a></h2>
+        <p class="date">02 September 2021 <a href="https://www.youtube.com/watch?v=ziailRGhmxA">[YT link]</a></p>
+        <p class="description">Vegan Gains and his wife (Jasmin Gains) have repeatedly deleted their videos and hidden their past --and no, that is not just because of his "dark sense of humor".  Some of those (old) videos were NOT joking around, they showed him direct reflecting on his own motivations and psychology --with much of it being directly bound up in his (still ongoing) video game addiction. #vegan #vegans #veganism @Vegan Gains @Jasmin Gains @That'll Learn Ya</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">197</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/BCbpQqCqKmk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8UxrmkU2PgFiDb73G2u69l9rm7g" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-BCbpQqCqKmk.html">Vegan Gains: No Apology, Channel Deleted.</a></h2>
+        <p class="date">31 August 2021 <a href="https://www.youtube.com/watch?v=BCbpQqCqKmk">[YT link]</a></p>
+        <p class="description">Satire is not comedy.  Banned in the USA, because you don't like what we have to say.  @Vegan Gains @Jasmin Gains @That'll Learn Ya #VeganGains #Veganism #Vegans<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">198</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/gjKCUiQoMSU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6Fq4slaU107200glQg7kS7gSX0A" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-gjKCUiQoMSU.html">Vegan Gains: Penis Size, Ego & Intellect.</a></h2>
+        <p class="date">31 August 2021 <a href="https://www.youtube.com/watch?v=gjKCUiQoMSU">[YT link]</a></p>
+        <p class="description">[L032] Vegan Gains was banned… for creating a "Science Education Channel"… perhaps the worst excuse for a science education channel in the history of the world. #vegan #vegans #veganism @Vegan Gains @Jasmin Gains</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">199</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/rLz9FlciI70/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAkq0i9-R9een4AQ47v9VAksGw7cA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-rLz9FlciI70.html">Being Shy is a Lie: Shyness is an Ideology</a></h2>
+        <p class="date">30 August 2021 <a href="https://www.youtube.com/watch?v=rLz9FlciI70">[YT link]</a></p>
+        <p class="description">Share the link to this video EVERY SINGLE TIME people give you the excuse that they're shy --that they can't do something, can't care about someone, or can't take responsibility because their shyness --and then send the same link to them again EVERY SINGLE TIME they reproach you for NOT being shy, as if shyness were a virtue --or as if being warm and self-confident enough to share your life with others were a defect in your character.  People who have ambition overcome their shyness, because they're positively motivated to accomplish something (anything) that's greater than what any one person could do on their own --a category that encompasses practically everything worth doing, aside from filling up a charcoal sketchbook.  People share their lives out of strength, not weakness: don't mistake weakness for strength, reject the culture that normalizing "shyness" and abnormalizes anything that jilts shy people out of their indolence.k</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">200</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Rwzy3k3RxMs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN6paN4PQysUmcAKs786gL9IU5RA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Rwzy3k3RxMs.html">Quit Video Games: "Hiding in My Room".</a></h2>
+        <p class="date">27 August 2021 <a href="https://www.youtube.com/watch?v=Rwzy3k3RxMs">[YT link]</a></p>
+        <p class="description">This is partly "a prequel to" the much more meaningful discussion found in my video, "Talent is Scarce" (that does refer to Daniel's situation, as an example, at some length), found here: <a href="https://www.youtube.com/watch?v=ssA7QlZU_48">https://www.youtube.com/watch?v=ssA7QlZU_48</a><br><br>@hiding in my room a.k.a @Chef Daniel a.k.a. Daniel Lord.<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#HIMR #HidingInMyRoom #QuitVideoGames</p>
+      </li>
+      </ol>
+      <div class="botleft"><a href="/a-bas-le-ciel/1.html">&lt;&lt;</a>&nbsp;&nbsp;<a href="/a-bas-le-ciel/3.html">&lt; Previous Page</a></div>
+      <div class="botright"><a href="/a-bas-le-ciel/5.html">Next Page &gt;</a>&nbsp;&nbsp;<a href="/a-bas-le-ciel/47.html">&gt;&gt;</a></div>
+    </section>
+    <aside></aside>
+  </main>
+  
+  <footer>
+    <div>
+      Site designed <a href="https://aryailia.site/">Aryailia</a>.
+      Content hosted with permission from <a href="http://a-bas-le-ciel.blogspot.com/">Eisel Mazard</a>.
+    </div>
+  </footer>
+</body>
+</html>

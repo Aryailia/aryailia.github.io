@@ -1,0 +1,553 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The C64: Are You Wasting Your Life… YET?</title>
+  <style>
+    /* Overall structure */
+    body { margin: 0px; padding: 0px; border: 0px; }
+    span, div, p, h1, h2, h3, h4, h5, h6 { line-height: 1.3em; }
+    @media screen and (min-width: 1200px) {
+      .medium-column {
+        display: grid;
+        /* 768 (thin) + 336px (thumnail) */
+        grid-template-columns: minmax(0, 1fr) 1104px minmax(0, 1fr);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .thin-column {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 768px minmax(0, 1fr);
+      }
+    }
+
+
+    /* Palette
+      #FAF9FA
+      #8695A8
+      #E39940
+      #A05148
+      #2B2F3A
+    */
+    /* Colour */
+    body           { background: #DAD9DA; }
+    .coloured-item { background: #FDFDFA; }
+    nav, footer    { background: #C5F6DF; }
+    /* nav            { color: #FAF9FA; } */
+
+    /* Overall structure */
+    /* top right bottom left */
+    main {  padding: 40px 20px 20px 20px; }
+    nav {
+      position: fixed;
+      top: 0px;
+      /* border-bottom: solid 1px black; */
+      height: 40px;
+      width: 100%;
+    }
+    nav span {
+      display: inline-block;
+      padding: 10px 15px;
+      text-align: center;
+      vertical-align: center;
+    }
+    nav .search {
+      float: right;
+    }
+    footer {
+      /* border-top: solid 1px black; */
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Verdana, Helvetica, "Dejavu Sans", "Noto Sans", sans-serif;
+    }
+    p {
+      font-faily: Calibri, "Times New Roman", "Open Sans", serif;
+    }
+  </style>
+  <style>
+    .transcription {
+      column-count: auto;
+      column-width: 24rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav><!--
+    --><span><a href="/a-bas-le-ciel/">Home</a></span><!--
+    --><span><a href="/a-bas-le-ciel/all.html">All (Search this)</a></span><!--
+    --><span><a href="/a-bas-le-ciel/1.html">Paginated</a></span><!--
+    --><span><a href="/a-bas-le-ciel/playlists.html">Playlists</a></span><!--
+    --><!--<span class="search">
+      <form  action="https://www.bing.com/" method="get">
+        <input type="hidden" name="q" autocomplete="off" value="site:/a-bas-le-ciel">
+        <input type="text" name="q" autocomplete="off">
+        <input type="submit" value="WIP Search">
+      </form>
+    </span>-->
+  </nav>
+  <main class="coloured-item">
+    <iframe src="https://www.youtube.com/embed/0Bxhhoq1SN4" width="560" height="315" frameborder="0">
+      <a href="https://youtube-iframe.com"></a>
+    </iframe>
+    <h1>The C64: Are You Wasting Your Life… YET?</h1>
+    <p>15 February 2021 <a href="https://www.youtube.com/watch?v=0Bxhhoq1SN4">[link youtube]</a></p>
+    <hr>
+    <p>In part an in-depth review of the "Commodore 64 Mini", this is not a "top ten" list, this is not a "hidden gems" list… this is an inevitable reflection on the meaning of life, given the stunning meaninglessness of the nostalgia for the video games of our childhood that so many of us are burdened with.<br><br>Credit for the music goes to a small channel called "Meme Music", give them some encouragement: <a href="https://www.youtube.com/c/MemeMusic/videos">https://www.youtube.com/c/MemeMusic/videos</a><br><br>The particular song quoted had fewer than 100 views when I found it: <a href="https://www.youtube.com/watch?v=ItMRSOJGQfQ">https://www.youtube.com/watch?v=ItMRSOJGQfQ</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>Why are comments disabled on my youtube channel?  Here's the answer, in a relatively uplifting 5 minute video: <a href="https://www.youtube.com/watch?v=EHb9k30KTXM">https://www.youtube.com/watch?v=EHb9k30KTXM</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>You may not know that I have several youtube channels, one of them is AR&IO (Active Research & Informed Opinion) found here: <a href="https://www.youtube.com/channel/UCP3fLeOekX2yBegj9-XwDhA/videos">https://www.youtube.com/channel/UCP3fLeOekX2yBegj9-XwDhA/videos</a><br><br>Another is à-bas-le-ciel, found here: <a href="https://www.youtube.com/user/HeiJinZhengZhi/videos">https://www.youtube.com/user/HeiJinZhengZhi/videos</a><br><br>And there is, in fact, a youtube channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>#C64Mini #Commodore64 #C64Maxi</p>
+    <hr>
+    <h2>Youtube Automatic Transcription</h2>
+    <div class="transcription">i want to open this video by saying i<br />have no nostalgia for the year
+1988 whatsoever i have no nostalgia
+for this video game that you see on
+screen
+galaxy force whatsoever and most people
+in the audience
+most people who could possibly get
+interested in the topic of this video
+will not be motivated by nostalgia
+but by a very different and more
+beneficial instinct
+called curiosity do you know what this
+is
+this is an audio cassette tape
+and the arcade game you just saw galaxy
+force
+a high-end 3d arcade game
+human beings attempted to program it on
+an
+audio cassette tape to play
+on the commodore 64. are you curious
+nostalgia in as much as it applies to
+the situation
+will only lead to disappointment but if
+just
+hearing about that makes you curious
+maybe
+just maybe you're going to get a little
+bit interested in commodore 64
+hardware or software in 2021
+here's a telling review from an obscure
+website you might have heard of
+amazon.com
+titled meh what was i thinking
+nostalgia wins again i was a huge c64
+fan back in the day
+i had a complete system at hundreds of
+games literally over 100 discs
+each with multiple games unfortunately
+my brain
+remembered them being a lot better than
+they are
+i don't know what i was expecting
+considering these are 8-bit graphics
+but p-u these games are bad
+much more succinctly this reviewer says
+don't buy it
+games very hard to play and don't play
+like you remember not worth it
+look at this what what the hell is this
+this
+is an audio cassette tape
+with the notorious name altered beast
+emblazoned on the top now altered beast
+was a terrible game in arcades to begin
+with it was a terrible game
+on the sega genesis but what a concept
+can you believe
+that there is an 8-bit computer version
+of this
+for the commodore 64. is it good is it
+enjoyable no it's just bizarre you just
+feel like you're transported into this
+parallel universe
+where human beings worked against
+unbelievably limiting
+hardware constraints to try to achieve
+these impossible
+graphical and gameplay effects with most
+of the time
+just disastrous laughable outcomes most
+of the time
+not all the time do you remember this
+game
+do you remember xenophobe there's a
+difference between something being
+memorable and being good but for many of
+us this was a
+memorable game even if it had been
+awful oh yeah notice down there in the
+fine print
+now available for your commodore 64
+cassette
+yes that's right and you know what it
+just might be
+the best version of this game ever made
+and it certainly
+as with so many things in the commerce
+64 has the best
+[Music]
+music
+back when i was a teenager i used to
+watch tv while washing dishes
+and i have this memory of a debate
+between the two
+famous film critics siskel and ebert
+and one of them said to the other look
+this movie
+it's not good enough to see in theaters
+but i'd recommend people
+rent it on vhs cassette and i'll always
+remember
+you know ebert argued back here and said
+no that doesn't make any sense how can
+you possibly think
+five dollars matters more than wasting
+two hours of your life
+either this is worth spending two hours
+doing
+or it is not when you are looking
+at alice in wonderland unfolding on
+screen you might feel
+you might feel a little bit intrigued
+may feel a little bit curious are you
+really willing to put two hours
+of your adult life into this and even if
+it were
+just two hours do you realize how much
+of that time might go into
+finicky self-defeating struggles to get
+the emulator to work properly to get the
+hardware or the software to work
+properly
+it is true that in 2021 the cost of
+playing the entire
+library of commodore 64 games has gotten
+shockingly close to zero whether you're
+going to buy the new hardware or the c64
+mini or whether you're gonna get set up
+on your own computer
+but but but but ultimately
+you must value your own time
+much more than the mere question of how
+many
+dollars or cents you're willing to put
+into it if anyone expects just a proud
+recitation of the accomplishments of my
+administration
+i say let's leave that to history we're
+not finished yet
+perhaps 3 000 video games
+were written for the commodore 64.
+the number is so high it's a matter of
+speculation
+if you believed that just 10 of those
+games
+were worth playing or a good use of your
+time right now
+in the year 2021 it would be a
+no-brainer
+should sign right up you don't really
+believe that
+do you you don't believe it's ten
+percent
+you don't believe it's five percent if
+you
+really stop and think about it you're
+wondering is it even
+one percent how close to zero
+is it is there anything you could
+justify
+spending five minutes or ten minutes
+playing
+on this unbelievably awful footnote in
+the history of computing
+and i know what you're thinking you're
+thinking well even if each game is only
+interesting for
+30 seconds or 60 seconds just have a
+look just have a glance just out of
+curiosity what would it be like if
+someone tried to make an
+8-bit version of space harrier and for
+some reason i wasn't interested in the
+sega master system 8-bit version of
+space air
+what would it be like if someone made an
+8-bit version of shadow dancer of
+shinobi on and on it goes
+what if i want to have a look isn't it
+the case that this device makes it as
+fast and simple for me to just try them
+out for a few minutes or
+a few seconds just as if i were taking a
+nintendo or sega cartridge and
+popping it into a console no
+no it does not
+this device promises to take what is
+already a
+complex and involuted hobby adored by a
+tiny number of people
+and make it easily accessible to the
+masses and in that
+it certainly fails in order to use this
+device
+you will need much more than the useless
+joystick that comes with it
+the joystick is useless and yet
+requisite because it has an inscrutable
+system of four buttons
+that are neither numbered nor color
+coded that you must use for
+all system functions but otherwise it is
+not a stick that is going to bring any
+joy into your life
+oh no in order to use the commodore 64
+in addition to plugging in your own usb
+keyboard and your own usb hard drive and
+your own usb
+hub because the number of ports is
+grossly inadequate
+you'll also need multiple joysticks
+oh and you think i was able to use this
+joystick
+nope it should work on pretty much any
+system that you can fit a usb
+plug into but mysteriously this joystick
+doesn't work
+whereas this one does and no
+the reason can't possibly be because of
+the difference between
+sanwa and hoary components so what many
+consumers imagine would be
+simple casual entertainment is pretty
+soon revealed
+to be a horrifyingly complex
+time-consuming
+chore now you got me all cheesed off
+i'm gonna play some temple of abshine
+forget you guys
+oh my hit points are like inexcusable in
+this dungeon man
+i need to find some elixir or something
+i think
+curiosity is an important positive part
+of adult life we don't stop learning
+and we shouldn't we should kindle the
+flame of curiosity whenever it happens
+to come up
+and in my case i admit i got drawn into
+this
+because i was curious about the music
+commodore 64 is home to some
+unbelievably awful games with just
+terribly primitive graphics awful
+controls
+video games that feel like a waste of
+time even when they're compared to other
+video games that on some intellectual
+level
+we're aware factually are a waste of our
+time
+the music still means something to me
+today and it was some of the first music
+i listened to as a child
+shaping my taste in music before i got
+interested in
+blues jazz hip-hop rap music the other
+forms of music that were to
+define my teenage years and in some ways
+to haunt my adult life
+when i heard that so many of the games i
+had known in my childhood
+from wonder boy to rampage to the
+simpsons arcade to zaxxon
+when i'd heard that so many games i was
+familiar with
+from other consoles did have
+a commodore 64 version i was curious
+and in acting on that curiosity the
+experience you have again and again is
+one wow it's really hard to get this
+loading
+two wow it's really hard to get the
+controls to work
+three wow how do i get past this option
+screen
+four oh it doesn't work anyway five oh
+do i have to do some kind of low level
+hacking
+some kind of command line trick to get
+this to work should i just give up oh oh
+now it's finally working
+and then steps six and seven that follow
+soon thereafter
+almost always almost are wow
+i can't believe how unbelievably awful
+this is
+two i can't imagine how disappointed
+children would have been
+when they received this brightly colored
+box from their parents back in 1988 and
+sat down to play this
+and three i can't believe anyone anyone
+imagined
+this was decent or passable when
+compared to the sega master system the
+nes
+or whatever other version it is that
+you're already familiar with
+few gamers familiar with the 8-bit era
+will be unaware of bubble bubble
+and the cute dinosaur slash dragons bob
+and hope
+it spawned a series of sequels and the
+characters are probably most famous now
+for the puzzle bubble or buster move
+series
+the evil baron von blubber has
+transformed our heroes into bubble
+blowing reptiles
+and captured their girlfriends in true
+80s gaming style
+so we're off to the cave of wonders to
+defeat bvb and get them back
+i laughed out loud
+trying to play bubble bobble on the
+commodore 64
+with my girlfriend for all of two
+minutes
+three minutes it probably took us three
+minutes to get through the title screens
+and the options to get the game running
+and then i just sat there laughing and
+laughing because i could not believe how
+awful it was
+and yeah it was made funnier to me
+because before i bought this thing i
+googled around i watched a few other
+youtube videos
+and there were all these losers on
+youtube who are telling you
+specifically that this game is
+unbelievably wonderful and just in
+general
+regaling you with what a great
+experience it is to sit down and play
+these authentic commodore 64 games on
+this
+totally inauthentic piece of garbage
+simulated hardware
+the vast majority of games are terrible
+and then depending on your sense of
+humor a significant percentage of them
+are laugh out loud hilariously
+awful you will sit and reflect on
+human nature itself you will wonder why
+did human beings do this to themselves
+you will wonder what were the
+programmers thinking you will wonder
+what were the executives at sega or
+atari thinking
+and you will wonder what were the people
+who played this
+for so many hours as children thinking
+what were their parents thinking
+and it remains mind-blowing to wonder
+what are these people thinking
+now because the internet is full of
+losers who are still pouring so many
+hours into this today in 2021.
+oh my hit points are like inexcusable in
+this dungeon man
+i first heard of temple of apshai
+because
+strong bad made jokes about it strongbat
+the fictional character on homestar
+runner.com
+he made jokes about temple of abstract
+that's all i've heard of this game
+people are unironically playing and
+loving this game in 2021 but
+but well it's true that it's not
+10 of the games on the system and it's
+not five percent and it's
+not even one percent of the games in the
+system
+there are some games some for which the
+best version
+ever made is on the commodore 64.
+and so now i will give you my top 10
+list
+that is precisely two video games long
+there are two video games i can tell you
+where the best version
+you could ever possibly play is on this
+system
+and nowhere else if you are looking for
+an excuse
+to buy this thing or to sink the time
+into figuring out how to use
+c64 on an emulator on a computer near
+you
+yes i am telling you unironically there
+are two
+and only two games that can justify your
+time
+and both of them are two player and both
+of them are suitable for playing for
+lengths of say
+five to ten minutes with your girlfriend
+before you go back to reading aristotle
+or otherwise
+get on to leading your highly productive
+life and number one
+on that list is arkanoid
+ii the sequel to arcana
+this is simply the best version
+of the game that exists and with
+absolutely zero irony
+i can tell you that the atari soft
+version
+of mario brothers yes that's right the
+commodore 64 version that was programmed
+by atari is better than the nintendo
+version
+is better than the arcade version of the
+iconic
+original mario bros i think curiosity is
+a wonderful thing and it's important to
+stay curious as an adult
+i don't regret being curious about this
+system i don't regret doing the little
+bit of research
+into its library of software that i did
+however don't confuse curiosity
+with nostalgia nostalgia for 1988
+i ain't got it you don't want it and if
+that's the road you're on
+it is a road only leading to bitter
+disappointment
+and at some point you've got to look in
+the mirror and realize
+this is just a waste of your time
+if anyone expects just a proud
+recitation of the accomplishments of my
+administration
+i say let's leave that to history
+we're not finished yet
+you</div>
+  </main>
+  
+  <footer>
+    <div>
+      Site designed <a href="https://aryailia.site/">Aryailia</a>.
+      Content hosted with permission from <a href="http://a-bas-le-ciel.blogspot.com/">Eisel Mazard</a>.
+    </div>
+  </footer>
+</body>
+</html>

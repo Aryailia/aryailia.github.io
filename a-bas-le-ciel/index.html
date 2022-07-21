@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Archive of Eisel Mazard's videos</title>
+  <style>
+    /* Overall structure */
+    body { margin: 0px; padding: 0px; border: 0px; }
+    span, div, p, h1, h2, h3, h4, h5, h6 { line-height: 1.3em; }
+    @media screen and (min-width: 1200px) {
+      .medium-column {
+        display: grid;
+        /* 768 (thin) + 336px (thumnail) */
+        grid-template-columns: minmax(0, 1fr) 1104px minmax(0, 1fr);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .thin-column {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 768px minmax(0, 1fr);
+      }
+    }
+
+
+    /* Palette
+      #FAF9FA
+      #8695A8
+      #E39940
+      #A05148
+      #2B2F3A
+    */
+    /* Colour */
+    body           { background: #DAD9DA; }
+    .coloured-item { background: #FDFDFA; }
+    nav, footer    { background: #C5F6DF; }
+    /* nav            { color: #FAF9FA; } */
+
+    /* Overall structure */
+    /* top right bottom left */
+    main {  padding: 40px 20px 20px 20px; }
+    nav {
+      position: fixed;
+      top: 0px;
+      /* border-bottom: solid 1px black; */
+      height: 40px;
+      width: 100%;
+    }
+    nav span {
+      display: inline-block;
+      padding: 10px 15px;
+      text-align: center;
+      vertical-align: center;
+    }
+    nav .search {
+      float: right;
+    }
+    footer {
+      /* border-top: solid 1px black; */
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Verdana, Helvetica, "Dejavu Sans", "Noto Sans", sans-serif;
+    }
+    p {
+      font-faily: Calibri, "Times New Roman", "Open Sans", serif;
+    }
+  </style>
+  <style>
+    section { padding: 30px; }
+  </style>
+</head>
+<body>
+  <nav><!--
+    --><span>Home</span><!--
+    --><span><a href="/a-bas-le-ciel/all.html">All (Search this)</a></span><!--
+    --><span><a href="/a-bas-le-ciel/1.html">Paginated</a></span><!--
+    --><span><a href="/a-bas-le-ciel/playlists.html">Playlists</a></span><!--
+    --><!--<span class="search">
+      <form  action="https://www.bing.com/" method="get">
+        <input type="hidden" name="q" autocomplete="off" value="site:/a-bas-le-ciel">
+        <input type="text" name="q" autocomplete="off">
+        <input type="submit" value="WIP Search">
+      </form>
+    </span>-->
+  </nav>
+  <main class="thin-column">
+    <aside></aside>
+    <section class="coloured-item">
+      <p>
+        This site was created by <a href="https://aryailia.site/">Aryailia</a>.
+        If you find any problems submit an issue on the <a href="https://github.com/Aryailia/aryailia.github.io">GitHub page</a> for this project.
+      </p>
+      <p>This is an archive of the videos on Eisel Mazard's YouTube channels provided with permission by Eisel Mazard.</p>
+      <hr>
+      <p>Currently, this site archives:</p>
+      <ul>
+        <li><a href="https://www.youtube.com/user/HeiJinZhengZhi/videos">à-bas-le-ciel</a>  <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCWPKJM4CT6ES2BrUz9wbELw">[RSS feed link]</a></li>
+        <li>Maybe more will come</li>
+      </ul>
+
+      <p>Eisel Mazard's other YouTube channels:</p>
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/channel/UCP3fLeOekX2yBegj9-XwDhA/videos">Active Research and Informed Opinion</a>
+          <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCP3fLeOekX2yBegj9-XwDhA">[RSS]</a>
+        </li>
+
+        <li>
+          <a href="https://www.youtube.com/channel/UCwFVGsSXOM5d3xLSunquAPA/videos">AR&amp;IO: Reviews</a>
+          <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCwFVGsSXOM5d3xLSunquAPA">[RSS]</a></li>
+      </ul>
+
+      <p>Other places to find Eisel Mazard:</p>
+      <ul>
+        <li>Discord (See <a href="/a-bas-le-ciel/1.html">latest video</a> for newest invite link)</li>
+        <li><a href="http://a-bas-le-ciel.blogspot.com/">Blogspot</a></li>
+        <li><a href="https://www.patreon.com/a_bas_le_ciel">Patreon</a></li>
+        <li><a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">Instagram</a></li>
+      </ul>
+
+    </section>
+    <aside></aside>
+  </main>
+  <!-- Specifically skipping footer -->
+</body>
+</html>

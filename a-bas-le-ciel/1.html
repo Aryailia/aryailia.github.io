@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video Index - Page 1</title>
+  <style>
+    /* Overall structure */
+    body { margin: 0px; padding: 0px; border: 0px; }
+    span, div, p, h1, h2, h3, h4, h5, h6 { line-height: 1.3em; }
+    @media screen and (min-width: 1200px) {
+      .medium-column {
+        display: grid;
+        /* 768 (thin) + 336px (thumnail) */
+        grid-template-columns: minmax(0, 1fr) 1104px minmax(0, 1fr);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .thin-column {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 768px minmax(0, 1fr);
+      }
+    }
+
+
+    /* Palette
+      #FAF9FA
+      #8695A8
+      #E39940
+      #A05148
+      #2B2F3A
+    */
+    /* Colour */
+    body           { background: #DAD9DA; }
+    .coloured-item { background: #FDFDFA; }
+    nav, footer    { background: #C5F6DF; }
+    /* nav            { color: #FAF9FA; } */
+
+    /* Overall structure */
+    /* top right bottom left */
+    main {  padding: 40px 20px 20px 20px; }
+    nav {
+      position: fixed;
+      top: 0px;
+      /* border-bottom: solid 1px black; */
+      height: 40px;
+      width: 100%;
+    }
+    nav span {
+      display: inline-block;
+      padding: 10px 15px;
+      text-align: center;
+      vertical-align: center;
+    }
+    nav .search {
+      float: right;
+    }
+    footer {
+      /* border-top: solid 1px black; */
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Verdana, Helvetica, "Dejavu Sans", "Noto Sans", sans-serif;
+    }
+    p {
+      font-faily: Calibri, "Times New Roman", "Open Sans", serif;
+    }
+  </style>
+  <style>
+.paginated-list li {
+  margin-top:    40px;
+  /* list-style-position: outside; */
+}
+.paginated-list .topright, .botright {
+  text-align: right;
+}
+.paginated-list > div {
+  margin-top: 40px;
+}
+
+.paginated-list {
+  display: grid;
+  grid-template-areas:
+    "topleft   topright"
+    "list      list"
+    "botleft   botright";
+}
+.paginated-list .topleft  { grid-area: topleft; }
+.paginated-list .topright { grid-area: topright; }
+.paginated-list .list     { grid-area: list; }
+.paginated-list .botleft  { grid-area: botleft; }
+.paginated-list .botright { grid-area: botright; }
+
+.paginated-item {
+  padding: 30px 20px;
+}
+.paginated-item .number   {
+  padding: 0px 10px 0px 0px; /* TRBL */
+}
+.paginated-item .thumbnail   {
+  width: 336px;
+  margin-right: 10px;
+}
+.paginated-item * {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+.paginated-item .title       {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.paginated-item .description {
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+.paginated-item {
+  display: grid;
+  grid-template-areas:
+    "number thumbnail title"
+    "number thumbnail date"
+    "number thumbnail description";
+  grid-template-rows: auto 2em 1fr;
+  height: 188px;
+}
+.paginated-item .number      { grid-area: number; }
+.paginated-item .thumbnail   { grid-area: thumbnail; }
+.paginated-item .title       { grid-area: title; }
+.paginated-item .date        { grid-area: date; }
+.paginated-item .description { grid-area: description; }
+
+  </style>
+</head>
+<body>
+  <nav><!--
+    --><span><a href="/a-bas-le-ciel/">Home</a></span><!--
+    --><span><a href="/a-bas-le-ciel/all.html">All (Search this)</a></span><!--
+    --><span>Paginated</span><!--
+    --><span><a href="/a-bas-le-ciel/playlists.html">Playlists</a></span><!--
+    --><!--<span class="search">
+      <form  action="https://www.bing.com/" method="get">
+        <input type="hidden" name="q" autocomplete="off" value="site:/a-bas-le-ciel">
+        <input type="text" name="q" autocomplete="off">
+        <input type="submit" value="WIP Search">
+      </form>
+    </span>-->
+  </nav>
+  <main class="medium-column">
+    <aside></aside>
+    <section class="paginated-list">
+      <div class="topleft"></div>
+      <div class="topright"><a href="/a-bas-le-ciel/2.html">Next Page &gt;</a>&nbsp;&nbsp;<a href="/a-bas-le-ciel/47.html">&gt;&gt;</a></div>
+      <ol class="list">
+      <li class="paginated-item coloured-item">
+        <div class="number">1</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/hoxM7jBBlaU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAVHIxuDHhLVxdmi0MHWNOcYqODmQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-hoxM7jBBlaU.html">Blackpill Problem: Chad Solution. @Incel TV</a></h2>
+        <p class="date">20 July 2022 <a href="https://www.youtube.com/watch?v=hoxM7jBBlaU">[YT link]</a></p>
+        <p class="description">This is the final video in the playlist, "Advice Nobody Wants to Hear". #blackpill #incels #advicenobodywantstohear Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a> @decline @TkyoSam</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">2</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/D78QWMu2hK0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDiiP3fZJDDjhZ5Z_em0D3X6rWKgw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-D78QWMu2hK0.html">I am not a tough guy, but I'm tougher than these guys.</a></h2>
+        <p class="date">15 July 2022 <a href="https://www.youtube.com/watch?v=D78QWMu2hK0">[YT link]</a></p>
+        <p class="description">@durianrider @Freelee The BananaGirl #vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">3</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/o3NZO_wGQbU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBv6WNh4NbSWw3-NV5-OZVEUjJlbg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-o3NZO_wGQbU.html">[Ink to Inc.] The end of the book industry; the end of the video game industry.</a></h2>
+        <p class="date">13 July 2022 <a href="https://www.youtube.com/watch?v=o3NZO_wGQbU">[YT link]</a></p>
+        <p class="description">[INK001] I have a separate youtube channel called "From Ink to Inc.", and here it is: <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a> #booktube #writertube #authortube</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">4</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/LlcDA78LGwQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBYt6nlRYlLG9S0gS7sM2QPcneLTw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-LlcDA78LGwQ.html">Just a footnote in the history of veganism?</a></h2>
+        <p class="date">08 July 2022 <a href="https://www.youtube.com/watch?v=LlcDA78LGwQ">[YT link]</a></p>
+        <p class="description">[L092] @Gary L. Francione @Gary Yourofsky @Freelee The BananaGirl @durianrider @Erin Janus @Paul Bashir @Joey Carbstrong @Wayne Hsiung @Direct Action Everywhere - DxE  @NutritionFacts.org @Hitomi Mochizuki @James Aspey @Healthy Crazy Cool @Patrisse Cullors @Rationality Rules @CosmicSkeptic @Earthling Ed <br><br><br><br>Link to the book, _Veganism: Future of an Illusion_ = <a href="https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/">https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/</a><br><br><br><br>0:00 Gary Yourofsy, for example.<br><br>2:21 Who is important enough criticize, who is just "a minor footnote"?<br><br>3:25 The thesis: we tend to assume we already know…<br><br>3:56 Gary Francione, for example.<br><br>5:13 Wayne Hsiung (DxE: Direct Action Everywhere), for example.<br><br>6:13 Gary Yourofsy, there were red flags.<br><br>6:55 Wayne Hsiung, there were red flags.<br><br>7:29 Were you willing to recognize the red flags, or… ?<br><br>8:37 Present political significance is an inference.<br><br>9:01 Freelee, "Why would you bother criticizing Freelee… ?"<br><br>11:33 The mentality of the follower.<br><br>12:55 BLM: Patrisse Khan Cullors, for example.<br><br>14:50 The thesis restated.<br><br>16:00 Black Lives Matter: public expectations (the mentality of the followers).<br><br>16:40 Durianrider, Freelee, Gary Yourofsky, Gary Francione.<br><br>17:30 People really believed in James Aspey.<br><br>19:52 Erin Janus, for example.<br><br>21:32 The thesis restated: an inference based on our assumptions (or fantasies) about the future.<br><br>23:06 Jeremy Bentham, Utilitarianism, Rationality Rules & Cosmic Skeptic.<br><br>26:48 Hitomi Mochizuki, for example.<br><br>29:06 What about me?  Am I just a footnote?<br><br>29:39 Earthling Ed, for example.<br><br>30:15 Dr. Greger (NutritionFacts), for example (Michael Greger).<br><br>31:42 Gary Francione, an aristocrat among us.<br><br>34:09 Belief: Gary Francione vs. Gary Yourofsky.<br><br>35:27 Why did they accomplish so little?<br><br>36:44 Gary Yourofsky, red flags: did you ignore them?<br><br>37:22 They have money, fame, power, respect and sex, but…<br><br>38:06 What are they going to accomplish in the next five years?<br><br>40:26 BLM: learning the lessons of (very recent) history.<br><br><br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a> #veganism  #vegans  #vegan</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">5</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/eMqulOpNnH8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAM9aRQ3xCpmDpqaNE7e-Z8qmH1_w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-eMqulOpNnH8.html">Freelee vs. Durianrider in 2022: Pot, Kettle, Black.</a></h2>
+        <p class="date">08 July 2022 <a href="https://www.youtube.com/watch?v=eMqulOpNnH8">[YT link]</a></p>
+        <p class="description">Yes, the video contains screenshots of my "secret" emails with Durianrider.  Yes, the court case is still going on, in.  Yes, there's a playlist of videos (on this channel) that will update you about it, and tell the whole tale.  <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7rnlpe1mrR7bnaQwSaBYfij">https://www.youtube.com/playlist?list=PLZEkgohG7k7rnlpe1mrR7bnaQwSaBYfij</a><br><br>@Freelee The BananaGirl @The Frugivore Diet @durianrider #vegan #vegans #vegandrama<br><br>• 5:15 Commentary commences<br><br>• 10:46 Screenshot 1.<br><br>• 10:50 Screenshot 2.<br><br>• 11:03 Screenshot 3.<br><br>• 11:55 Screenshot 4.<br><br>• 11:60 Screenshot 5.<br><br>• 12:05 Screenshot 6.</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">6</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/dwn8KqhCwJI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAt8MKjhFZSsgoD2k36YpDrh4uqVA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-dwn8KqhCwJI.html">Evil is ordinary, and ordinary people are evil. @TkyoSam @Oriental Pearl</a></h2>
+        <p class="date">04 July 2022 <a href="https://www.youtube.com/watch?v=dwn8KqhCwJI">[YT link]</a></p>
+        <p class="description">Link to the book, "Veganism: Future of an Illusion": <a href="https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/">https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/</a><br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>#vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">7</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/inn0bGwjOLc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDC4ev3wtXwl4FMOrbL14cxYaCpxg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-inn0bGwjOLc.html">Q&A: "What should I study in university?" #advicenobodywantstohear</a></h2>
+        <p class="date">01 July 2022 <a href="https://www.youtube.com/watch?v=inn0bGwjOLc">[YT link]</a></p>
+        <p class="description">[L091] Here's the link to the book, _No More Manifestos,_ "much aforementioned": <br><br>I do have a playlist of my old videos titled, "University Education, Critique Of": <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7q4UfL8k99S7kLax-tGUmnU">https://www.youtube.com/playlist?list=PLZEkgohG7k7q4UfL8k99S7kLax-tGUmnU</a><br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a> #nihilism #autodidact</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">8</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/nUQ2rnFucts/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3nouQuGpxNEsIBgxb5ubcg8JiZw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-nUQ2rnFucts.html">Rationality Rules is ex-vegan for all the wrong reasons.</a></h2>
+        <p class="date">30 June 2022 <a href="https://www.youtube.com/watch?v=nUQ2rnFucts">[YT link]</a></p>
+        <p class="description">The book costs less than a sheaf of blank paper… and it is SLIGHTLY more entertaining: _Veganism: Future of an Illusion_ <a href="https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/">https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/</a><br><br>And no, that's not the only book I've written: _No More Manifestos: the Political Philosophy of Eisel Mazard_ <a href="https://www.amazon.com/More-Manifestos-philosophy-%C3%A0-bas-ciel/dp/B0B4GP4WSB/">https://www.amazon.com/More-Manifestos-philosophy-%C3%A0-bas-ciel/dp/B0B4GP4WSB/</a><br><br>If you're not familiar with @Rationality Rules (Stephen Woodford) here's the link to the specific video being alluded to on his channel: _Veganism will win, but you're wrong about why_ <a href="https://www.youtube.com/watch?v=rRHrOQXsIRg">https://www.youtube.com/watch?v=rRHrOQXsIRg</a><br><br>#vegan #atheism #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">9</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/-CIDD1lAuCY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBhpa0_qj-sZpubgVC0xd3QyCElQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v--CIDD1lAuCY.html">Video Game Addicts are Volcels. @decline @Hiding In My Room @TkyoSam</a></h2>
+        <p class="date">28 June 2022 <a href="https://www.youtube.com/watch?v=-CIDD1lAuCY">[YT link]</a></p>
+        <p class="description">Incels on the popcorn chicken diet, man.  The title alludes to the meme, "fatcel is volcel", meaning that some people who consider themselves incels are, in fact, voluntarily making the decisions that keep them locked in a state of self-hating celibacy. #quitvideogames #incel #advicenobodywantstohear</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">10</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/awKfmE1JO2w/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAjMqrk-gEgweDM63EtSU03odqJfw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-awKfmE1JO2w.html">On the writing of "No More Manifestos". A casual conversation, recorded live.</a></h2>
+        <p class="date">26 June 2022 <a href="https://www.youtube.com/watch?v=awKfmE1JO2w">[YT link]</a></p>
+        <p class="description">[L090] Talking about the process (and product) of writing two books, (1) "No More Manifestos", <a href="https://www.amazon.com/dp/B0B4GP4WSB">https://www.amazon.com/dp/B0B4GP4WSB</a> and (2) Veganism: Future of an Illusion. <a href="https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/">https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard/dp/B09X7QXPRF/</a><br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a> #booktube #authortube #writertube</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">11</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/eS6oGn8iuf4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuIznvsO871BWcdF-05XJJnCmG8A" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-eS6oGn8iuf4.html">I'm Going Back to Thailand.</a></h2>
+        <p class="date">22 June 2022 <a href="https://www.youtube.com/watch?v=eS6oGn8iuf4">[YT link]</a></p>
+        <p class="description">There was a time when I'd ask, "does anyone want to meet up?"… BUT… Y'KNOW… #vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">12</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/lEeWIyYYBzQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBqRYF4b4H7gJCL8WQIkkOtuh15hQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-lEeWIyYYBzQ.html">Veganism Has a Cancer Problem. @Krocks In The Kitchen @Vegan Gains</a></h2>
+        <p class="date">16 June 2022 <a href="https://www.youtube.com/watch?v=lEeWIyYYBzQ">[YT link]</a></p>
+        <p class="description">The book is better than the youtube video: <a href="https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard-ebook/dp/B09XLPW36N/">https://www.amazon.com/Veganism-Future-Illusion-Eisel-Mazard-ebook/dp/B09XLPW36N/</a><br><br>Seriously. #veganism #vegans #vegan</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">13</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/19hGZCLPICw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBypD3yZ-351Cm29JGluGy_NwejCQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-19hGZCLPICw.html">Incels Discover Veganism: Celibacy and Ideology. @Wheat Waffles</a></h2>
+        <p class="date">15 June 2022 <a href="https://www.youtube.com/watch?v=19hGZCLPICw">[YT link]</a></p>
+        <p class="description">[L088] #vegans #veganism #incels Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a> @decline<br><br>0:00 Meaning of life.<br><br>8:44 Wheat Waffles on veganism (quotation).<br><br>10:24 Meaning of life.<br><br>46:19 Melissa comes on camera!<br><br>53:10 Meaning of life.</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">14</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/_jWcg5kjXPg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBaXq--k5Pf-xaPDa1757tUtWQYBg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-_jWcg5kjXPg.html">You can change your life: tragedy and heartbreak as a nihilistic atheist.</a></h2>
+        <p class="date">13 June 2022 <a href="https://www.youtube.com/watch?v=_jWcg5kjXPg">[YT link]</a></p>
+        <p class="description">[L089] This is "a response to" a video from "The Geek Getaway" that is… just SLIGHTLY less profound… LINK: <a href="https://www.youtube.com/watch?v=nmkqg2utZjM">https://www.youtube.com/watch?v=nmkqg2utZjM</a> #nihilism #atheism #advicenobodywantstohear @The Geek Getaway @90s Reloaded Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>0:00 The meaning of life.<br><br>26:48 What I said to "The Retro Bro" & "The Geek Getaway".<br><br>33:34 The meaning of life.</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">15</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/0Az8fF-S2KU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLChrPbXEgscgpSi-2MFkMzjSqHUTg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-0Az8fF-S2KU.html">Drug Tolerance: Side Effects Include Death. @Vegan Gains</a></h2>
+        <p class="date">09 June 2022 <a href="https://www.youtube.com/watch?v=0Az8fF-S2KU">[YT link]</a></p>
+        <p class="description">Marijuana can ruin your life.  Prescription antidepressants can ruin your life.  The side effects are real.  Your excuses for them are not.<br><br>If you're wondering why Mic the Vegan is in the thumbnail, here's the link: <a href="https://youtu.be/EUbyVBi8Ams">https://youtu.be/EUbyVBi8Ams</a><br><br>If you're wondering why Unnatural Vegan is in the thumbnail, here are two links: (1) <a href="https://youtu.be/Wor4nA3RE1w">https://youtu.be/Wor4nA3RE1w</a> (2) <a href="https://www.youtube.com/watch?v=__3VEQGL5lQ">https://www.youtube.com/watch?v=__3VEQGL5lQ</a><br><br>If you're wondering why Vegan Gains is in the thumbnail… there's a whole playlist… <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7rKUpm6KfAkQ6sRsCoDxRV0">https://www.youtube.com/playlist?list=PLZEkgohG7k7rKUpm6KfAkQ6sRsCoDxRV0</a><br><br>#sobriety #quitmarijuana #quiteverything @Unnatural Vegan @Mic the Vegan</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">16</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/AEy_GYA0Bx8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCoyNvOrcsCisPTWRxDWQCK7l5v2Q" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-AEy_GYA0Bx8.html">My Friendship with @Vegan Gains</a></h2>
+        <p class="date">09 June 2022 <a href="https://www.youtube.com/watch?v=AEy_GYA0Bx8">[YT link]</a></p>
+        <p class="description">A good friend will tell you truths others would find too terrible to tell. CLICK THE LINK: <a href="http://a-bas-le-ciel.blogspot.com/2022/06/The-Psychology-of-Vegan-Gains-Final-Judgement.html">http://a-bas-le-ciel.blogspot.com/2022/06/The-Psychology-of-Vegan-Gains-Final-Judgement.html</a> #vegangains #vegandrama #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">17</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/qlJ7Gmbpb2Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC712YLYDkyccKv5w_WVutCpBpthA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-qlJ7Gmbpb2Y.html">Coward, Liar, Caffeine Addict, Video Game Addict: @Vegan Gains</a></h2>
+        <p class="date">08 June 2022 <a href="https://www.youtube.com/watch?v=qlJ7Gmbpb2Y">[YT link]</a></p>
+        <p class="description">My final judgement on Vegan Gains: <a href="http://a-bas-le-ciel.blogspot.com/2022/06/The-Psychology-of-Vegan-Gains-Final-Judgement.html">http://a-bas-le-ciel.blogspot.com/2022/06/The-Psychology-of-Vegan-Gains-Final-Judgement.html</a> #vegangains #vegandrama #vegans</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">18</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/IpymFjh3Xus/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDYKokM7EYP2SHVk78e3lGi0l6xxw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-IpymFjh3Xus.html">Vegan Gains: "Secret" Emails, Lies & Defamation.</a></h2>
+        <p class="date">06 June 2022 <a href="https://www.youtube.com/watch?v=IpymFjh3Xus">[YT link]</a></p>
+        <p class="description">[L087] With live Q&A! @Vegan Gains #vegans #veganism #vegandrama Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Here's the link to the formerly private ("secret") emails, if you want to read along _while they're discussed_ in today's video: <a href="http://a-bas-le-ciel.blogspot.com/2022/06/vegan-gains-secret-emails-lies-and-defamation.html">http://a-bas-le-ciel.blogspot.com/2022/06/vegan-gains-secret-emails-lies-and-defamation.html</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">19</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/XT9WPQ13xes/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAblPSYKxPAAsyetBeKa3JY2qmKXA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-XT9WPQ13xes.html">Vegan Gains Explains Why We're "Enemies".</a></h2>
+        <p class="date">05 June 2022 <a href="https://www.youtube.com/watch?v=XT9WPQ13xes">[YT link]</a></p>
+        <p class="description">@The 2 AM Vegan @Vegan Gains #vegans #veganism #vegangains<br><br>If you'd like to hear what Richard has to say in context, without my editing, here's the link to the source on "The 2 AM Vegan": <a href="https://youtu.be/CVIOiBlxFAA?t=141">https://youtu.be/CVIOiBlxFAA?t=141</a><br><br>And, yeah, if you want to know the REAL REASON why Richard cut off all communication with me (according TO HIM… AT THE TIME)… you won't be surprised to find that it's quite a bit more embarrassing than the explanation he's now offering… <a href="https://www.youtube.com/watch?v=Ongv1I5A8_M">https://www.youtube.com/watch?v=Ongv1I5A8_M</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">20</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/eOvdgUfu6Xg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIdOqpVK6cQvl0bv7tqaqLWwJv_w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-eOvdgUfu6Xg.html">Vengeance. The Incel Mentality: Revenge as Romance.</a></h2>
+        <p class="date">31 May 2022 <a href="https://www.youtube.com/watch?v=eOvdgUfu6Xg">[YT link]</a></p>
+        <p class="description">It's secretly about the meaning of life. @decline @Hiding In My Room @TkyoSam Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>#vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">21</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Akwrz59lkf0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCSFci_bhpEWOO_ahrvnqinJz7d8w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Akwrz59lkf0.html">Changing the Technology of the Gun: the End of Impunity, the End of Anonymity, the End of Privacy.</a></h2>
+        <p class="date">30 May 2022 <a href="https://www.youtube.com/watch?v=Akwrz59lkf0">[YT link]</a></p>
+        <p class="description">Share the link: if you think this video is raising important questions (about gun control, about the next steps we should take, politically, after the Uvalde massacre, the Las Vegas massacre, the Boston massacre, etc.) send the link to someone who's going to be willing to hear it, whether that be a friend or a facebook group of like minded people.  You cannot expect youtube to passively promote a political message of this kind: it's the role of the audience, if they care, to make it matter.<br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>#uvalde #guncontrol #politics</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">22</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/aeT60h0z_rU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPHaPcmbUf0T4u-K-hczoFdiqwJw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-aeT60h0z_rU.html">The Future of Gun Control & the History of the Constitution (vs. Woody Holton & Robert G. Parkinson)</a></h2>
+        <p class="date">29 May 2022 <a href="https://www.youtube.com/watch?v=aeT60h0z_rU">[YT link]</a></p>
+        <p class="description">[L086] If you do not know the significance of Uvalde, Texas, here's an article: <a href="https://www.bbc.com/news/world-us-canada-61613177">https://www.bbc.com/news/world-us-canada-61613177</a><br><br>Link to Robert G. Parkinson's book: <a href="https://www.amazon.ca/Thirteen-Clocks-Colonies-Declaration-Independence/dp/1469662574/">https://www.amazon.ca/Thirteen-Clocks-Colonies-Declaration-Independence/dp/1469662574/</a><br><br>Link to Woody Holton's book: <a href="https://www.amazon.com/Unruly-Americans-Origins-Constitution-Holton/dp/0809016435/">https://www.amazon.com/Unruly-Americans-Origins-Constitution-Holton/dp/0809016435/</a><br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>#Booktube #History #Politics</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">23</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/PdB0vKy5uLQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8BQk_ze_OX0ytSmF44FgR0G11kw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-PdB0vKy5uLQ.html">Political Revolution in the 21st Century: How Not Why.</a></h2>
+        <p class="date">27 May 2022 <a href="https://www.youtube.com/watch?v=PdB0vKy5uLQ">[YT link]</a></p>
+        <p class="description">[L085] Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">24</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/TYzItS0mDTE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBh6I11YJqX7QC36XoV0NVfxzGZrw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-TYzItS0mDTE.html">Nobody believes in "Freedom of Religion".  Nobody.</a></h2>
+        <p class="date">26 May 2022 <a href="https://www.youtube.com/watch?v=TYzItS0mDTE">[YT link]</a></p>
+        <p class="description">[L084] Phrases like "freedom of religion", "freedom of conscience" and "freedom of belief" are easily spoken.  What do they really mean?  What, really, are the implications, for the future of Europe, of America, of China, and of the world? #Xinjiang #Atheism #Nihilism<br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">25</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/tDCv3DmxxnQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfclRfiyBblE5ecyARJ6GWyKaHOg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-tDCv3DmxxnQ.html">How many lives have you ruined? How many people have you killed?</a></h2>
+        <p class="date">26 May 2022 <a href="https://www.youtube.com/watch?v=tDCv3DmxxnQ">[YT link]</a></p>
+        <p class="description">@Unnatural Vegan @Kristen Leo #vegan #vegans #veganism Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">26</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/ag4Up9Fn8_o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQv1a-JnD8tOoglCCk0eLnnIrW0A" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-ag4Up9Fn8_o.html">Hitomi Mochizuki is Ex-Vegan. #NotSatire</a></h2>
+        <p class="date">25 May 2022 <a href="https://www.youtube.com/watch?v=ag4Up9Fn8_o">[YT link]</a></p>
+        <p class="description">Yeah, I said it. @Kristen Leo also pretends to be vegan, while buying, wearing and selling leather. @Hitomi Mochizuki @Unnatural Vegan @Kalel #HitomiMochizuki #Veganism Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">27</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/t3tmf29Oavg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3RjE7J79LP1QOWfCvwL4gxQ818g" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-t3tmf29Oavg.html">3DS: Video Games for Attractive People Who Have Sex.</a></h2>
+        <p class="date">23 May 2022 <a href="https://www.youtube.com/watch?v=t3tmf29Oavg">[YT link]</a></p>
+        <p class="description">The #3DS #eshop is closing TODAY.  But that's not a reason to #quitvideogames …your sex life, on the other hand, may well be.  Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>0:00 Shadow of the Ninja 3DS, NES & Famicom (闇の仕事人, Yami no Shigotonin Kage)<br><br>0:50 The principle of the thing ("philosophy").<br><br>3:57 Sega Superstars Tennis (3DS & Nintendo Wii).<br><br>4:23 Bomb Monkey (3DS exclusive).<br><br>5:27 Columns (3DS, Game Gear, Master System, NOT the Genesis or Mega Drive version).<br><br>7:40 Sega 3D Classics (3DS) including Puyo Puyo 2.<br><br>8:53 Dr. Robotnik's Mean Bean Machine (3DS & Game Gear).</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">28</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/NPc1QGtEwcw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdWr3qOcEKm6nofR4UQupDJJ4Irw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-NPc1QGtEwcw.html">Antisemitism and/or/as/vs Multiculturalism.</a></h2>
+        <p class="date">19 May 2022 <a href="https://www.youtube.com/watch?v=NPc1QGtEwcw">[YT link]</a></p>
+        <p class="description">[L083] Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>#antisemitism #racism #politics</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">29</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/jNi1JkiqBTw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwngltZBOPiKJmXIn6kHg-44wrwA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-jNi1JkiqBTw.html">Amber Heard is telling the truth; Johnny Depp is living a lie.</a></h2>
+        <p class="date">18 May 2022 <a href="https://www.youtube.com/watch?v=jNi1JkiqBTw">[YT link]</a></p>
+        <p class="description">Just say no: Amber Heard vs. Johnny Depp vs. Sobriety. #quiteverything #sobriety #commentary<br><br>Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">30</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/2G3Iw7UAiCc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLATMJQnPd60GQeA_0d-8DCdMVRjWg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-2G3Iw7UAiCc.html">"Atheists, what are we fighting for?" vs. Matt Dillahunty.</a></h2>
+        <p class="date">17 May 2022 <a href="https://www.youtube.com/watch?v=2G3Iw7UAiCc">[YT link]</a></p>
+        <p class="description">[L082] Livestreams are announced in advance via Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>I upload regularly to three youtube channels, covering (i) nonfiction (both personal and political), (ii) fiction (including my own creative writing) and (iii) the study of languages (including Chinese).  The links to them are: 1. à-bas-le-ciel = <a href="https://www.youtube.com/user/heijinzhengzhi/videos">https://www.youtube.com/user/heijinzhengzhi/videos</a>  2. From Ink to Inc. = <a href="https://www.youtube.com/c/FromInktoInc/videos">https://www.youtube.com/c/FromInktoInc/videos</a>  3. A channel using my own name, Eisel Mazard = <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a> <br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://youtu.be/XJfHgTqCne4">https://youtu.be/XJfHgTqCne4</a><br><br>@Matt Dillahunty #atheism #nihilism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">31</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/XJfHgTqCne4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMNFEVdBvEF9y69Br0n5NkFVu2pA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-XJfHgTqCne4.html">Why are comments disabled on my channel? (THE REAL ANSWER)</a></h2>
+        <p class="date">15 May 2022 <a href="https://www.youtube.com/watch?v=XJfHgTqCne4">[YT link]</a></p>
+        <p class="description">[L081] The philosophy of doing youtube (and non-fiction #booktube / #authortube / #writertube) in 2022.  If anyone in the audience has any intelligent questions, it'll be a Q&A, but if not… a monologue.  ;-)<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">32</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/-IMSzegTsG8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDX90wBlRFQus6GgRgPICFuOQ8KOQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v--IMSzegTsG8.html">Caveman Economics.</a></h2>
+        <p class="date">14 May 2022 <a href="https://www.youtube.com/watch?v=-IMSzegTsG8">[YT link]</a></p>
+        <p class="description">​@Coffeezilla @James Aspey @Brian Turner @BRIAN TURNER INVESTS To understand this video, you do not need to know the meaning of the word Bitcoin, nor Cryptocurrency, TerraUSD, UST, Luna… nor even Coffeezilla. #vegan #vegans #veganism  Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/">https://www.instagram.com/a_bas_le_ciel/</a>  Find me on Patreon: <a href="https://www.patreon.com/a_bas_le_ciel/posts">https://www.patreon.com/a_bas_le_ciel/posts</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">33</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/J1hjPossCNw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCjyhDf73LDFjG9C_XXzUu4Zl7EzQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-J1hjPossCNw.html">Vegan Mind Tricks: doing the impossible by possible means.</a></h2>
+        <p class="date">11 May 2022 <a href="https://www.youtube.com/watch?v=J1hjPossCNw">[YT link]</a></p>
+        <p class="description">[L080] We uncover the unthinkable by means of the thinkable; we do the impossible by means of the possible. #vegan #vegans #veganism<br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">34</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/Q2HLTDOcMA4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoNhkFor21Sc_LhsHvjH50HTsidw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-Q2HLTDOcMA4.html">Civil Disobedience Doesn't Work: BLM (Black Lives Matter)</a></h2>
+        <p class="date">09 May 2022 <a href="https://www.youtube.com/watch?v=Q2HLTDOcMA4">[YT link]</a></p>
+        <p class="description">Shout out to @Susan Woods Nonprofit Solutions, link = <a href="https://www.youtube.com/channel/UCVXPM0eEZlUwd4YW8UvqpKA/videos">https://www.youtube.com/channel/UCVXPM0eEZlUwd4YW8UvqpKA/videos</a><br><br>There's a playlist of videos on BLM (Black Lives Matter) on this channel, going all the way back to their original constitution (now long since deleted from the internet and "forgotten") and another —very different— playlist of videos engaged in the critique of civil disobedience.<br><br>Link 1 = <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7qDwvsV2lnuOz_-B9RGDO_Y">https://www.youtube.com/playlist?list=PLZEkgohG7k7qDwvsV2lnuOz_-B9RGDO_Y</a><br><br>Link 2 = <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7rtpI_3UY6VKORCzQcgjBxp">https://www.youtube.com/playlist?list=PLZEkgohG7k7rtpI_3UY6VKORCzQcgjBxp</a><br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a><br><br>#vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">35</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/rEDkO3oJGJs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwifbCQsU3U3vSweqzN5DW-MLJGA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-rEDkO3oJGJs.html">The Necessity of Nihilism: Atheism is Not Enough.</a></h2>
+        <p class="date">09 May 2022 <a href="https://www.youtube.com/watch?v=rEDkO3oJGJs">[YT link]</a></p>
+        <p class="description">Check out the playlist, _Historical Nihilism, 历史虚无主义, "My Own" Philosophy._ <a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7ogRyDdIAh757EGzOrGoLWs">https://www.youtube.com/playlist?list=PLZEkgohG7k7ogRyDdIAh757EGzOrGoLWs</a><br><br>#nihilism #atheism #maxstirner @JaclynGlenn @Amazing Atheist @CosmicSkeptic @Rationality Rules</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">36</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/uCRpCh4Otuk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCuKma29pskuHmBK0cFS0ZFap9yJw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-uCRpCh4Otuk.html">Nostalgia is an attempt to vindicate the stupidity of your youth with the stupidity of adulthood.</a></h2>
+        <p class="date">07 May 2022 <a href="https://www.youtube.com/watch?v=uCRpCh4Otuk">[YT link]</a></p>
+        <p class="description">[L079] Has anyone made a playlist of all the videos in which I break down weeping?  Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">37</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/X2SJuIBkg74/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDSIcA6IJmvwZv9G-YtybJAiiZzLw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-X2SJuIBkg74.html">Durianrider: Truth and Consequences in 2022.</a></h2>
+        <p class="date">06 May 2022 <a href="https://www.youtube.com/watch?v=X2SJuIBkg74">[YT link]</a></p>
+        <p class="description">[L078] THE BOOK: <a href="https://www.amazon.com/dp/B09X7QXPRF">https://www.amazon.com/dp/B09X7QXPRF</a> (Yeah, BTW, it's separately available on each "version" of Amazon, for every country in the world.)<br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a><br><br>#vegan #vegans #veganism @durianrider @Freelee The BananaGirl @The Frugivore Diet @Earthling Ed @Joey Carbstrong @James Aspey @Bonny Rebecca @MadFit @Henya Mania @NinaAndRanda @Tess Begg</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">38</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/lMLZrdlUZRg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDdYhFi37EZoh3lrjosuZjcd1XhPw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-lMLZrdlUZRg.html">Roe v. Wade is a Legal Fiction: Abortion in America.</a></h2>
+        <p class="date">04 May 2022 <a href="https://www.youtube.com/watch?v=lMLZrdlUZRg">[YT link]</a></p>
+        <p class="description">If you want to know my political position on abortion _generally,_ click through to my earlier video, paradoxically but plainly titled: *"It's Infanticide: Legalize Abortion Anyway."* <a href="https://youtu.be/emS0DwzhFR8">https://youtu.be/emS0DwzhFR8</a> @Amazing Atheist @The Jimmy Dore Show @The Obama White House <br><br>Just one link: <a href="https://en.wikipedia.org/wiki/Griswold_v._Connecticut">https://en.wikipedia.org/wiki/Griswold_v._Connecticut</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">39</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/YEp8rbvbzpg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-xXiUmv9J33bbZ9Z3GtQkPCnfrQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-YEp8rbvbzpg.html">The Last PUA in Japan: Tkyosam's Deleted Videos.</a></h2>
+        <p class="date">02 May 2022 <a href="https://www.youtube.com/watch?v=YEp8rbvbzpg">[YT link]</a></p>
+        <p class="description">@TkyoSam #Incels #BlackPill #Japan</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">40</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/TD3uohbf_To/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQudnjfVVqE6tgiirAoQWqLO4-ZQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-TD3uohbf_To.html">Amber Heard Wins. @TkyoSam</a></h2>
+        <p class="date">30 April 2022 <a href="https://www.youtube.com/watch?v=TD3uohbf_To">[YT link]</a></p>
+        <p class="description">[L077] Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">41</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/ukmZgNFQ9uc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAS3g2OdwLEuj2CXHVC_MsemeA-cw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-ukmZgNFQ9uc.html">Am I Trying to Ruin Your Life? @TkyoSam @Vegan Gains etc.</a></h2>
+        <p class="date">27 April 2022 <a href="https://www.youtube.com/watch?v=ukmZgNFQ9uc">[YT link]</a></p>
+        <p class="description">[L076] The thing is, on the internet, when you offer advice that nobody wants to hear… someone… somewhere… really wants to hear it… not necessarily the person you've criticized. @Henya Mania @JaclynGlenn @Frank Family Vlogs @laoshu505000 #sobriety #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">42</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/NW56nMvEib0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFbyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAyUxMkfL4mclcENo7sELkH-8KQKQ" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-NW56nMvEib0.html">TkyoSam & Oriental Pearl: Cruel to Be Kind.</a></h2>
+        <p class="date">24 April 2022 <a href="https://www.youtube.com/watch?v=NW56nMvEib0">[YT link]</a></p>
+        <p class="description">It's never been about weight loss.  It's never been about learning a language. It's about who you want to be, what kind of person you want to become, and what you're willing to do to make it happen: good or evil, known or unknown. @TkyoSam @Oriental Pearl #vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">43</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/AdnmF4x405Q/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLfTYgasXRAJ0A41i5vcysTeo3Bw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-AdnmF4x405Q.html">I am better than Vegan Gains. At video games.</a></h2>
+        <p class="date">21 April 2022 <a href="https://www.youtube.com/watch?v=AdnmF4x405Q">[YT link]</a></p>
+        <p class="description">Shout out to @Vince Goodrum O.G. <a href="https://www.youtube.com/c/VinceGoodrum/videos">https://www.youtube.com/c/VinceGoodrum/videos</a><br><br>Shout out to @Hamza Unfiltered <a href="https://www.youtube.com/channel/UCHW4DMIaBmTGGGPmbmr-Dsg/videos">https://www.youtube.com/channel/UCHW4DMIaBmTGGGPmbmr-Dsg/videos</a><br><br>Shout out to @Dorian Develops <a href="https://www.youtube.com/c/DorianDevelops/videos">https://www.youtube.com/c/DorianDevelops/videos</a><br><br>Uh… shout out to @Vegan Gains and @Jasmin Gains… I guess.<br><br>And, very briefly, there is a youtube channel called "Coach Mike" quoted in there: <a href="https://www.youtube.com/channel/UCuAhaFgI8xiYfVFXnv8I2_w/videos">https://www.youtube.com/channel/UCuAhaFgI8xiYfVFXnv8I2_w/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a> #quitvideogames</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">44</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/cLDqXSbUmIs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFbyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdinqW9BlG-4wW-XeA-KCIxj7kEA" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-cLDqXSbUmIs.html">Tkyosam: I Challenge You to a Cage Match.</a></h2>
+        <p class="date">21 April 2022 <a href="https://www.youtube.com/watch?v=cLDqXSbUmIs">[YT link]</a></p>
+        <p class="description">I'd suggest everyone (EVERYONE) takes a look at my earlier video, "PUA, the Doomed Subculture of David Bond." <a href="https://youtu.be/5tlLKJEJaX4">https://youtu.be/5tlLKJEJaX4</a><br><br>@TkyoSam #notsatire #vegan #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">45</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/wx8PsmQyx3U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYg5O4kWUYWWZ0KFE5p73Erm5lxw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-wx8PsmQyx3U.html">#Authortube #Writertube #Booktube (Advice Nobody Wants to Hear)</a></h2>
+        <p class="date">19 April 2022 <a href="https://www.youtube.com/watch?v=wx8PsmQyx3U">[YT link]</a></p>
+        <p class="description">[L075] Q&A about writing, learning, and the life of the mind.<br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">46</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/XooDjBPvQQw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5icqTrZOLCv17hu5jqrqqjRpe0g" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-XooDjBPvQQw.html">Having Things: #Booktube is Babylon.</a></h2>
+        <p class="date">18 April 2022 <a href="https://www.youtube.com/watch?v=XooDjBPvQQw">[YT link]</a></p>
+        <p class="description">@MetalJesusRocks @Destiny Fomo @Last Gamer @* e m m i e * @Elizabeth Filips @books with chloe @Alexandra Roselyn @TkyoSam <br><br>Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a></p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">47</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/sR3yeUPZX1Q/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7SByrbxgc_VVUng7oImX0VlKqzg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-sR3yeUPZX1Q.html">Tkyosam: How to Be Stupid for Dummies.</a></h2>
+        <p class="date">15 April 2022 <a href="https://www.youtube.com/watch?v=sR3yeUPZX1Q">[YT link]</a></p>
+        <p class="description">Everyone Hates Tkyosam.  Everyone.  @TkyoSam @Gimmeabreakman @Oriental Pearl @Vegan Gains #vegan #vegans #veganism</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">48</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/jTsywboXTBA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDCrJ1nuvv3GvAQM_i2WxGScmRPQg" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-jTsywboXTBA.html">TkyoSam is still on drugs. Ally Hardesty is still on drugs.</a></h2>
+        <p class="date">14 April 2022 <a href="https://www.youtube.com/watch?v=jTsywboXTBA">[YT link]</a></p>
+        <p class="description">@TkyoSam @Ally Hardesty @Daniel Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a> #fitness #sobriety #quiteverything</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">49</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/GgU5V9IwZl4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDj3S1qvkKuYauRWIOUU-vjx2xk4w" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-GgU5V9IwZl4.html">Sex for Fat People: Tkyosam vs. Reality.</a></h2>
+        <p class="date">12 April 2022 <a href="https://www.youtube.com/watch?v=GgU5V9IwZl4">[YT link]</a></p>
+        <p class="description">The Ultimate Game is NO GAME.  Yeah, I made an earlier video with that title, and if you want to hear the positive side of the message in today's video, that's the one to click on: <a href="https://www.youtube.com/watch?v=qd3jQ6x_ni0">https://www.youtube.com/watch?v=qd3jQ6x_ni0</a><br><br>@TkyoSam @Oriental Pearl @MetalJesusRocks Support the creation of new content on the channel (and speak to me, directly, if you want to) via Patreon, for $1 per month: <a href="https://www.patreon.com/a_bas_le_ciel">https://www.patreon.com/a_bas_le_ciel</a><br><br>A searchable list of all of my videos (more effective than searching within youtube, IMO) can be found here: <a href="https://aryailia.github.io/a-bas-le-ciel/all.html">https://aryailia.github.io/a-bas-le-ciel/all.html</a><br><br>Find me on Instagram: <a href="https://www.instagram.com/a_bas_le_ciel/?hl=en">https://www.instagram.com/a_bas_le_ciel/?hl=en</a><br><br>à-bas-le-ciel is not my only youtube channel… there is, in fact, another channel that has my own legal name, Eisel Mazard: <a href="https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos">https://www.youtube.com/channel/UCuxp5G-XFGcH4lmgejZddqA/videos</a><br><br>And if you're looking for an answer to the question, "Why is the comment section disabled on this channel?", here it is: <a href="https://www.youtube.com/watch?v=WMvwwd0shMg">https://www.youtube.com/watch?v=WMvwwd0shMg</a> #advicenobodywantstohear #advice #sex</p>
+      </li>
+      <li class="paginated-item coloured-item">
+        <div class="number">50</div>
+        <img class="thumbnail" src="https://i.ytimg.com/vi/2PkqSeMjoqE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAlYaSLmtEL_WGA5cZkyLIL3d0pfw" width="100%">
+        <h2 class="title"><a href="/a-bas-le-ciel/video/v-2PkqSeMjoqE.html">Fat shaming is an art, not a science: TkyoSam.</a></h2>
+        <p class="date">10 April 2022 <a href="https://www.youtube.com/watch?v=2PkqSeMjoqE">[YT link]</a></p>
+        <p class="description">@TkyoSam is an incel who pretends to be a "P.U.A." dating coach, seducing huge (but always unspecified) numbers of women with his "game". But he's living a lie, and, let's face it, he's barely living at all.  The ultimate game is no game.  The question you get answer is: who do I want to be?  What kind of person do I want to become?  And then you get to find out who's with you: who loves you, who respects you, who's willing to be your friend —given the outcomes of that decision you've made. #vegan #veganism #incels<br><br>You may not know that I have a playlist of videos on this subject: _Toxic Diet Culture: Fat People & the Politics of Weight Loss._<br><br><a href="https://www.youtube.com/playlist?list=PLZEkgohG7k7pTEaat8lt3EhLYDhyxkkBE">https://www.youtube.com/playlist?list=PLZEkgohG7k7pTEaat8lt3EhLYDhyxkkBE</a></p>
+      </li>
+      </ol>
+      <div class="botleft"></div>
+      <div class="botright"><a href="/a-bas-le-ciel/2.html">Next Page &gt;</a>&nbsp;&nbsp;<a href="/a-bas-le-ciel/47.html">&gt;&gt;</a></div>
+    </section>
+    <aside></aside>
+  </main>
+  
+  <footer>
+    <div>
+      Site designed <a href="https://aryailia.site/">Aryailia</a>.
+      Content hosted with permission from <a href="http://a-bas-le-ciel.blogspot.com/">Eisel Mazard</a>.
+    </div>
+  </footer>
+</body>
+</html>
