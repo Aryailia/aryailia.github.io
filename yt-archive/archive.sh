@@ -52,13 +52,13 @@ my_make() {
   case "${1}"
     ############################################################################
     # Main maintenance actions
-    in download-metadata)
-      [ -n "${3}" ] || die FATAL 1 "Arg three '${3}' must be non-empty"
+    in download-metadata) # <url> <interim-directory> <archive-file>
+      [ -d "${3}" ] || die FATAL 1 "Arg three '${3}' must be a directory"
       ytdl --write-info-json --skip-download --continue --ignore-errors \
         --no-post-overwrites \
         --sub-lang en --write-auto-sub \
         --download-archive "${4}" \
-        --output "${3}" \
+        --output "${3}/%(id)s" \
         "${2}"
 
 
@@ -160,9 +160,9 @@ my_make() {
         id="${filepath%.info.json}"
         if   [ ! -f "${interim}/${id}.info.json" ] \
           && [ ! -f "${subtitle}/${id}.en.vtt" ] \
-          && ! grep -qF -- "${id}" "${skipfile}"
+          && ! grep -qF -- "${id}" "${skipfile}" >/dev/null
         then
-          my_make download-metadata "https://www.youtube.com/watch?v=${id}" "${interim}/%(id)s"
+          my_make download-metadata "https://www.youtube.com/watch?v=${id}" "${interim}"
         fi
       }
       for_each_file_in_dir "${metadata}" redownload_subs
@@ -208,7 +208,7 @@ my_make() {
     ############################################################################
     # Utility functions
 
-    ;; autosub) # <file> <output-dir>
+    ;; autosub) #         <file> <output-dir>
       docker images "${name}" --format "{{.Repository}}" | grep -F "autosub" \
         || die FATAL 1 "'autosub' docker image not built yet" \
           "See https://github.com/abhirooptalasila/AutoSub"
@@ -226,7 +226,7 @@ my_make() {
         -v "${out_dir}:/output" \
         autosub:0.9.3 --format vtt --file "/app/${stem}.en.${ext}"
 
-    ;; verify-subbed-fully)
+    ;; verify-subbed-fully) # <media-file> <sub-file>
       [ -r "${2}" ] || die FATAL 1 "Arg two '${2}' must be a readable file"
       [ -r "${3}" ] || die FATAL 1 "Arg three '${3}' must be a readable file"
       duration="$( ffprobe -v error -show_entries format=duration \
@@ -255,10 +255,10 @@ my_make() {
         )" || exit "$?"
         printf %s\\n "${dump}" | jq --slurp 'sort_by(.title)'
 
-    ;; list-as-archive)
+    ;; list-as-archive) # <directory>
       my_make list-stems "${2}" | sed "s/^/youtube /"
 
-    ;; list-stems) # <directory>
+    ;; list-stems) #         <directory>
       [ -d "${2}" ] || die FATAL 1 "Arg two '${2}' must be a directory"
 
       print_stem() {
